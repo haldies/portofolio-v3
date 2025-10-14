@@ -2,7 +2,42 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
+import Image from '../../../components/AppImage';
 import { Meteors } from '@/components/ui/meteors';
+
+const learningPartners = [
+  {
+    name: 'Amazon Web Services',
+    program: 'Generative AI & Cloud Practitioner',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg'
+  },
+  {
+    name: 'Google',
+    program: 'Google Cloud Skills Boost',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg'
+  },
+  {
+    name: 'Bangkit Academy',
+    program: 'Machine Learning Cohort',
+    logo: 'https://storage.googleapis.com/bangkit-media/bangkit-logo.png'
+  },
+  {
+    name: 'Oracle',
+    program: 'Oracle Cloud Infrastructure',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg'
+  },
+  {
+    name: 'Coursera',
+    program: 'Deep Learning Specializations',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/Coursera_logo.svg'
+  },
+  {
+    name: 'Dicoding',
+    program: 'Dicoding Academy Paths',
+    logo: 'https://dicoding-web-img.sgp1.digitaloceanspaces.com/original/general_logo_full.png'
+  }
+];
+
 const HeroSection = () => {
   const [currentSpecialization, setCurrentSpecialization] = useState(0);
   const sectionRef = useRef(null);
@@ -16,6 +51,7 @@ const HeroSection = () => {
     'Computer Vision Specialist', 
     'AI Research',
   ];
+  const partnerLoop = [...learningPartners, ...learningPartners];
 
   const mockSentimentAnalysis = (text) => {
     const sentiments = [
@@ -122,6 +158,18 @@ const HeroSection = () => {
         .animate-float-soft { animation: floatSoft 12s ease-in-out infinite; }
         .animate-fade-slide-up { animation: fadeSlideUp 450ms ease forwards; }
         .will-change-transform { will-change: transform; }
+        @keyframes marqueeSlide {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .marquee-track {
+          display: flex;
+          width: max-content;
+          animation: marqueeSlide 32s linear infinite;
+        }
+        .marquee-track:hover {
+          animation-play-state: paused;
+        }
       `}</style>
       {/* Full Background with subtle parallax */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -232,7 +280,7 @@ const HeroSection = () => {
               </div>
               <div className="space-y-1">
                 <div className="text-xl sm:text-3xl font-bold text-foreground">Top 10%</div>
-                <div className="text-sm sm:text-base text-text-secondary">Bangkit Academy</div>
+                <div className="text-sm sm:text-base text-text-secondary">Bangkit Academy & Laskar Ai</div>
               </div>
               <div className="space-y-1">
                 <div className="text-xl sm:text-3xl font-bold text-foreground">15+</div>
@@ -245,6 +293,38 @@ const HeroSection = () => {
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <Icon name="ChevronDown" size={24} className="text-text-secondary" />
+        </div>
+      </div>
+      {/* Learning Partners Marquee */}
+      <div className="relative z-10 px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
+            Learning Partners & Programs
+          </div>
+          <div className="relative overflow-hidden rounded-[28px] border border-border bg-card/80 shadow-brand-subtle backdrop-blur">
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background via-background to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background via-background to-transparent" />
+            <div className="marquee-track items-center gap-8 px-10 py-6">
+              {partnerLoop.map((brand, index) => {
+                const isDuplicate = index >= learningPartners.length;
+                return (
+                  <div
+                    key={`${brand.name}-${index}`}
+                    aria-hidden={isDuplicate}
+                    className="flex min-w-[220px] items-center gap-3 rounded-2xl border border-border bg-background px-4 py-3 shadow-sm backdrop-blur-sm transition-colors duration-300 hover:border-foreground"
+                  >
+                    <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-border bg-card">
+                      <Image src={brand.logo} alt={`${brand.name} logo`} className="h-10 w-10 object-contain" />
+                    </div>
+                    <div className="text-left">
+                      <p className="text-sm font-semibold text-foreground">{brand.name}</p>
+                      <p className="text-xs text-text-secondary">{brand.program}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </section>

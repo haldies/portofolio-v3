@@ -1,5 +1,9 @@
 import React from 'react';
-import Icon from '../../../components/AppIcon';
+
+const formatLabel = (label) =>
+  label
+    .replace(/[_-]/g, ' ')
+    .replace(/\b\w/g, (char) => char.toUpperCase());
 
 const AchievementBadges = () => {
   const achievements = [
@@ -8,8 +12,6 @@ const AchievementBadges = () => {
       title: 'Bangkit Academy 2024',
       subtitle: 'Top 10% Graduate',
       description: 'Selected among the top 10% of graduates from Google-backed Bangkit Academy, demonstrating excellence in machine learning and mobile development.',
-      icon: 'Trophy',
-      color: 'from-slate-500 via-slate-600 to-slate-700',
       stats: {
         rank: 'Top 10% distinction',
         cohort: '1500 participants ',
@@ -21,8 +23,6 @@ const AchievementBadges = () => {
       title: 'Laskar AI Competition',
       subtitle: 'Best Capstone Project',
       description: 'Won the best capstone project award for developing an innovative AI solution that addresses real-world problems with measurable impact.',
-      icon: 'Award',
-      color: 'from-slate-500 via-slate-600 to-slate-700',
       stats: {
         position: 'Best Project',
         category: 'Healthcare',
@@ -34,8 +34,6 @@ const AchievementBadges = () => {
       title: 'AI Education Creator',
       subtitle: '18.7k+ Followers',
       description: 'Built a strong community of AI enthusiasts through educational content, making complex AI concepts accessible to thousands of learners.',
-      icon: 'Users',
-      color: 'from-slate-500 via-slate-600 to-slate-700',
       stats: {
         followers: '18.7k+',
         engagement: '12% avg',
@@ -47,8 +45,6 @@ const AchievementBadges = () => {
       title: 'AI Certifications',
       subtitle: 'Multiple Credentials',
       description: 'Earned multiple industry-recognized certifications in machine learning, Ai Engineer, and cloud AI services from leading tech companies.',
-      icon: 'GraduationCap',
-      color: 'from-slate-500 via-slate-600 to-slate-700',
       stats: {
         certs: '20+ Credentials',
         providers: 'Coursera, Dicoding, AWS, IBM, Google',
@@ -69,51 +65,42 @@ const AchievementBadges = () => {
           </p>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid auto-rows-fr gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {achievements?.map((achievement) => (
             <article
               key={achievement?.id}
-              className="group flex h-full flex-col overflow-hidden rounded-[28px] border border-slate-200/80 bg-white/80 shadow-[0_40px_80px_-60px_rgba(15,23,42,0.45)] transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_60px_120px_-80px_rgba(15,23,42,0.4)]"
+              className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200/80 bg-white/90 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_30px_60px_-40px_rgba(15,23,42,0.25)]"
             >
-              <div className={`h-1 w-full bg-gradient-to-r ${achievement?.color}`} />
+              <div className="flex flex-1 flex-col">
+                <span className="inline-flex items-center self-start rounded-full border border-slate-200/80 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 transition-colors duration-200 group-hover:border-slate-300 group-hover:text-slate-600">
+                  {achievement?.subtitle}
+                </span>
 
-              <div className="flex flex-1 flex-col gap-6 p-8">
-                <div className="flex items-center gap-4">
-                  <div className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${achievement?.color} text-white shadow-lg shadow-slate-900/10`}>
-                    <Icon 
-                      name={achievement?.icon} 
-                      size={22} 
-                      className="text-white"
-                    />
-                  </div>
+                <h3 className="mt-4 text-2xl font-semibold tracking-tight text-foreground">
+                  {achievement?.title}
+                </h3>
 
-                  <div>
-                    <p className="text-sm font-medium uppercase tracking-[0.2em] text-slate-400">
-                      {achievement?.subtitle}
-                    </p>
-                    <h3 className="mt-2 text-xl font-semibold tracking-tight text-foreground">
-                      {achievement?.title}
-                    </h3>
-                  </div>
-                </div>
+                <p className="mt-4 text-sm leading-relaxed text-slate-500">
+                  {achievement?.description}
+                </p>
 
-                <p className="text-sm leading-relaxed text-slate-500">
-                    {achievement?.description}
+                <div className="mt-auto pt-8">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
+                    Key Highlights
                   </p>
 
-                <div className="mt-auto border-t border-slate-100/80 pt-6">
-                  <div className="flex flex-col gap-3">
+                  <dl className="mt-4 space-y-3">
                     {Object.entries(achievement?.stats)?.map(([key, value]) => (
                       <div key={key} className="flex items-center justify-between text-sm">
-                        <span className="uppercase tracking-[0.16em] text-xs text-slate-400">
-                          {key}
-                        </span>
-                        <span className="font-medium text-slate-600">
+                        <dt className="text-xs font-medium uppercase tracking-[0.16em] text-slate-400">
+                          {formatLabel(key)}
+                        </dt>
+                        <dd className="font-medium text-slate-700">
                           {value}
-                        </span>
+                        </dd>
                       </div>
                     ))}
-                  </div>
+                  </dl>
                 </div>
               </div>
             </article>

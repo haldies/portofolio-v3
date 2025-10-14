@@ -307,36 +307,6 @@ const TikTokIntegration = () => {
               </div>
             ))}
           </div>
-
-          {/* Call to Action */}
-          <div className="text-center mt-12 p-8 bg-slate-100 rounded-brand-lg border border-border">
-            <h3 className="text-xl font-bold text-foreground mb-3">
-              Join the AI Learning Community
-            </h3>
-            <p className="text-text-secondary mb-6 max-w-2xl mx-auto">
-              Follow me on TikTok for daily AI insights, tutorials, and behind-the-scenes content that makes artificial intelligence accessible to everyone.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                variant="default"
-                iconName="Video"
-                iconPosition="left"
-                onClick={() => window.open('https://tiktok.com/@gerhardien', '_blank')}
-              >
-                Follow on TikTok
-              </Button>
-              <Button
-                variant="outline"
-                iconName="BookOpen"
-                iconPosition="left"
-                asChild
-              >
-                <a href="/educational-content">
-                  Explore Knowledge Hub
-                </a>
-              </Button>
-            </div>
-          </div>
         </div>
       </div>
     </section>
