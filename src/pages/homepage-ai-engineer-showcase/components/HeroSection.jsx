@@ -19,7 +19,7 @@ const learningPartners = [
   {
     name: 'Bangkit Academy',
     program: 'Machine Learning Cohort',
-    logo: 'https://storage.googleapis.com/bangkit-media/bangkit-logo.png'
+    logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyxwyUDWjolHziF0tAR-ehPWMui5dJyHWMzQ&s'
   },
   {
     name: 'Oracle',
@@ -29,12 +29,12 @@ const learningPartners = [
   {
     name: 'Coursera',
     program: 'Deep Learning Specializations',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/Coursera_logo.svg'
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Coursera_logo_%282020%29.svg/2560px-Coursera_logo_%282020%29.svg.png'
   },
   {
     name: 'Dicoding',
     program: 'Dicoding Academy Paths',
-    logo: 'https://dicoding-web-img.sgp1.digitaloceanspaces.com/original/general_logo_full.png'
+    logo: 'https://dicoding-assets.sgp1.cdn.digitaloceanspaces.com/blog/wp-content/uploads/2014/12/dicoding-header-logo.png'
   }
 ];
 

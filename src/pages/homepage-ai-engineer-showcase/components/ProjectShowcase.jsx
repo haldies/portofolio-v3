@@ -4,7 +4,6 @@ import Image from '../../../components/AppImage';
 import Button from '../../../components/ui/Button';
 
 const ProjectShowcase = () => {
-  // Category filter state
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   const projects = [
@@ -12,7 +11,7 @@ const ProjectShowcase = () => {
       id: 'sentiment-analyzer',
       title: 'Real-time Sentiment Analysis Platform',
       description: 'Advanced NLP system that analyzes customer feedback sentiment in real-time, helping businesses understand customer emotions and improve service quality.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
+      image: '/assets/Projekan/llmmaganghub.png',
       category: 'Natural Language Processing',
       technologies: ['Python', 'TensorFlow', 'BERT', 'FastAPI', 'React'],
       metrics: {
@@ -28,14 +27,14 @@ const ProjectShowcase = () => {
       ],
       demoUrl: '/ai-playground',
       githubUrl: 'https://github.com/haldies',
-      liveUrl: '#',
+      liveUrl: '/projects/llm-maganghub',
       status: 'Production Ready'
     },
     {
       id: 'computer-vision',
       title: 'Smart Object Detection System',
       description: 'Computer vision solution for automated quality control in manufacturing, detecting defects and anomalies with high precision using deep learning.',
-      image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=400&fit=crop',
+      image: '/assets/images/logo_laskarAi.png',
       category: 'Computer Vision',
       technologies: ['PyTorch', 'YOLO', 'OpenCV', 'Docker', 'AWS'],
       metrics: {
@@ -51,14 +50,14 @@ const ProjectShowcase = () => {
       ],
       demoUrl: '/ai-playground',
       githubUrl: 'https://github.com/haldies',
-      liveUrl: '#',
+      liveUrl: null,
       status: 'In Production'
     },
     {
       id: 'recommendation-engine',
       title: 'Personalized Recommendation Engine',
       description: 'Machine learning system that provides personalized product recommendations, increasing user engagement and conversion rates through advanced collaborative filtering.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
+      image: '/assets/images/logobangkit.png',
       category: 'Machine Learning',
       technologies: ['Scikit-learn', 'Pandas', 'Redis', 'PostgreSQL', 'Flask'],
       metrics: {
@@ -74,7 +73,7 @@ const ProjectShowcase = () => {
       ],
       demoUrl: '/ai-playground',
       githubUrl: 'https://github.com/haldies',
-      liveUrl: '#',
+      liveUrl: null,
       status: 'Scaling'
     }
   ];
@@ -174,14 +173,25 @@ const ProjectShowcase = () => {
                     >
                       Code
                     </Button>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      iconName="ExternalLink"
-                      onClick={() => window.open(project?.liveUrl, '_blank')}
-                    >
-                      Live
-                    </Button>
+                    {project?.liveUrl && (
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        iconName="ExternalLink"
+                        asChild={project.liveUrl.startsWith('/')}
+                        onClick={
+                          project.liveUrl.startsWith('/')
+                            ? undefined
+                            : () => window.open(project.liveUrl, '_blank')
+                        }
+                      >
+                        {project.liveUrl.startsWith('/') ? (
+                          <Link to={project.liveUrl}>Live</Link>
+                        ) : (
+                          'Live'
+                        )}
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>

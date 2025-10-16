@@ -8,6 +8,7 @@ import ProfessionalJourneyAchievements from './pages/professional-journey-achiev
 import AIPlaygroundInteractiveDemos from './pages/ai-playground-interactive-demos';
 import ContactCollaborationHub from './pages/contact-collaboration-hub';
 import KnowledgeHubEducationalContent from './pages/knowledge-hub-educational-content';
+import ProjectDetailLLMMagangHub from './pages/project-detail-llm-maganghub';
 import FooterPage from "components/Footer";
 
 const Routes = () => {
@@ -23,6 +24,7 @@ const Routes = () => {
         <Route path="/ai-playground" element={<AIPlaygroundInteractiveDemos />} />
         <Route path="/contact" element={<ContactCollaborationHub />} />
         <Route path="/educational-content" element={<KnowledgeHubEducationalContent />} />
+        <Route path="/projects/:projectId" element={<ProjectDetailLLMMagangHub />} />
         <Route path="*" element={<NotFound />} />
       </RouterRoutes>
       <FooterPage/>
