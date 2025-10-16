@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 import Image from '../../../components/AppImage';
-import { Meteors } from '@/components/ui/meteors';
+import Meteors from '../../../components/ui/meteors';
 
 const learningPartners = [
   {
@@ -144,8 +144,6 @@ const HeroSection = () => {
       onMouseLeave={handleMouseLeave}
       className="relative min-h-screen bg-gradient-to-br from-white via-slate-50 to-white overflow-hidden"
     >
-      <Meteors />
-      {/* Local styles for subtle unique animations */}
       <style>{`
         @keyframes floatSoft {
           0%, 100% { transform: translateY(0) translateX(0) scale(1); }
@@ -183,6 +181,9 @@ const HeroSection = () => {
         />
         {/* Readability Overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/75 via-white/65 to-white/75" />
+        <div className="absolute inset-0">
+          <Meteors number={15} className="opacity-80" />
+        </div>
       </div>
       {/* Subtle Accents */}
       <div className="absolute inset-0 opacity-10">

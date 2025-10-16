@@ -1,9 +1,9 @@
 import React, { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Header from '../../components/ui/Header';
-import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
-import Image from '../../components/AppImage';
+import CategoryScroller from '../../components/ui/CategoryScroller';
+import ProjectCard from '../../components/ui/ProjectCard';
 
 const projects = [
   {
@@ -15,7 +15,9 @@ const projects = [
     accent: 'bg-primary/10 text-primary',
     tags: ['React', 'TypeScript', 'Data Visualization'],
     category: 'Analytics',
-    image: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1200&h=780&fit=crop'
+    image: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1200&h=780&fit=crop',
+    codeHref: 'https://github.com/haldies',
+    liveHref: 'https://haldies.com/projects/insight-hub'
   },
   {
     id: 'vision-studio',
@@ -26,7 +28,9 @@ const projects = [
     accent: 'bg-secondary/10 text-secondary',
     tags: ['Computer Vision', 'Inference', 'UI/UX'],
     category: 'Computer Vision',
-    image: 'https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=1200&h=780&fit=crop'
+    image: 'https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=1200&h=780&fit=crop',
+    codeHref: 'https://github.com/haldies',
+    liveHref: 'https://haldies.com/projects/vision-studio'
   },
   {
     id: 'contextual-ai',
@@ -37,7 +41,9 @@ const projects = [
     accent: 'bg-accent/10 text-accent',
     tags: ['AI Assistant', 'Prompt Design', 'Education'],
     category: 'AI Assistant',
-    image: 'https://images.unsplash.com/photo-1686191128892-26b98c48d570?w=1200&h=780&fit=crop'
+    image: 'https://images.unsplash.com/photo-1686191128892-26b98c48d570?w=1200&h=780&fit=crop',
+    codeHref: 'https://github.com/haldies',
+    liveHref: 'https://haldies.com/projects/contextual-ai'
   },
   {
     id: 'content-orchestrator',
@@ -48,7 +54,9 @@ const projects = [
     accent: 'bg-trust-purple/10 text-trust-purple',
     tags: ['Automation', 'Workflow', 'CMS'],
     category: 'Automation',
-    image: 'https://images.unsplash.com/photo-1523966211575-eb4a01e7dd51?w=1200&h=780&fit=crop'
+    image: 'https://images.unsplash.com/photo-1523966211575-eb4a01e7dd51?w=1200&h=780&fit=crop',
+    codeHref: 'https://github.com/haldies',
+    liveHref: 'https://haldies.com/projects/content-orchestrator'
   },
   {
     id: 'api-observatory',
@@ -59,7 +67,9 @@ const projects = [
     accent: 'bg-innovation-green/10 text-innovation-green',
     tags: ['SRE', 'Monitoring', 'Node.js'],
     category: 'Platform',
-    image: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=1200&h=780&fit=crop'
+    image: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=1200&h=780&fit=crop',
+    codeHref: 'https://github.com/haldies',
+    liveHref: 'https://haldies.com/projects/api-observatory'
   },
   {
     id: 'secure-vault',
@@ -70,7 +80,9 @@ const projects = [
     accent: 'bg-warning/10 text-warning',
     tags: ['Security', 'Identity', 'Architecture'],
     category: 'Security',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=780&fit=crop'
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=780&fit=crop',
+    codeHref: 'https://github.com/haldies',
+    liveHref: 'https://haldies.com/projects/secure-vault'
   }
 ];
 
@@ -120,58 +132,25 @@ const ProjectsShowcase = () => {
         </div>
       </section>
       <section className="pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-10 flex max-w-7xl flex-wrap items-center gap-3">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`rounded-full border px-4 py-2 text-sm transition-colors ${
-                selectedCategory === category
-                  ? 'border-foreground bg-foreground text-background'
-                  : 'border-border bg-card text-muted-foreground hover:border-foreground/50 hover:text-foreground'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
+        <div className="mx-auto mb-10 max-w-7xl">
+          <CategoryScroller
+            categories={categories}
+            selectedCategory={selectedCategory}
+            onSelect={setSelectedCategory}
+          />
         </div>
-        <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-2 md:gap-8 xl:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl gap-3 md:grid-cols-2 md:gap-3 xl:grid-cols-3">
           {filteredProjects.map((project) => (
-            <article
+            <ProjectCard
               key={project.id}
-              className="group relative overflow-hidden rounded-[32px] border border-border bg-card/80 shadow-brand-subtle transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl"
-            >
-              <div className="relative h-52 w-full overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <span className="absolute top-4 left-4 rounded-full bg-background/80 px-3 py-1 text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground backdrop-blur">
-                  {project.category}
-                </span>
-              </div>
-              <div className="p-8">
-                <div className="mb-8 flex items-center justify-between">
-                  <div className={`flex h-12 w-12 items-center justify-center rounded-2xl ${project.accent}`}>
-                    <Icon name={project.icon} size={22} />
-                  </div>
-                  <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">{project.tags[0]}</span>
-                </div>
-                <h2 className="mb-4 text-2xl font-semibold text-foreground">{project.title}</h2>
-                <p className="mb-6 text-sm leading-relaxed text-muted-foreground">{project.description}</p>
-                <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground/80">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-border px-3 py-1 transition-colors duration-200 group-hover:border-foreground/40 group-hover:text-foreground"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </article>
+              image={project.image}
+              title={project.title}
+              description={project.description}
+              tags={project.tags}
+              category={project.category}
+              codeHref={project.codeHref}
+              liveHref={project.liveHref}
+            />
           ))}
         </div>
       </section>

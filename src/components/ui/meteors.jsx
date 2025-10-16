@@ -1,47 +1,46 @@
-import React, { useEffect, useState } from "react"
+import React from 'react';
+import { motion } from 'framer-motion';
+import { cn } from '../../lib/utils';
 
-import { cn } from "@/lib/utils"
 
-export const Meteors = ({
-  number = 20,
-  minDelay = 0.2,
-  maxDelay = 1.2,
-  minDuration = 2,
-  maxDuration = 10,
-  angle = 215,
-  className
-}) => {
-  const [meteorStyles, setMeteorStyles] = useState([])
-
-  useEffect(() => {
-    const styles = [...new Array(number)].map(() => ({
-      "--angle": -angle + "deg",
-      top: "-5%",
-      left: `calc(0% + ${Math.floor(Math.random() * window.innerWidth)}px)`,
-      animationDelay: Math.random() * (maxDelay - minDelay) + minDelay + "s",
-      animationDuration:
-        Math.floor(Math.random() * (maxDuration - minDuration) + minDuration) +
-        "s",
-    }))
-    setMeteorStyles(styles)
-  }, [number, minDelay, maxDelay, minDuration, maxDuration, angle])
+const Meteors = ({ number = 20, className }) => {
+  const meteorCount = Math.max(1, number);
+  const meteors = React.useMemo(
+    () =>
+      Array.from({ length: meteorCount }, (_, idx) => ({
+        key: `meteor-${idx}`,
+        position: idx * (800 / meteorCount) - 400,
+        delay: Math.random() * 5,
+        duration: Math.random() * 5 + 5,
+        startTop: Math.random() * 240 - 80 // spread vertically so trails reach into the hero
+      })),
+    [meteorCount]
+  );
 
   return (
-    <>
-      {[...meteorStyles].map((style, idx) => (
-        // Meteor Head
-        (<span
-          key={idx}
-          style={{ ...style }}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      {meteors.map((meteor) => (
+        <span
+          key={meteor.key}
           className={cn(
-            "animate-meteor pointer-events-none absolute size-0.5 rotate-[var(--angle)] rounded-full bg-zinc-500 shadow-[0_0_0_1px_#ffffff10]",
+            'animate-meteor-effect absolute h-0.5 w-0.5 rotate-[45deg] rounded-[9999px] bg-white/90 shadow-[0_0_0_1px_#ffffff40]',
+            "before:absolute before:top-1/2 before:h-px before:w-[56px] before:-translate-y-1/2 before:bg-gradient-to-r before:from-white before:to-transparent before:content-['']",
             className
-          )}>
-          {/* Meteor Tail */}
-          <div
-            className="pointer-events-none absolute top-1/2 -z-10 h-px w-[50px] -translate-y-1/2 bg-gradient-to-r from-zinc-500 to-transparent" />
-        </span>)
+          )}
+          style={{
+            top: `${meteor.startTop}px`,
+            left: `${meteor.position}px`,
+            animationDelay: `${meteor.delay}s`,
+            animationDuration: `${meteor.duration}s`,
+          }}
+        />
       ))}
-    </>
+    </motion.div>
   );
-}
+};
+
+export default Meteors;

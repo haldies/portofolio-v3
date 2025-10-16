@@ -47,7 +47,7 @@ const AchievementBadges = () => {
       description: 'Earned multiple industry-recognized certifications in machine learning, Ai Engineer, and cloud AI services from leading tech companies.',
       stats: {
         certs: '20+ Credentials',
-        providers: 'Coursera, Dicoding, AWS, IBM, Google',
+        providers: 'Aws,Cousera,++',
         validity: 'Current & Active'
       }
     }

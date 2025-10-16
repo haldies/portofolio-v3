@@ -7,46 +7,76 @@
 @layer base {
   :root {
     /* Background Colors */
-    --color-background: #fafafa; /* gray-50 */
-    --color-foreground: #1f2937; /* gray-800 */
-    --color-card: #ffffff; /* white */
-    --color-card-foreground: #1f2937; /* gray-800 */
-    --color-popover: #ffffff; /* white */
-    --color-popover-foreground: #1f2937; /* gray-800 */
-    --color-muted: #f1f5f9; /* slate-100 */
-    --color-muted-foreground: #64748b; /* slate-500 */
+    --color-background: #fafafa;
+    /* gray-50 */
+    --color-foreground: #1f2937;
+    /* gray-800 */
+    --color-card: #ffffff;
+    /* white */
+    --color-card-foreground: #1f2937;
+    /* gray-800 */
+    --color-popover: #ffffff;
+    /* white */
+    --color-popover-foreground: #1f2937;
+    /* gray-800 */
+    --color-muted: #f1f5f9;
+    /* slate-100 */
+    --color-muted-foreground: #64748b;
+    /* slate-500 */
 
     /* Border and Input */
-    --color-border: #e5e7eb; /* gray-200 */
-    --color-input: #ffffff; /* white */
-    --color-ring: #3b82f6; /* blue-500 */
+    --color-border: #e5e7eb;
+    /* gray-200 */
+    --color-input: #ffffff;
+    /* white */
+    --color-ring: #3b82f6;
+    /* blue-500 */
 
     /* Brand Colors */
-    --color-primary: #1e3a8a; /* blue-800 */
-    --color-primary-foreground: #ffffff; /* white */
-    --color-secondary: #3b82f6; /* blue-500 */
-    --color-secondary-foreground: #ffffff; /* white */
+    --color-primary: #1e3a8a;
+    /* blue-800 */
+    --color-primary-foreground: #ffffff;
+    /* white */
+    --color-secondary: #3b82f6;
+    /* blue-500 */
+    --color-secondary-foreground: #ffffff;
+    /* white */
 
     /* Accent and Success */
-    --color-accent: #10b981; /* emerald-500 */
-    --color-accent-foreground: #ffffff; /* white */
-    --color-success: #059669; /* emerald-600 */
-    --color-success-foreground: #ffffff; /* white */
+    --color-accent: #10b981;
+    /* emerald-500 */
+    --color-accent-foreground: #ffffff;
+    /* white */
+    --color-success: #059669;
+    /* emerald-600 */
+    --color-success-foreground: #ffffff;
+    /* white */
 
     /* Warning and Error */
-    --color-warning: #d97706; /* amber-600 */
-    --color-warning-foreground: #ffffff; /* white */
-    --color-error: #dc2626; /* red-600 */
-    --color-error-foreground: #ffffff; /* white */
-    --color-destructive: #dc2626; /* red-600 */
-    --color-destructive-foreground: #ffffff; /* white */
+    --color-warning: #d97706;
+    /* amber-600 */
+    --color-warning-foreground: #ffffff;
+    /* white */
+    --color-error: #dc2626;
+    /* red-600 */
+    --color-error-foreground: #ffffff;
+    /* white */
+    --color-destructive: #dc2626;
+    /* red-600 */
+    --color-destructive-foreground: #ffffff;
+    /* white */
 
     /* Additional Brand Colors */
-    --color-tech-blue: #1e3a8a; /* blue-800 */
-    --color-innovation-green: #10b981; /* emerald-500 */
-    --color-conversion-amber: #f59e0b; /* amber-500 */
-    --color-trust-purple: #6366f1; /* indigo-500 */
-    --color-text-secondary: #6b7280; /* gray-500 */
+    --color-tech-blue: #1e3a8a;
+    /* blue-800 */
+    --color-innovation-green: #10b981;
+    /* emerald-500 */
+    --color-conversion-amber: #f59e0b;
+    /* amber-500 */
+    --color-trust-purple: #6366f1;
+    /* indigo-500 */
+    --color-text-secondary: #6b7280;
+    /* gray-500 */
 
     /* Radius */
     --radius: 0.5rem;
@@ -87,7 +117,12 @@
     font-variation-settings: 'opsz' 32;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     line-height: 1.2;
@@ -96,9 +131,11 @@
   .font-mono {
     font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Cascadia Code', 'Ubuntu Mono', monospace;
   }
+
   .theme {
     --animate-meteor: meteor 5s linear infinite;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -128,7 +165,19 @@
 }
 
 @layer components {
+
   /* Brand Typography Classes */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    /* IE & Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
   .text-brand-headline {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
@@ -191,14 +240,29 @@
   }
 
   /* Brand Spacing System */
-  .space-brand-xs { @apply space-y-2; }
-  .space-brand-sm { @apply space-y-3; }
-  .space-brand-md { @apply space-y-5; }
-  .space-brand-lg { @apply space-y-8; }
-  .space-brand-xl { @apply space-y-13; }
+  .space-brand-xs {
+    @apply space-y-2;
+  }
+
+  .space-brand-sm {
+    @apply space-y-3;
+  }
+
+  .space-brand-md {
+    @apply space-y-5;
+  }
+
+  .space-brand-lg {
+    @apply space-y-8;
+  }
+
+  .space-brand-xl {
+    @apply space-y-13;
+  }
 }
 
 @layer utilities {
+
   /* Custom Backdrop Blur */
   .backdrop-blur-brand {
     backdrop-filter: blur(10px);
@@ -206,9 +270,17 @@
   }
 
   /* Brand Border Radius */
-  .rounded-brand-sm { border-radius: 4px; }
-  .rounded-brand { border-radius: 8px; }
-  .rounded-brand-lg { border-radius: 12px; }
+  .rounded-brand-sm {
+    border-radius: 4px;
+  }
+
+  .rounded-brand {
+    border-radius: 8px;
+  }
+
+  .rounded-brand-lg {
+    border-radius: 12px;
+  }
 
   /* Text Rendering Optimization */
   .text-render-optimized {
@@ -244,16 +316,18 @@
 
 @theme inline {
   @keyframes meteor {
-  0% {
-    transform: rotate(var(--angle)) translateX(0);
-    opacity: 1;
+    0% {
+      transform: rotate(var(--angle)) translateX(0);
+      opacity: 1;
     }
-  70% {
-    opacity: 1;
+
+    70% {
+      opacity: 1;
     }
-  100% {
-    transform: rotate(var(--angle)) translateX(-500px);
-    opacity: 0;
+
+    100% {
+      transform: rotate(var(--angle)) translateX(-900px);
+      opacity: 0;
     }
   }
 }

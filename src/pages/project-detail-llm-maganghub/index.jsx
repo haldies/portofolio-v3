@@ -10,7 +10,7 @@ const projectDetails = {
     badgeLabel: 'Conversational AI',
     title: 'MagangHub LLM Assistant',
     summary:
-      'Personalized AI copilot that accelerates internship onboarding and day-to-day support at MagangHub. The assistant answers policy questions, surfaces SOPs, and recommends next best actions by synthesizing team knowledge.',
+      'Gak nyangka iseng-iseng bikin website malah dipakai banyak orang. Awalnya cuma mau daftar MagangHub Kemnaker sambil live TikTok, tapi proses cari lowongan dan cek kuota terasa ribet, jadi gue bikin versi sendiri yang lebih simple buat semua orang.',
     impactMetrics: [
       { label: 'Response Accuracy', value: '92.4%' },
       { label: 'Time Saved / Query', value: '6.5 minutes' },
@@ -18,33 +18,33 @@ const projectDetails = {
     ],
     highlights: [
       {
-        title: 'Context-Aware Responses',
+        title: 'Quota & Applicant Insights',
         description:
-          'Combines retrieval-augmented generation (RAG) with conversation history to deliver responses grounded in the latest company knowledge base.'
+          'Lowongan menampilkan sisa kuota dan jumlah pelamar secara real-time, jadi pengguna bisa analisis peluang keterima sebelum daftar.'
       },
       {
-        title: 'Team Knowledge Capture',
+        title: 'Smart Filtering Experience',
         description:
-          'Streamlined document ingestion pipeline keeps operational playbooks and onboarding material in sync without manual updates.'
+          'Filter lengkap berdasarkan peluang, provinsi, jurusan, sampai lowongan paling banyak dan paling sedikit pelamar supaya pencarian terasa lebih terarah.'
       },
       {
-        title: 'Secure Workspace Controls',
+        title: 'JobCart & AI Recommendation',
         description:
-          'Role-based access and audit logging ensure sensitive data is handled responsibly across squads and internship tracks.'
+          'Fitur JobCart bantu simpan kandidat lowongan sementara eksperimen Gemini LLM lagi digarap buat rekomendasi otomatis tiga pilihan terbaik sesuai CV.'
       }
     ],
     techStack: [
-      'Next.js micro-frontend shell',
-      'Python FastAPI orchestrator',
-      'OpenAI GPT-4 Turbo & embeddings',
-      'Pinecone vector retrieval layer',
-      'PostgreSQL knowledge base',
-      'LangChain evaluation harness'
+      'React + Vite frontend',
+      'Tailwind CSS design system',
+      'Node.js proxy untuk MagangHub API',
+      'Gemini LLM recommendation prototype',
+      'Supabase persistence layer',
+      'LaunchDarkly feature flags'
     ],
     problemStatement:
-      'Internship cohorts needed faster access to institutional knowledge without overwhelming mentors. We developed a secure knowledge retrieval pipeline that keeps curated content in sync and allows interns to self-serve for everyday questions while providing mentors with insight into popular queries.',
+      'Dari pertama buka portal MagangHub gue ngerasa navigasinya kurang ramah: informasi peluang tersebar, kuota nggak langsung kebaca, dan peserta cuma bisa apply tiga posisi. Karena API-nya kebuka, gue compile ulang semua data biar orang-orang bisa eksplor lowongan lebih gampang sambil mantau persaingan secara transparan.',
     architectureNotes:
-      'Designed for rapid iteration: each module communicates through event-driven pipelines, enabling new knowledge connectors and evaluation suites with minimal rework.',
+      'Stack ringan buat shipping cepat: React + Vite untuk front-end interaktif, Tailwind buat styling, Node.js proxy buat kumpulin data dari API MagangHub, ditambah Supabase supaya snapshot kuota bisa di-cache. Sekarang lagi eksperimen Gemini LLM biar rekomendasi lowongan makin personal.',
     videoSrc: '/assets/Projekan/video/demovideop1.mp4',
     seo: {
       title: 'MagangHub LLM Assistant – Project Detail',

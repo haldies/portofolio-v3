@@ -110,6 +110,7 @@ export default {
         'slide-down': 'slideDown 0.4s ease-out',
         'scale-in': 'scaleIn 0.3s ease-out',
         'pulse-brand': 'pulseBrand 2s ease-in-out infinite',
+        'meteor-effect': 'meteor 5s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -131,6 +132,11 @@ export default {
         pulseBrand: {
           '0%, 100%': { transform: 'scale(1)', opacity: '1' },
           '50%': { transform: 'scale(1.05)', opacity: '0.8' },
+        },
+        meteor: {
+          '0%': { transform: 'rotate(215deg) translateX(0)', opacity: '1' },
+          '70%': { opacity: '1' },
+          '100%': { transform: 'rotate(215deg) translateX(-900px)', opacity: '0' },
         },
       },
       backdropBlur: {

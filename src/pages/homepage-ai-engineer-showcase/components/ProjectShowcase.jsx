@@ -1,80 +1,42 @@
 import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Image from '../../../components/AppImage';
+import CategoryScroller from '../../../components/ui/CategoryScroller';
 import Button from '../../../components/ui/Button';
+import ProjectCard from '../../../components/ui/ProjectCard';
 
 const ProjectShowcase = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   const projects = [
     {
-      id: 'sentiment-analyzer',
-      title: 'Real-time Sentiment Analysis Platform',
-      description: 'Advanced NLP system that analyzes customer feedback sentiment in real-time, helping businesses understand customer emotions and improve service quality.',
+      id: 1,
+      title: 'MagangHub LLM ',
+      description: 'Retrieval-augmented assistant that analyzes internship quotas and resumes to recommend the top three placements automatically.',
       image: '/assets/Projekan/llmmaganghub.png',
-      category: 'Natural Language Processing',
-      technologies: ['Python', 'TensorFlow', 'BERT', 'FastAPI', 'React'],
-      metrics: {
-        accuracy: '94.2%',
-        processing: '< 100ms',
-        languages: '12 supported'
-      },
-      features: [
-        'Multi-language sentiment detection',
-        'Real-time processing pipeline',
-        'Custom model fine-tuning',
-        'Interactive dashboard'
-      ],
-      demoUrl: '/ai-playground',
-      githubUrl: 'https://github.com/haldies',
-      liveUrl: '/projects/llm-maganghub',
-      status: 'Production Ready'
+      category: 'Large Language Model',
+      tags: ['Llm', 'React.js', 'tailwind', 'vite'],
+      codeHref: 'https://github.com/haldies/maganghub-llm',
+      liveHref: 'https://maganghub-genz.vercel.app'
     },
     {
-      id: 'computer-vision',
-      title: 'Smart Object Detection System',
-      description: 'Computer vision solution for automated quality control in manufacturing, detecting defects and anomalies with high precision using deep learning.',
+      id: 2,
+      title: 'Vision Quality Inspector',
+      description: 'Edge-ready computer vision workflow that spots manufacturing defects using a fine-tuned YOLOv8 model and rapid feedback loops.',
       image: '/assets/images/logo_laskarAi.png',
       category: 'Computer Vision',
-      technologies: ['PyTorch', 'YOLO', 'OpenCV', 'Docker', 'AWS'],
-      metrics: {
-        accuracy: '97.8%',
-        speed: '30 FPS',
-        defects: '15 types'
-      },
-      features: [
-        'Real-time object detection',
-        'Defect classification',
-        'Automated reporting',
-        'Edge deployment ready'
-      ],
-      demoUrl: '/ai-playground',
-      githubUrl: 'https://github.com/haldies',
-      liveUrl: null,
-      status: 'In Production'
+      tags: ['YOLOv8', 'TensorRT', 'MLOps', 'Edge Deployment'],
+      codeHref: 'https://github.com/haldies/vision-quality-inspector',
+      liveHref: 'https://demo.haldies.com/vision-quality'
     },
     {
-      id: 'recommendation-engine',
-      title: 'Personalized Recommendation Engine',
-      description: 'Machine learning system that provides personalized product recommendations, increasing user engagement and conversion rates through advanced collaborative filtering.',
+      id: 3,
+      title: 'Personalization Engine',
+      description: 'Hybrid recommendation stack blending collaborative filtering and embeddings to lift engagement across content platforms.',
       image: '/assets/images/logobangkit.png',
       category: 'Machine Learning',
-      technologies: ['Scikit-learn', 'Pandas', 'Redis', 'PostgreSQL', 'Flask'],
-      metrics: {
-        accuracy: '89.5%',
-        ctr: '+23%',
-        users: '100K+ active'
-      },
-      features: [
-        'Collaborative filtering',
-        'Content-based recommendations',
-        'A/B testing framework',
-        'Scalable architecture'
-      ],
-      demoUrl: '/ai-playground',
-      githubUrl: 'https://github.com/haldies',
-      liveUrl: null,
-      status: 'Scaling'
+      tags: ['Feature Store', 'Vector Search', 'Realtime Inference', 'A/B Testing'],
+      codeHref: 'https://github.com/haldies/personalization-engine',
+      liveHref: 'https://demo.haldies.com/personalization'
     }
   ];
 
@@ -103,98 +65,26 @@ const ProjectShowcase = () => {
 
         <div className="max-w-6xl mx-auto">
           {/* Category Filter */}
-          <div className="flex flex-wrap items-center gap-2 mb-8">
-            {categories?.map((cat) => (
-              <Button
-                key={cat}
-                variant={selectedCategory === cat ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => setSelectedCategory(cat)}
-              >
-                {cat}
-              </Button>
-            ))}
-          </div>
+          <CategoryScroller
+            categories={categories}
+            selectedCategory={selectedCategory}
+            onSelect={setSelectedCategory}
+            className="mb-8"
+          />
 
           {/* Projects Grid */}
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {filteredProjects?.map((project) => (
-              <div
+              <ProjectCard
                 key={project?.id}
-                className="group bg-card border border-border rounded-brand-lg overflow-hidden hover:shadow-brand-medium transition-all duration-300"
-              >
-                <div className="relative h-40">
-                  <Image
-                    src={project?.image}
-                    alt={project?.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute top-3 left-3">
-                    <span className="px-2.5 py-1 bg-background/90 text-foreground text-xs font-medium rounded-full">
-                      {project?.category}
-                    </span>
-                  </div>
-                  <div className="absolute top-3 right-3">
-                    <span className="px-2.5 py-1 bg-accent text-accent-foreground text-xs font-medium rounded-full">
-                      {project?.status}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-5 space-y-3">
-                  <h3 className="text-lg font-semibold text-foreground">
-                    {project?.title}
-                  </h3>
-                  <p className="text-sm text-text-secondary">
-                    {project?.description}
-                  </p>
-
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 pt-1">
-                    {project?.technologies?.slice(0, 4)?.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2.5 py-0.5 bg-secondary/10 text-secondary text-xs rounded-full border border-secondary/20"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Actions */}
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    <Button variant="default" size="sm" iconName="Play" asChild>
-                      <Link to={project?.demoUrl}>Demo</Link>
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      iconName="Github"
-                      onClick={() => window.open(project?.githubUrl, '_blank')}
-                    >
-                      Code
-                    </Button>
-                    {project?.liveUrl && (
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        iconName="ExternalLink"
-                        asChild={project.liveUrl.startsWith('/')}
-                        onClick={
-                          project.liveUrl.startsWith('/')
-                            ? undefined
-                            : () => window.open(project.liveUrl, '_blank')
-                        }
-                      >
-                        {project.liveUrl.startsWith('/') ? (
-                          <Link to={project.liveUrl}>Live</Link>
-                        ) : (
-                          'Live'
-                        )}
-                      </Button>
-                    )}
-                  </div>
-                </div>
-              </div>
+                image={project?.image}
+                title={project?.title}
+                description={project?.description}
+                tags={project?.tags}
+                category={project?.category}
+                codeHref={project?.codeHref}
+                liveHref={project?.liveHref}
+              />
             ))}
           </div>
 

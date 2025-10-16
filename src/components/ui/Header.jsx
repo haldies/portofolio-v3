@@ -9,10 +9,10 @@ const Header = () => {
     const location = useLocation();
 
     const navigationItems = [
-        { name: 'Home', path: '/home', icon: 'Home' },
-        { name: 'Journey', path: '/achievements', icon: 'Trophy' },
-        { name: 'Projects', path: '/ai-playground', icon: 'Zap' },
-        { name: 'Educational', path: '/educational-content', icon: 'BookOpen' }
+        { name: 'Home', path: '/home' },
+        { name: 'Journey', path: '/achievements'},
+        { name: 'Projects', path: '/ai-playground'},
+        { name: 'Educational', path: '/educational-content' }
     ];
 
     useEffect(() => {
@@ -44,20 +44,7 @@ const Header = () => {
                 }`}
         >
             <div className="w-full">
-                <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
-                    <Link
-                        to="/home"
-                 
-                    >
-                        <div className="hidden sm:block">
-                            <h1 className="text-brand-headline text-xl text-foreground">
-                                Gerhardien
-                            </h1>
-                            <p className="text-xs text-text-secondary font-brand-accent">
-                                AI Engineer
-                            </p>
-                        </div>
-                    </Link>
+                <div className="relative mx-auto flex h-16 w-full max-w-8xl items-center justify-between px-4 sm:px-6 lg:px-8">
 
                     {/* Desktop Navigation */}
                     <nav className="hidden lg:flex items-center space-x-1">
@@ -69,12 +56,24 @@ const Header = () => {
                                     ? 'bg-accent text-accent-foreground shadow-brand-subtle'
                                     : 'text-foreground hover:bg-muted hover:text-foreground'
                                     }`}
-                            >
-                                <Icon name={item?.icon} size={16} />
+                            > 
                                 <span>{item?.name}</span>
                             </Link>
                         ))}
                     </nav>
+                    <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                        <Link
+                            to="/home"
+                            className="inline-flex flex-col items-center text-center transition-opacity hover:opacity-80 pointer-events-auto"
+                        >
+                            <h1 className="text-xl font-semibold uppercase tracking-[0.35em] text-foreground">
+                                Gerhardien
+                            </h1>
+                            <p className="mt-1 text-sm uppercase tracking-[0.48em] text-text-secondary">
+                                AI Engineer
+                            </p>
+                        </Link>
+                    </div>
 
                     {/* CTA Button - Desktop */}
                     <div className="hidden lg:flex items-center space-x-4">
