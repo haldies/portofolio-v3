@@ -66,7 +66,7 @@ const Header = () => {
                             to="/home"
                             className="inline-flex flex-col items-center text-center transition-opacity hover:opacity-80 pointer-events-auto"
                         >
-                            <h1 className="text-xl font-semibold uppercase tracking-[0.35em] text-foreground">
+                            <h1 className="text-lg font-semibold uppercase tracking-[0.35em] text-foreground">
                                 Gerhardien
                             </h1>
                             <p className="mt-1 text-sm uppercase tracking-[0.48em] text-text-secondary">
@@ -135,7 +135,7 @@ const Header = () => {
                                     : 'text-foreground hover:bg-muted'
                                     }`}
                             >
-                                <Icon name={item?.icon} size={20} />
+                       
                                 <span>{item?.name}</span>
                             </Link>
                         ))}

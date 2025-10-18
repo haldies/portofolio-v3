@@ -276,7 +276,7 @@ const HeroSection = () => {
             {/* Quick Stats */}
             <div className="grid grid-cols-3 sm:grid-cols-3 gap-6 sm:gap-8 pt-8 border-t border-border text-center">
               <div className="space-y-1">
-                <div className="text-xl sm:text-3xl font-bold text-foreground">18.7k</div>
+                <div className="text-xl sm:text-3xl font-bold text-foreground">19.2k</div>
                 <div className="text-sm sm:text-base text-text-secondary">TikTok Followers</div>
               </div>
               <div className="space-y-1">
@@ -300,7 +300,7 @@ const HeroSection = () => {
       <div className="relative z-10 px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <div className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
-            Learning Partners & Programs
+            Learning Journey & Learning Programs
           </div>
           <div className="relative overflow-hidden rounded-[28px] border border-border bg-card/80 shadow-brand-subtle backdrop-blur">
             <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background via-background to-transparent" />

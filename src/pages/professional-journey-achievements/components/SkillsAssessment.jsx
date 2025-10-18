@@ -80,7 +80,7 @@ const SkillsAssessment = () => {
               <h3 className="text-lg font-medium text-foreground">{category?.category}</h3>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-4">
               {category?.skills?.map((skill, skillIndex) => (
                 <div
                   key={skillIndex}

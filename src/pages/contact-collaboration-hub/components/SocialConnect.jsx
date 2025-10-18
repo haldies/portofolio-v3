@@ -6,7 +6,7 @@ const SocialConnect = () => {
   const socialPlatforms = [
     {
       name: 'LinkedIn',
-      handle: '@haldies-pasya',
+      handle: '@haldies',
       description: 'Professional networking and career updates',
       icon: 'Linkedin',
       color: 'bg-blue-600',
@@ -17,18 +17,18 @@ const SocialConnect = () => {
     },
     {
       name: 'GitHub',
-      handle: '@haldies-dev',
+      handle: '@haldies',
       description: 'Open source projects and code collaboration',
       icon: 'Github',
       color: 'bg-gray-800',
       followers: '1.8K',
       activity: 'Commits weekly',
-      url: 'https://github.com/haldies-dev',
+      url: 'https://github.com/haldies',
       recentPost: 'Released v2.0 of my AI model optimization toolkit - now with 40% faster training times and improved memory efficiency.'
     },
     {
       name: 'TikTok',
-      handle: '@haldies_ai',
+      handle: '@gerhardien',
       description: 'AI education and tech tutorials',
       icon: 'Video',
       color: 'bg-pink-600',
@@ -38,48 +38,19 @@ const SocialConnect = () => {
       recentPost: '"Explaining Neural Networks in 60 seconds" - breaking down complex AI concepts into bite-sized, easy-to-understand content.'
     },
     {
-      name: 'Twitter',
-      handle: '@haldies_tech',
+      name: 'Instagram',
+      handle: '@gerhardien_',
       description: 'AI industry insights and quick thoughts',
-      icon: 'Twitter',
+      icon: 'instagram',
       color: 'bg-blue-500',
-      followers: '3.1K',
+      followers: '1.8K',
       activity: 'Tweets daily',
-      url: 'https://twitter.com/haldies_tech',
+      url: 'https://instagram.com/gerhardien_',
       recentPost: 'Hot take: The next breakthrough in AI won\'t come from bigger models, but from better data quality and more efficient architectures. 🧵 Thread below:'
     }
   ];
 
-  const quickActions = [
-    {
-      title: 'Schedule a Call',
-      description: 'Book a 30-minute consultation',
-      icon: 'Calendar',
-      color: 'bg-accent',
-      action: 'Schedule Now'
-    },
-    {
-      title: 'Download Resume',
-      description: 'Get my latest CV and portfolio',
-      icon: 'Download',
-      color: 'bg-secondary',
-      action: 'Download PDF'
-    },
-    {
-      title: 'View Portfolio',
-      description: 'Explore my latest AI projects',
-      icon: 'FolderOpen',
-      color: 'bg-trust-purple',
-      action: 'View Projects'
-    },
-    {
-      title: 'Join Newsletter',
-      description: 'Weekly AI insights and tutorials',
-      icon: 'Mail',
-      color: 'bg-warning',
-      action: 'Subscribe'
-    }
-  ];
+
 
   return (
     <section className="py-16 lg:py-24 bg-background">
@@ -157,44 +128,6 @@ const SocialConnect = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Quick Actions */}
-        <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-brand-lg p-8">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-foreground mb-2">
-              Quick Actions
-            </h3>
-            <p className="text-text-secondary">
-              Skip the forms - take direct action with these quick options
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {quickActions?.map((action, index) => (
-              <div
-                key={action?.title}
-                className="bg-card border border-border rounded-brand p-6 text-center hover-lift transition-brand cursor-pointer"
-              >
-                <div className={`w-12 h-12 ${action?.color} rounded-brand flex items-center justify-center mx-auto mb-4`}>
-                  <Icon name={action?.icon} size={24} className="text-white" />
-                </div>
-                <h4 className="font-semibold text-foreground mb-2">
-                  {action?.title}
-                </h4>
-                <p className="text-sm text-text-secondary mb-4">
-                  {action?.description}
-                </p>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  fullWidth
-                >
-                  {action?.action}
-                </Button>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

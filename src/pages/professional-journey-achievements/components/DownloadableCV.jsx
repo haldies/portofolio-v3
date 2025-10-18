@@ -47,18 +47,6 @@ const DownloadableCV = () => {
       icon: 'FileDown',
       description: 'Standard format, widely compatible',
       action: 'download-pdf'
-    },
-    {
-      format: 'Interactive Web',
-      icon: 'Globe',
-      description: 'Online version with clickable links',
-      action: 'view-web'
-    },
-    {
-      format: 'Word Document',
-      icon: 'FileText',
-      description: 'Editable format for customization',
-      action: 'download-docx'
     }
   ];
 
@@ -154,73 +142,7 @@ const DownloadableCV = () => {
           ))}
         </div>
       </div>
-      {/* Quick Actions */}
-      <div className="flex flex-col sm:flex-row gap-3 pt-6 border-t border-border">
-        <Button
-          variant="default"
-          iconName="Download"
-          iconPosition="left"
-          onClick={() => handleDownload('download-pdf')}
-          disabled={isGenerating}
-          loading={isGenerating}
-          className="flex-1"
-        >
-          Quick Download PDF
-        </Button>
-        <Button
-          variant="outline"
-          iconName="Eye"
-          iconPosition="left"
-          onClick={() => handleDownload('view-web')}
-          className="flex-1"
-        >
-          Preview Online
-        </Button>
-        <Button
-          variant="ghost"
-          iconName="Share2"
-          iconPosition="left"
-          onClick={() => {
-            navigator.clipboard?.writeText(window.location?.origin + '/cv-preview');
-            // Show toast notification in real implementation
-          }}
-          className="flex-1"
-        >
-          Share Link
-        </Button>
-      </div>
-      {/* CV Stats */}
-      <div className="mt-6 pt-6 border-t border-border">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="text-center">
-            <div className="text-2xl font-bold text-accent">2.5K+</div>
-            <div className="text-sm text-text-secondary">Downloads</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-success">95%</div>
-            <div className="text-sm text-text-secondary">Response Rate</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-warning">4</div>
-            <div className="text-sm text-text-secondary">Formats Available</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-primary">24/7</div>
-            <div className="text-sm text-text-secondary">Always Updated</div>
-          </div>
-        </div>
-      </div>
-      {/* Last Updated Info */}
-      <div className="mt-4 p-3 bg-muted/30 rounded-brand text-center">
-        <div className="flex items-center justify-center text-sm text-text-secondary">
-          <Icon name="Clock" size={14} className="mr-2" />
-          Last updated: {new Date()?.toLocaleDateString('en-US', { 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
-          })}
-        </div>
-      </div>
+    
     </div>
   );
 };

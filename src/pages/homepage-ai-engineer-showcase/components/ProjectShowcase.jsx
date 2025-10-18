@@ -11,7 +11,7 @@ const ProjectShowcase = () => {
     {
       id: 1,
       title: 'MagangHub LLM ',
-      description: 'Retrieval-augmented assistant that analyzes internship quotas and resumes to recommend the top three placements automatically.',
+      description: 'Implementasi Large Language Model (LLM) untuk platform MagangHub guna meningkatkan interaksi pengguna melalui fitur  rekomendasi lowongan berbasis AI.',
       image: '/assets/Projekan/llmmaganghub.png',
       category: 'Large Language Model',
       tags: ['Llm', 'React.js', 'tailwind', 'vite'],
@@ -20,9 +20,9 @@ const ProjectShowcase = () => {
     },
     {
       id: 2,
-      title: 'Vision Quality Inspector',
-      description: 'Edge-ready computer vision workflow that spots manufacturing defects using a fine-tuned YOLOv8 model and rapid feedback loops.',
-      image: '/assets/images/logo_laskarAi.png',
+      title: 'Google lens clone',
+      description: 'Mengembangkan fitur pencarian gambar mirip seperti Google Lens, menggunakan MobileNet sebagai feature extractor dan dataset 33.000 gambar produk.',
+      image: '/assets/images/google_lens.png',
       category: 'Computer Vision',
       tags: ['YOLOv8', 'TensorRT', 'MLOps', 'Edge Deployment'],
       codeHref: 'https://github.com/haldies/vision-quality-inspector',
@@ -30,11 +30,11 @@ const ProjectShowcase = () => {
     },
     {
       id: 3,
-      title: 'Personalization Engine',
-      description: 'Hybrid recommendation stack blending collaborative filtering and embeddings to lift engagement across content platforms.',
+      title: 'Image classification Skin Type',
+      description: 'Membangun model klasifikasi citra untuk mengidentifikasi tipe kulit manusia menggunakan CNN, dengan akurasi mencapai 92% pada dataset yang beragam.',
       image: '/assets/images/logobangkit.png',
       category: 'Machine Learning',
-      tags: ['Feature Store', 'Vector Search', 'Realtime Inference', 'A/B Testing'],
+      tags: ['image classification', 'CNN', 'TensorFlow', 'Vit', 'Flask'],
       codeHref: 'https://github.com/haldies/personalization-engine',
       liveHref: 'https://demo.haldies.com/personalization'
     }
