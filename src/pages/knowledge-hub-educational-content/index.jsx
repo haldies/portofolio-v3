@@ -1,133 +1,118 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Icon from '../../components/AppIcon';
 import Header from 'components/ui/Header';
 
 const KnowledgeHubEducationalContent = () => {
-  const programCategories = [
+  const [activeTab, setActiveTab] = useState('programs');
+
+  const tabs = [
+    { id: 'programs', label: 'Info Program', icon: 'BookOpen' },
+    { id: 'roadmap', label: 'Roadmap AI', icon: 'Route' },
+    { id: 'tools', label: 'Tools', icon: 'Cpu' },
+  ];
+
+  const programHighlights = [
     {
-      title: 'Beasiswa & Program Gratis',
-      description:
-        'Kumpulan program resmi yang membantu talenta digital Indonesia mempelajari AI secara terstruktur tanpa biaya.',
-      highlights: [
-        {
-          name: 'IDCamp 2025',
-          provider: 'IOH (Indosat Ooredoo Hutchison)',
-          link: 'https://idcamp.ioh.co.id/',
-          detail:
-            '100% fokus pada AI dengan 4 jalur belajar: AI Engineer, Gen AI Engineer, MLOps Engineer, dan Data Scientist.',
-        },
-        {
-          name: 'Dicoding x IBM SkillsBuild PIJAK',
-          provider: 'Dicoding & IBM SkillsBuild',
-          link: 'https://www.dicoding.com/pijak',
-          detail:
-            'Program komprehensif yang menggabungkan modul teknis AI dan soft skill profesional untuk kesiapan kerja.',
-        },
-      ],
-      badge: 'Beasiswa',
+      name: 'IDCamp 2025',
+      provider: 'Indosat Ooredoo Hutchison',
+      focus: 'Beasiswa AI Engineer',
+      detail:
+        'Program beasiswa daring dengan mentor dan capstone project yang fokus pada AI engineer dan LLMOps.',
+      link: 'https://idcamp.ioh.co.id/',
     },
     {
-      title: 'Learning Community & Mentorship',
-      description:
-        'Rencanakan kolaborasi dengan komunitas lokal untuk mempercepat pembelajaran melalui studi kasus nyata.',
-      highlights: [
-        {
-          name: 'AI Study Group',
-          provider: 'Haldies & Partners',
-          link: '#',
-          detail:
-            'Diskusi rutin mengenai proyek mini seputar computer vision, NLP, dan generative AI dengan mentor industri.',
-        },
-        {
-          name: 'Tech Talk Live',
-          provider: 'Community Events',
-          link: '#',
-          detail:
-            'Sesi bulanan berbagi insight roadmap karier AI, showcase portofolio, dan update tools terbaru.',
-        },
-      ],
-      badge: 'Community',
+      name: 'Dicoding x IBM SkillsBuild - PIJAK',
+      provider: 'Dicoding & IBM SkillsBuild',
+      focus: 'Bootcamp AI Terapan',
+      detail:
+        'Kolaborasi modul teknis AI dan soft skill profesional yang dirancang untuk kesiapan kerja.',
+      link: 'https://www.dicoding.com/pijak',
     },
     {
-      title: 'Kurasi Kursus & Sertifikasi',
-      description:
-        'Rekomendasi jalur belajar mandiri untuk memperkuat kompetensi teknis sekaligus menyiapkan sertifikasi.',
-      highlights: [
-        {
-          name: 'DeepLearning.AI Specializations',
-          provider: 'Coursera',
-          link: 'https://www.coursera.org/deeplearning-ai',
-          detail:
-            'Pembelajaran mendalam untuk generative AI, LLMOps, dan machine learning production-grade.',
-        },
-        {
-          name: 'Machine Learning Engineer Nanodegree',
-          provider: 'Udacity',
-          link: 'https://www.udacity.com/course/machine-learning-engineer-nanodegree--nd009t',
-          detail:
-            'Roadmap modular untuk membangun, mendeploy, dan memonitor model machine learning skala produksi.',
-        },
-      ],
-      badge: 'Kurasi',
+      name: 'Google Bangkit Academy',
+      provider: 'Google, GoTo, Traveloka',
+      focus: 'Machine Learning Track',
+      detail:
+        'Jalur machine learning berbahasa Indonesia dengan mentor industri dan proyek produk akhir.',
+      link: 'https://grow.google/intl/id_id/bangkit/',
+    },
+    {
+      name: 'AI Catalyst Immersion',
+      provider: 'Makers Institute',
+      focus: 'Product AI Sprint',
+      detail:
+        'Program cepat 6 minggu membangun proof-of-concept generative AI untuk kebutuhan industri.',
+      link: 'https://www.makersinstitute.id/',
     },
   ];
 
-  const aiRoadmap = [
+  const roadmapSteps = [
     {
-      stage: 'Fondasi Data & Algoritma',
-      focus: 'Matematika diskrit, statistik, Python untuk analitik, dan git workflow.',
-      output: 'Notebook analisis eksploratif & mini project regresi.',
+      period: '1. Fondasi & Dasar',
+      focus: 'Matematika dasar, Python, dan logika pemrograman.',
+      detail: 'Mulai dengan kursus pengantar, gunakan buku catatan interaktif, dan latih kemampuan dengan proyek kecil.',
     },
     {
-      stage: 'Machine Learning Applied',
-      focus: 'Supervised & unsupervised learning, feature engineering, model evaluation.',
-      output: 'Model klasifikasi siap uji dengan pipeline terstandarisasi.',
+      period: '2. Data & Analitik',
+      focus: 'Eksplorasi data, SQL, statistik, dan visualisasi.',
+      detail:
+        'Bangun pipeline sederhana, gunakan dataset publik, dan dokumentasikan insight dengan dashboard ringan.',
     },
     {
-      stage: 'Deep Learning & Generative AI',
-      focus: 'Neural network, transformer, fine-tuning LLM, dan safety-by-design.',
-      output: 'Model generative AI dengan guardrail serta prompt workflow yang terdokumentasi.',
+      period: '3. Machine Learning',
+      focus: 'Model supervised/unsupervised, evaluasi, dan deployment dasar.',
+      detail:
+        'Gunakan scikit-learn atau TensorFlow, fokus pada eksperimen terukur, dan deploy versi sederhana di cloud.',
     },
     {
-      stage: 'MLOps & Production',
-      focus: 'CI/CD model, observabilitas, data drift monitoring, dan cost optimization.',
-      output: 'Deployment blueprint (API, batch, maupun streaming) siap dirilis.',
+      period: '4. Generative & LLMOps',
+      focus: 'Fine-tuning, prompt engineering, vector DB, observability.',
+      detail:
+        'Rancang alur RAG, kelola versi prompt, serta ukur kualitas model dengan feedback manusia.',
+    },
+    {
+      period: '5. Production & Scaling',
+      focus: 'Monitoring, MLOps workflow, dan kolaborasi lintas fungsi.',
+      detail:
+        'Implementasikan CI/CD, observasi performa real-time, dan iterasi berbasis feedback pengguna.',
     },
   ];
 
-  const aiTools = [
+  const toolStack = [
     {
-      name: 'PyTorch & Lightning',
-      usage: 'Eksperimen model deep learning yang reproducible dengan konfigurasi modular.',
-      stack: ['DL', 'Experimentation'],
-    },
-    {
-      name: 'TensorFlow Extended (TFX)',
-      usage: 'Pipeline produksi end-to-end dari data ingestion hingga model serving.',
-      stack: ['MLOps', 'Production'],
-    },
-    {
-      name: 'Hugging Face Hub',
-      usage: 'Fine-tuning model transformer, deployment inference endpoints, dan evaluasi LLM.',
-      stack: ['NLP', 'Generative AI'],
-    },
-    {
-      name: 'LangChain + OpenAI',
-      usage: 'Membangun agent dan RAG pipeline untuk skenario enterprise dan prototyping cepat.',
-      stack: ['Agentic', 'Prototyping'],
+      name: 'LangChain',
+      tagline: 'Framework orkestrasi LLM untuk pipeline RAG dan agentic workflow.',
+      icon: 'Workflow',
     },
     {
       name: 'Weights & Biases',
-      usage: 'Experiment tracking, model registry, dan observabilitas performa model.',
-      stack: ['Monitoring', 'Experimentation'],
+      tagline: 'Tracking eksperimen, dataset, dan model untuk reproducibility.',
+      icon: 'ChartNoAxesCombined',
     },
     {
-      name: 'Docker & Kubernetes',
-      usage: 'Standarisasi environment ML serta orkestrasi deployment berskala.',
-      stack: ['Infra', 'Orchestration'],
+      name: 'Modal',
+      tagline: 'Deploy model, job, dan cron serverless dengan focus AI.',
+      icon: 'Server',
+    },
+    {
+      name: 'Supabase',
+      tagline: 'Backend Postgres + storage untuk aplikasi AI ringan dan prototipe.',
+      icon: 'Database',
+    },
+    {
+      name: 'Vercel',
+      tagline: 'Hosting front-end dan edge function untuk integrasi AI cepat.',
+      icon: 'Globe',
+    },
+    {
+      name: 'OpenAI API',
+      tagline: 'Model LLM dan API multimodal untuk ideasi dan automasi konten.',
+      icon: 'Sparkles',
     },
   ];
+
+  const sectionVisibility = (tabId) => (activeTab === tabId ? 'block' : 'hidden lg:block');
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -144,191 +129,138 @@ const KnowledgeHubEducationalContent = () => {
       </Helmet>
       <Header />
 
-      <main className="pt-20 pb-24">
-        {/* Hero */}
-        <section className="relative isolate overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
-          <div className="absolute inset-0 opacity-60">
-            <div className="absolute -top-32 right-16 h-72 w-72 rounded-full bg-sky-500/30 blur-3xl" />
-            <div className="absolute -bottom-40 left-12 h-80 w-80 rounded-full bg-indigo-500/20 blur-3xl" />
-          </div>
-
-          <div className="relative mx-auto flex max-w-5xl flex-col items-center px-6 py-24 text-center sm:px-8">
-            <span className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-6 py-2 text-sm uppercase tracking-[0.3em] text-white/70">
-              <Icon name="BookOpen" size={18} />
+      <main className="pb-24">
+        <header className="border-b border-border/60 bg-card/70 backdrop-blur">
+          <div className="mx-auto max-w-6xl px-6 py-16 text-center sm:px-8">
+            <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-accent">
+              <Icon name="BookOpen" size={16} />
               Knowledge Hub
             </span>
-
-            <h1 className="mt-8 text-4xl font-semibold tracking-tight sm:text-5xl">
-              Belajar AI Dari Fondasi Hingga Produksi
+            <h1 className="mt-6 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+              Kurasi Belajar AI Satu Halaman
             </h1>
-            <p className="mt-6 max-w-3xl text-lg text-white/70 sm:text-xl">
-              Halaman ini merangkum program beasiswa, roadmap, dan tools yang saya gunakan untuk membangun solusi
-              AI end-to-end. Gunakan sebagai navigasi ketika merencanakan perjalanan karier AI-mu sendiri.
+            <p className="mx-auto mt-3 max-w-2xl text-sm text-muted-foreground sm:text-base">
+              Navigasi cepat untuk program, roadmap, dan tools yang dipakai sehari-hari saat membangun solusi AI-end-to-end.
             </p>
-
-            <div className="mt-12 grid w-full max-w-4xl gap-6 sm:grid-cols-2">
-              <div className="rounded-3xl border border-white/10 bg-white/5 p-6 text-left shadow-lg shadow-black/30 backdrop-blur">
-                <p className="text-xs uppercase tracking-[0.4em] text-sky-200/80">Sekilas</p>
-                <p className="mt-4 text-lg font-medium text-white">
-                  Kurasi program resmi dan komunitas yang aktif terbuka sepanjang 2025.
-                </p>
-              </div>
-              <div className="rounded-3xl border border-white/10 bg-white/5 p-6 text-left shadow-lg shadow-black/30 backdrop-blur">
-                <p className="text-xs uppercase tracking-[0.4em] text-emerald-200/80">Fokus Tahun Ini</p>
-                <p className="mt-4 text-lg font-medium text-white">
-                  Generative AI, LLMOps, dan praktek MLOps yang production-ready.
-                </p>
-              </div>
-            </div>
           </div>
-        </section>
+          <nav className="border-t border-border/60">
+            <div className="mx-auto flex max-w-6xl overflow-x-auto px-6 sm:px-8">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`flex items-center gap-2 whitespace-nowrap border-b-2 px-4 py-3 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 focus-visible:ring-offset-2 ${
+                    activeTab === tab.id
+                      ? 'border-accent text-accent'
+                      : 'border-transparent text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  <Icon name={tab.icon} size={16} />
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+          </nav>
+        </header>
 
-        {/* Program Categories */}
-        <section className="mx-auto mt-20 max-w-6xl px-6 sm:px-8">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <section
+          id="programs"
+          className={`${sectionVisibility('programs')} mx-auto mt-12 max-w-6xl px-6 sm:px-8`}
+        >
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-accent">Kategori Program</p>
-              <h2 className="mt-3 text-3xl font-semibold text-foreground">Info Program & Beasiswa AI</h2>
-              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                Pilih jalur belajar yang sesuai dengan target kariermu. Setiap kategori memuat ringkasan manfaat,
-                penyelenggara, serta alasan kenapa cocok untuk aspiring AI engineer.
-              </p>
+              <p className="text-xs font-semibold uppercase tracking-[0.4em] text-accent">Info Program</p>
+              <h2 className="mt-2 text-xl font-semibold text-foreground sm:text-2xl">
+                Beasiswa dan bootcamp yang aktif sepanjang 2025
+              </h2>
             </div>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {programCategories.map((category) => (
-              <article
-                key={category.title}
-                className="relative flex flex-col gap-6 rounded-3xl border border-border/80 bg-card/90 p-8 shadow-lg shadow-black/5 transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl"
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {programHighlights.map((item) => (
+              <a
+                key={item.name}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-full flex-col gap-3 rounded-2xl border border-border/60 bg-card p-5 transition-transform duration-200 hover:-translate-y-1 hover:border-accent/60"
               >
-                <span className="inline-flex w-fit items-center gap-2 rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-accent">
-                  {category.badge}
-                </span>
+                <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.3em]">
+                  <span className="text-accent">{item.focus}</span>
+                  <span className="text-muted-foreground">Explore</span>
+                </div>
                 <div>
-                  <h3 className="text-2xl font-semibold">{category.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{category.description}</p>
+                  <p className="text-lg font-semibold text-foreground">{item.name}</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+                    {item.provider}
+                  </p>
                 </div>
-
-                <div className="space-y-4">
-                  {category.highlights.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block rounded-2xl border border-border/60 bg-muted/40 p-5 transition-colors hover:border-accent hover:bg-background/60"
-                    >
-                      <div className="flex items-start justify-between gap-4">
-                        <div>
-                          <p className="text-base font-semibold text-foreground">{item.name}</p>
-                          <p className="mt-1 text-xs font-semibold uppercase tracking-[0.3em] text-accent/70">
-                            {item.provider}
-                          </p>
-                          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.detail}</p>
-                        </div>
-                        <span className="shrink-0 rounded-full bg-background/80 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.3em] text-accent">
-                          Jelajahi
-                        </span>
-                      </div>
-                    </a>
-                  ))}
-                </div>
-              </article>
+                <p className="text-sm leading-relaxed text-muted-foreground">{item.detail}</p>
+              </a>
             ))}
           </div>
         </section>
 
-        {/* AI Roadmap */}
-        <section className="mx-auto mt-24 max-w-6xl px-6 sm:px-8">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-accent">Roadmap AI</p>
-              <h2 className="mt-3 text-3xl font-semibold text-foreground">Tahapan Belajar AI yang Disarankan</h2>
-              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                Roadmap ini berbasis pengalaman pribadi membangun solusi AI untuk kebutuhan enterprise. Setiap tahap
-                dilengkapi fokus kompetensi dan ekspektasi hasil yang dapat kamu validasi lewat portofolio.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-12 grid gap-6 lg:grid-cols-[360px,1fr]">
-            <div className="rounded-3xl border border-border bg-card/90 p-6 shadow-lg shadow-black/5">
-              <p className="text-xs uppercase tracking-[0.4em] text-accent/80">Strategi</p>
-              <h3 className="mt-4 text-2xl font-semibold text-foreground">Milestones Penting</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Mulai dari pondasi data hingga operasionalisasi model. Pastikan tiap milestone terdokumentasi agar
-                mudah dibagikan saat sesi mentoring atau evaluasi kinerja.
-              </p>
-              <ul className="mt-6 list-disc space-y-2 pl-5 text-sm text-muted-foreground marker:text-accent">
-                <li>Bangun kebiasaan membuat catatan eksperimen yang konsisten.</li>
-                <li>Buat retro setiap fase untuk mengukur gap skill sebelum naik tahap berikutnya.</li>
-                <li>Kolaborasikan roadmap dengan mentor atau rekan sejawat untuk accountability.</li>
-              </ul>
+        <section
+          id="roadmap"
+          className={`${sectionVisibility('roadmap')} mx-auto mt-16 max-w-6xl px-6 sm:px-8`}
+        >
+          <div className="rounded-2xl border border-border/70 bg-card/80 p-6 shadow-sm">
+            <div className="mb-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.4em] text-accent">Roadmap AI</p>
+              <h2 className="mt-2 text-xl font-semibold text-foreground sm:text-2xl">
+                Perjalanan berlapis dari fondasi hingga produksi
+              </h2>
             </div>
 
-            <ol className="relative flex flex-col gap-6">
-              <span className="absolute inset-y-3 left-6 w-px bg-gradient-to-b from-transparent via-accent/40 to-transparent" />
-              {aiRoadmap.map((entry, index) => (
-                <li
-                  key={entry.stage}
-                  className="relative rounded-3xl border border-border/70 bg-muted/40 p-6 shadow-lg shadow-black/5 backdrop-blur-sm"
-                >
-                  <div className="absolute -left-[13px] top-7 flex h-6 w-6 items-center justify-center rounded-full border border-accent/40 bg-background text-xs font-semibold text-accent">
-                    {index + 1}
-                  </div>
-                  <div className="flex flex-col gap-3 pl-4">
-                    <p className="text-xs font-semibold uppercase tracking-[0.4em] text-accent/80">{entry.stage}</p>
-                    <p className="text-sm leading-relaxed text-muted-foreground">{entry.focus}</p>
-                    <div className="rounded-2xl bg-background/70 px-4 py-3 text-sm text-foreground">
-                      <span className="font-semibold text-accent">Deliverable:</span> {entry.output}
-                    </div>
-                  </div>
+            <ul className="relative flex flex-col gap-8">
+              <span className="pointer-events-none absolute left-[12px] top-3 h-[calc(100%-24px)] w-px bg-border/60" />
+              {roadmapSteps.map((step) => (
+                <li key={step.period} className="relative pl-12">
+                  <span className="absolute left-0 top-1 flex h-6 w-6 items-center justify-center rounded-full border border-accent/50 bg-background text-[10px] font-bold uppercase tracking-[0.3em] text-accent">
+                    <Icon name="ArrowDown" size={14} />
+                  </span>
+                  <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+                    {step.period}
+                  </h3>
+                  <p className="mt-2 text-base font-semibold text-foreground">{step.focus}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.detail}</p>
                 </li>
               ))}
-            </ol>
+            </ul>
           </div>
         </section>
 
-        {/* AI Tools */}
-        <section className="mx-auto mt-24 max-w-6xl px-6 sm:px-8">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-accent">Tooling</p>
-              <h2 className="mt-3 text-3xl font-semibold text-foreground">Tools AI yang Paling Sering Digunakan</h2>
-              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                Perangkat berikut menjadi backbone dalam riset, eksperimen, hingga deployment. Kombinasikan sesuai
-                kebutuhan proyekmu, terutama ketika menyeimbangkan kecepatan iterasi dan reliability.
-              </p>
-            </div>
+        <section
+          id="tools"
+          className={`${sectionVisibility('tools')} mx-auto mt-16 max-w-6xl px-6 sm:px-8`}
+        >
+          <div className="mb-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-accent">Tools</p>
+            <h2 className="mt-2 text-xl font-semibold text-foreground sm:text-2xl">
+              Stack ringan yang membantu shipping solusi AI end-to-end
+            </h2>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {aiTools.map((tool) => (
-              <article
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {toolStack.map((tool) => (
+              <div
                 key={tool.name}
-                className="flex h-full flex-col gap-4 rounded-3xl border border-border/70 bg-card/80 p-6 shadow-lg shadow-black/5 transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="flex items-center gap-4 rounded-2xl border border-border/60 bg-card p-5"
               >
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent">
+                  <Icon name={tool.icon} size={20} />
+                </span>
                 <div>
-                  <h3 className="text-xl font-semibold text-foreground">{tool.name}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{tool.usage}</p>
+                  <p className="text-base font-semibold text-foreground">{tool.name}</p>
+                  <p className="text-sm text-muted-foreground">{tool.tagline}</p>
                 </div>
-                <div className="mt-auto flex flex-wrap gap-2">
-                  {tool.stack.map((badge) => (
-                    <span
-                      key={`${tool.name}-${badge}`}
-                      className="rounded-full bg-accent/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.3em] text-accent"
-                    >
-                      {badge}
-                    </span>
-                  ))}
-                </div>
-              </article>
+              </div>
             ))}
           </div>
         </section>
       </main>
-
     </div>
   );
 };
