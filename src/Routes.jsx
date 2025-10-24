@@ -15,19 +15,19 @@ const Routes = () => {
   return (
     <BrowserRouter>
       <ErrorBoundary>
-      <ScrollToTop />
-      <RouterRoutes>
-        {/* Define your route here */}
-        <Route path="/" element={<HomepageAIEngineerShowcase />} />
-        <Route path="/home" element={<HomepageAIEngineerShowcase />} />
-        <Route path="/achievements" element={<ProfessionalJourneyAchievements />} />
-        <Route path="/ai-playground" element={<AIPlaygroundInteractiveDemos />} />
-        <Route path="/contact" element={<ContactCollaborationHub />} />
-        <Route path="/educational-content" element={<KnowledgeHubEducationalContent />} />
-        <Route path="/projects/:projectId" element={<ProjectDetailLLMMagangHub />} />
-        <Route path="*" element={<NotFound />} />
-      </RouterRoutes>
-      <FooterPage/>
+        <ScrollToTop />
+        <RouterRoutes>
+          {/* Define your route here */}
+          <Route path="/" element={<HomepageAIEngineerShowcase />} />
+          <Route path="/home" element={<HomepageAIEngineerShowcase />} />
+          <Route path="/achievements" element={<ProfessionalJourneyAchievements />} />
+          <Route path="/ai-playground" element={<AIPlaygroundInteractiveDemos />} />
+          <Route path="/contact" element={<ContactCollaborationHub />} />
+          <Route path="/educational-content" element={<KnowledgeHubEducationalContent />} />
+          <Route path="/projects/:projectId" element={<ProjectDetailLLMMagangHub />} />
+          <Route path="*" element={<NotFound />} />
+        </RouterRoutes>
+        <FooterPage />
       </ErrorBoundary>
     </BrowserRouter>
   );

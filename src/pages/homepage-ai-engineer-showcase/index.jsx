@@ -8,7 +8,7 @@ import TikTokIntegration from './components/TikTokIntegration';
 
 const HomepageAIEngineerShowcase = () => {
   useEffect(() => {
-  
+
     const handleSmoothScroll = (e) => {
       const target = e?.target?.getAttribute('href');
       if (target && target?.startsWith('#')) {
@@ -51,11 +51,11 @@ const HomepageAIEngineerShowcase = () => {
         {/* Hero Section with Interactive AI Demo */}
         <HeroSection />
 
-        {/* Achievement Badges with Hover Details */}
-        <AchievementBadges />
 
         {/* Featured Project Showcase */}
         <ProjectShowcase />
+        {/* Achievement Badges with Hover Details */}
+        <AchievementBadges />
 
         {/* TikTok Content Integration */}
         <TikTokIntegration />
