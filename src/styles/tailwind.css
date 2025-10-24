@@ -296,21 +296,11 @@
 
   /* Scrollbar Styling */
   .scrollbar-brand {
-    scrollbar-width: thin;
-    scrollbar-color: var(--color-accent) var(--color-muted);
+    scrollbar-width: none;
   }
 
   .scrollbar-brand::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  .scrollbar-brand::-webkit-scrollbar-track {
-    background: var(--color-muted);
-  }
-
-  .scrollbar-brand::-webkit-scrollbar-thumb {
-    background: var(--color-accent);
-    border-radius: 3px;
+    display: none;
   }
 }
 
