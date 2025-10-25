@@ -44,17 +44,156 @@ const projectDetails = {
     problemStatement:
       'Dari pertama buka portal MagangHub gue ngerasa navigasinya kurang ramah: informasi peluang tersebar, kuota nggak langsung kebaca, dan peserta cuma bisa apply tiga posisi. Karena API-nya kebuka, gue compile ulang semua data biar orang-orang bisa eksplor lowongan lebih gampang sambil mantau persaingan secara transparan.',
     architectureNotes:
-      'Stack ringan buat shipping cepat: React + Vite untuk front-end interaktif, Tailwind buat styling, Node.js proxy buat kumpulin data dari API MagangHub, ditambah Supabase supaya snapshot kuota bisa di-cache. Sekarang lagi eksperimen Gemini LLM biar rekomendasi lowongan makin personal.',
+      'Stack ringan buat shipping cepat: React + Vite untuk front-end interaktif, Tailwind buat styling dan Gemini LLM sebagai rekomendasi lowongan makin personal.',
     videoSrc: '/assets/Projekan/video/demovideop1.mp4',
     seo: {
-      title: 'MagangHub LLM Assistant – Project Detail',
+      title: 'MagangHub LLM Assistant Project Detail',
       description:
         'Deep dive into the MagangHub conversational AI assistant built for internship onboarding, featuring secure knowledge retrieval and an interactive demo.'
     },
     cta: {
       primaryLabel: 'Book a Discovery Call',
       primaryHref: '/contact',
+    secondaryLabel: 'Back to AI Playground',
+    secondaryHref: '/ai-playground'
+    }
+  },
+  'google-lens-clone': {
+    badgeLabel: 'Computer Vision',
+    title: 'Google Lens Clone - Visual Search',
+    summary:
+      'Eksperimen mengkloning pengalaman Google Lens untuk membantu pengguna menemukan produk serupa hanya dengan memotret gambar. Sistem ini memanfaatkan embedding visual agar pencarian terasa instan dan relevan.',
+    impactMetrics: [
+      { label: 'Search Latency', value: '~120 ms' },
+      { label: 'Image Library', value: '33k products' },
+    ],
+    highlights: [
+      {
+        title: 'Context-Aware Matching',
+        description:
+          'Menghasilkan embedding visual dengan MobileNet yang telah di-finetune sehingga sistem mampu memahami tekstur, warna, dan bentuk secara detail.'
+      },
+ 
+      {
+        title: 'Actionable Results',
+        description:
+          'Hasil pencarian langsung menampilkan tautan produk dan metadata tambahan sehingga pengguna dapat melakukan penelusuran lanjutan dengan cepat.'
+      }
+    ],
+    techStack: [
+      'React + Vite frontend',
+      'Tailwind CSS interface system',
+      'MobileNet feature extractor',
+      'similarity search index',
+    ],
+    problemStatement:
+      'Pengguna e-commerce sering kesulitan menemukan produk serupa hanya dari kata kunci. Dengan 33 ribu gambar produk yang tersedia, dibutuhkan solusi pencarian visual yang cepat dan akurat untuk mempercepat discovery.',
+    architectureNotes:
+      'Frontend ringan berbasis React menangkap gambar, mengirimkannya ke service inference Node.js yang memanggil model MobileNet teroptimasi.',
+    videoSrc: '',
+    seo: {
+      title: 'Google Lens Clone - Project Detail',
+      description:
+        'Detail implementasi Google Lens Clone dengan MobileNet dan Faiss untuk pencarian produk berbasis gambar secara real-time.'
+    },
+    cta: {
+      primaryLabel: 'Schedule Vision Demo',
+      primaryHref: '/contact',
       secondaryLabel: 'Back to AI Playground',
+      secondaryHref: '/ai-playground'
+    }
+  },
+  'image-classification-skin-type': {
+    badgeLabel: 'Machine Learning',
+    title: 'Skin Type Image Classification',
+    summary:
+      'Model CNN untuk mengklasifikasikan tipe kulit manusia berdasarkan citra wajah, membantu brand skincare memberikan rekomendasi produk yang lebih personal.',
+    impactMetrics: [
+      { label: 'Model Accuracy', value: '80%' },
+      { label: 'Inference Time', value: '180 ms' },
+      { label: 'Dataset Variants', value: '4 skin types' }
+    ],
+    highlights: [
+      {
+        title: 'Balanced Dataset Strategy',
+        description:
+          'Kurasi dataset multi-etnis dengan augmentasi adaptif agar model tidak bias terhadap warna kulit tertentu.'
+      },
+      {
+        title: 'Explainable Predictions',
+        description:
+          'Menggunakan Grad-CAM heatmaps untuk menampilkan area wajah yang menjadi fokus model sehingga hasil lebih mudah dipercaya.'
+      },
+      {
+        title: 'Seamless Product Hand-off',
+        description:
+          'Output model langsung terhubung ke API rekomendasi produk sehingga pengguna mendapatkan rekomendasi skincare secara instan.'
+      }
+    ],
+    techStack: [
+      'TensorFlow CNN backbone',
+      'Vision Transformer feature comparisons',
+      'Flask REST inference service',
+      'Supabase logging & analytics',
+      'React dashboard for operators',
+      'Tailwind CSS UI system'
+    ],
+    problemStatement:
+      'Brand skincare kesulitan menilai jenis kulit pelanggan secara cepat dan konsisten. Diperlukan sistem otomatis berbasis citra untuk membantu tim beauty consultant memberikan rekomendasi awal yang akurat.',
+    architectureNotes:
+      'Pipeline training menggunakan TensorFlow dengan augmentasi kuat, sementara inference disajikan melalui Flask API. Dashboard React memonitor hasil klasifikasi dan mengemas rekomendasi produk ke pengguna akhir.',
+    videoSrc: '',
+    seo: {
+      title: 'Skin Type Classifier - Project Detail',
+      description:
+        'Pelajari arsitektur sistem klasifikasi tipe kulit berbasis CNN dan Grad-CAM untuk rekomendasi skincare yang lebih personal.'
+    },
+    cta: {
+      primaryLabel: 'Discuss ML Deployment',
+      primaryHref: '/contact',
+      secondaryLabel: 'Back to AI Playground',
+      secondaryHref: '/ai-playground'
+    }
+  },
+  'zushi-nft': {
+    badgeLabel: 'Frontend Experience',
+    title: 'Zushi - NFT Landing Page',
+    summary:
+      'Landing page interaktif untuk memperkenalkan Zushi, proyek kripto yang menggabungkan narasi futuristik dengan desain neon minimalis. Dirancang agar tim marketing bisa mengkampanyekan token perdana secara cepat.',
+    impactMetrics: [
+      { label: 'Time to Build', value: '7 day' }
+    ],
+    highlights: [
+      {
+        title: 'Immersive Storytelling',
+        description:
+          'Konten hero "Introducing Zushi" dioptimasi dengan tipografi gradien dan micro-interactions untuk menanamkan rasa percaya sejak awal.'
+      },
+      {
+        title: 'Responsive Motion Layouts',
+        description:
+          'Animasi hover dan parallax ringan diterapkan menggunakan Tailwind + vanilla JS sehingga performa tetap kencang di mobile.'
+      },
+    ],
+    techStack: [
+      'Semantic HTML foundation',
+      'Tailwind CSS utility design',
+      'Vanilla JavaScript micro-interactions',
+    ],
+    problemStatement:
+      'Tim Zushi membutuhkan landing page kripto yang mampu menjelaskan diferensiasi proyek sekaligus mengajak investor awal bergabung, semuanya harus diselesaikan dalam waktu singkat.',
+    architectureNotes:
+      'Proyek dibangun dengan fondasi HTML semantik dan Tailwind untuk styling cepat. Interaksi animasi dikelola menggunakan Vanila JavaScript ringan.',
+    videoSrc: '',
+    seo: {
+      title: 'Zushi NFT Landing Page - Project Detail',
+      description:
+        'Detail desain dan implementasi landing page Zushi yang menonjolkan narasi kripto futuristik dengan performa tinggi.'
+    },
+    cta: {
+      primaryLabel: 'Request UX Review',
+      primaryHref: '/contact',
+      secondaryLabel: 'View All Projects',
       secondaryHref: '/ai-playground'
     }
   }
@@ -105,18 +244,24 @@ const ProjectDetailLLMMagangHub = () => {
           <div className="mx-auto max-w-5xl rounded-3xl border border-border bg-card/90 p-6 shadow-brand-medium">
             <h2 className="text-2xl font-semibold">Product Walkthrough</h2>
             <p className="mt-3 text-sm text-muted-foreground">
-              Explore key user journeys—from onboarding queries to workflow hand-offs—and see how the assistant maintains context while staying grounded in verified sources.
+              Explore key user journeys - from onboarding queries to workflow hand-offs - and see how the assistant maintains context while staying grounded in verified sources.
             </p>
             <div className="mt-6 overflow-hidden rounded-2xl border border-border/60 bg-black">
-              <video
-                src={project.videoSrc}
-                className="h-full w-full"
-                controls
-                preload="metadata"
-                playsInline
-              >
-                Your browser does not support the video tag. Download the demo to view it locally.
-              </video>
+              {project.videoSrc ? (
+                <video
+                  src={project.videoSrc}
+                  className="h-full w-full"
+                  controls
+                  preload="metadata"
+                  playsInline
+                >
+                  Your browser does not support the video tag. Download the demo to view it locally.
+                </video>
+              ) : (
+                <div className="flex h-64 items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-8 text-center text-sm font-medium text-slate-200/80">
+                  Demo walkthrough coming soon. Reach out for a guided session or prototype access.
+                </div>
+              )}
             </div>
           </div>
         </section>

@@ -1,9 +1,9 @@
 import React, { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Header from '../../components/ui/Header';
-import Button from '../../components/ui/Button';
 import CategoryScroller from '../../components/ui/CategoryScroller';
 import ProjectCard from '../../components/ui/ProjectCard';
+import FooterCTA from '../../components/ui/FooterCTA';
 
   const projects = [
     {
@@ -23,6 +23,7 @@ import ProjectCard from '../../components/ui/ProjectCard';
       image: '/assets/images/google_lens.png',
       category: 'Computer Vision',
       tags: ['YOLOv8', 'TensorRT', 'MLOps', 'Edge Deployment'],
+      detailHref: '/projects/google-lens-clone',
       codeHref: 'https://github.com/haldies/vision-quality-inspector',
       liveHref: 'https://demo.haldies.com/vision-quality'
     },
@@ -33,6 +34,7 @@ import ProjectCard from '../../components/ui/ProjectCard';
       image: '/assets/images/CSkin_Skin_Classification.webp',
       category: 'Machine Learning',
       tags: ['image classification', 'CNN', 'TensorFlow', 'Vit', 'Flask'],
+      detailHref: '/projects/image-classification-skin-type',
       codeHref: 'https://github.com/haldies/personalization-engine',
       liveHref: 'https://demo.haldies.com/personalization'
     }
@@ -102,31 +104,20 @@ const ProjectsShowcase = () => {
           ))}
         </div>
       </section>
-      <section className="pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <div className="bg-brand-gradient rounded-brand-lg p-8 text-white">
-            <h2 className="mb-4 text-3xl font-bold">Need a hand shaping your next idea?</h2>
-            <p className="mb-6 text-lg opacity-90">
-              Let's collaborate on meaningful, design-led solutions that move your product forward with intent.
-            </p>
-            <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <Button variant="secondary" size="lg" iconName="FolderOpen" iconPosition="left" asChild>
-                <a href="/achievements">View All Projects</a>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                iconName="MessageCircle"
-                iconPosition="left"
-                className="border-white/20 bg-white/10 text-white hover:bg-white/20"
-                asChild
-              >
-                <a href="/contact">Let's Connect</a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+
+
+      <FooterCTA
+        title="Need a hand shaping your next idea?"
+        description="Let's collaborate on meaningful, design-led solutions that move your product forward with intent."
+        primaryAction={{
+          href: '/achievements',
+          label: 'View All Projects'
+        }}
+        secondaryAction={{
+          href: '/contact',
+          label: "Let's Connect"
+        }}
+      />
     </div>
   );
 };

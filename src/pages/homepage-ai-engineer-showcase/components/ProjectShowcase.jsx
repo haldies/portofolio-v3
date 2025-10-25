@@ -25,6 +25,7 @@ const ProjectShowcase = () => {
       image: '/assets/images/google_lens.png',
       category: 'Computer Vision',
       tags: ['YOLOv8', 'TensorRT', 'MLOps', 'Edge Deployment'],
+      detailHref: '/projects/google-lens-clone',
       codeHref: 'https://github.com/haldies/vision-quality-inspector',
       liveHref: 'https://demo.haldies.com/vision-quality'
     },
@@ -35,8 +36,19 @@ const ProjectShowcase = () => {
       image: '/assets/images/CSkin_Skin_Classification.webp',
       category: 'Machine Learning',
       tags: ['image classification', 'CNN', 'TensorFlow', 'Vit', 'Flask'],
+      detailHref: '/projects/image-classification-skin-type',
       codeHref: 'https://github.com/haldies/personalization-engine',
       liveHref: 'https://demo.haldies.com/personalization'
+    },
+    {
+      id: 4,
+      title: 'Zushi NFT Landing Page',
+      description: 'Landing page responsif untuk proyek kripto Zushi yang menyoroti inovasi, keamanan, dan keberlanjutan mata uang digital.',
+      image: '/assets/Projekan/web-nft.jpg',
+      category: 'Frontend Development',
+      tags: ['HTML', 'CSS', 'JavaScript', 'Tailwind CSS'],
+      detailHref: '/projects/zushi-nft',
+      liveHref: 'https://demo.haldies.com/zushi-nft'
     }
   ];
 
