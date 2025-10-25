@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Button from '../ui/Button';
 import Icon from '../AppIcon';
 import {
@@ -7,15 +7,7 @@ import {
   assistantQuickPrompts
 } from '../../data/assistantKnowledge';
 
-const initialMessages = [
-  {
-    id: 'assistant-initial',
-    role: 'assistant',
-    content:
-      'Halo! Aku Haldies Assistant. Aku siap bantu jelasin projek, perjalanan profesional, dan opsi kolaborasi. Ketik pertanyaanmu atau pilih salah satu prompt cepat di bawah.',
-    timestamp: new Date()
-  }
-];
+const initialMessages = [];
 
 const formatTime = (value) =>
   new Intl.DateTimeFormat('id-ID', { hour: '2-digit', minute: '2-digit' }).format(value);
@@ -289,8 +281,16 @@ const AssistantChatbot = () => {
   const [isThinking, setIsThinking] = useState(false);
   const [activeThinkingStep, setActiveThinkingStep] = useState(-1);
   const chatBodyRef = useRef(null);
+  const textareaRef = useRef(null);
   const pendingReplyRef = useRef();
   const thinkingIntervalRef = useRef();
+  const adjustTextareaHeight = useCallback(() => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+
+    textarea.style.height = 'auto';
+    textarea.style.height = `${textarea.scrollHeight}px`;
+  }, []);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -308,6 +308,9 @@ const AssistantChatbot = () => {
     if (!container) return;
     container.scrollTop = container.scrollHeight;
   }, [messages, isThinking, isOpen]);
+  useEffect(() => {
+    adjustTextareaHeight();
+  }, [inputValue, isOpen, adjustTextareaHeight]);
 
   useEffect(() => {
     if (!isThinking) {
@@ -551,6 +554,7 @@ const AssistantChatbot = () => {
                       rows={2}
                       value={inputValue}
                       onChange={(event) => setInputValue(event.target.value)}
+                      ref={textareaRef}
                       placeholder="Contoh: Bisa jelasin proyek Contextual AI Assistant?"
                       className="w-full resize-none bg-transparent text-sm text-black outline-none placeholder:text-slate-400"
                     />

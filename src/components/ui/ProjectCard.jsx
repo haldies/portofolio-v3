@@ -12,14 +12,16 @@ const ProjectCard = ({
   className,
   imageClassName,
   contentClassName,
-  codeHref,
+  detailHref,
   liveHref,
-  codeLabel = 'Code',
-  liveLabel = 'Live',
-  codeIcon = 'Github',
+  codeHref,
+  detailLabel = 'Detail Project',
+  liveLabel = 'Live Demo',
+  detailIcon = 'FileText',
   liveIcon = 'ExternalLink',
   children
 }) => {
+  const detailLink = detailHref || codeHref;
   const renderActionButton = (href, label, iconName) => {
     if (!href) return null;
     const isInternalLink = href.startsWith('/');
@@ -84,10 +86,10 @@ const ProjectCard = ({
             ))}
           </div>
         )}
-        {(codeHref || liveHref) && (
+        {(detailLink || liveHref) && (
           <div className="mt-6 flex flex-wrap gap-2">
+            {renderActionButton(detailLink, detailLabel, detailIcon)}
             {renderActionButton(liveHref, liveLabel, liveIcon)}
-            {renderActionButton(codeHref, codeLabel, codeIcon)}
           </div>
         )}
         {children}

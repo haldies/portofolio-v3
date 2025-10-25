@@ -5,86 +5,39 @@ import Button from '../../components/ui/Button';
 import CategoryScroller from '../../components/ui/CategoryScroller';
 import ProjectCard from '../../components/ui/ProjectCard';
 
-const projects = [
-  {
-    id: 'insight-hub',
-    title: 'Insight Hub Dashboard',
-    description:
-      'A modular analytics experience that surfaces real-time KPI tracking, growth insights, and smart recommendations for business stakeholders.',
-    icon: 'BarChart3',
-    accent: 'bg-primary/10 text-primary',
-    tags: ['React', 'TypeScript', 'Data Visualization'],
-    category: 'Analytics',
-    image: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1200&h=780&fit=crop',
-    codeHref: 'https://github.com/haldies',
-    liveHref: 'https://haldies.com/projects/insight-hub'
-  },
-  {
-    id: 'vision-studio',
-    title: 'Vision Studio',
-    description:
-      'Lightweight computer vision tooling that enables quick experimentation with classification models and curated datasets.',
-    icon: 'Camera',
-    accent: 'bg-secondary/10 text-secondary',
-    tags: ['Computer Vision', 'Inference', 'UI/UX'],
-    category: 'Computer Vision',
-    image: 'https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=1200&h=780&fit=crop',
-    codeHref: 'https://github.com/haldies',
-    liveHref: 'https://haldies.com/projects/vision-studio'
-  },
-  {
-    id: 'contextual-ai',
-    title: 'Contextual AI Assistant',
-    description:
-      'Conversational copilot designed for learning teams with content-aware prompts, persona modes, and reusable knowledge packs.',
-    icon: 'Bot',
-    accent: 'bg-accent/10 text-accent',
-    tags: ['AI Assistant', 'Prompt Design', 'Education'],
-    category: 'AI Assistant',
-    image: 'https://images.unsplash.com/photo-1686191128892-26b98c48d570?w=1200&h=780&fit=crop',
-    codeHref: 'https://github.com/haldies',
-    liveHref: 'https://haldies.com/projects/contextual-ai'
-  },
-  {
-    id: 'content-orchestrator',
-    title: 'Content Orchestrator',
-    description:
-      'Workflow engine that automates content planning, editorial reviews, and channel distribution with granular permissions.',
-    icon: 'Layers',
-    accent: 'bg-trust-purple/10 text-trust-purple',
-    tags: ['Automation', 'Workflow', 'CMS'],
-    category: 'Automation',
-    image: 'https://images.unsplash.com/photo-1523966211575-eb4a01e7dd51?w=1200&h=780&fit=crop',
-    codeHref: 'https://github.com/haldies',
-    liveHref: 'https://haldies.com/projects/content-orchestrator'
-  },
-  {
-    id: 'api-observatory',
-    title: 'API Observatory',
-    description:
-      'Monitoring suite offering availability dashboards, incident timelines, and proactive alerts for critical integrations.',
-    icon: 'Radar',
-    accent: 'bg-innovation-green/10 text-innovation-green',
-    tags: ['SRE', 'Monitoring', 'Node.js'],
-    category: 'Platform',
-    image: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=1200&h=780&fit=crop',
-    codeHref: 'https://github.com/haldies',
-    liveHref: 'https://haldies.com/projects/api-observatory'
-  },
-  {
-    id: 'secure-vault',
-    title: 'Secure Vault',
-    description:
-      'Security-forward vault that combines passwordless access, hardware integration, and audit trails for enterprise teams.',
-    icon: 'Shield',
-    accent: 'bg-warning/10 text-warning',
-    tags: ['Security', 'Identity', 'Architecture'],
-    category: 'Security',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=780&fit=crop',
-    codeHref: 'https://github.com/haldies',
-    liveHref: 'https://haldies.com/projects/secure-vault'
-  }
-];
+  const projects = [
+    {
+      id: 1,
+      title: 'MagangHub LLM ',
+      description: 'Implementasi Large Language Model (LLM) untuk platform MagangHub guna meningkatkan interaksi pengguna melalui fitur  rekomendasi lowongan berbasis AI.',
+      image: '/assets/Projekan/llmmaganghub.png',
+      category: 'Large Language Model',
+      tags: ['Llm', 'React.js', 'tailwind', 'vite'],
+      detailHref: '/projects/llm-maganghub',
+      liveHref: 'https://maganghub-genz.vercel.app'
+    },
+    {
+      id: 2,
+      title: 'Google lens clone',
+      description: 'Mengembangkan fitur pencarian gambar mirip seperti Google Lens, menggunakan MobileNet sebagai feature extractor dan dataset 33.000 gambar produk.',
+      image: '/assets/images/google_lens.png',
+      category: 'Computer Vision',
+      tags: ['YOLOv8', 'TensorRT', 'MLOps', 'Edge Deployment'],
+      codeHref: 'https://github.com/haldies/vision-quality-inspector',
+      liveHref: 'https://demo.haldies.com/vision-quality'
+    },
+    {
+      id: 3,
+      title: 'Image classification Skin Type',
+      description: 'Membangun model klasifikasi citra untuk mengidentifikasi tipe kulit manusia menggunakan CNN, dengan akurasi mencapai 92% pada dataset yang beragam.',
+      image: '/assets/images/CSkin_Skin_Classification.webp',
+      category: 'Machine Learning',
+      tags: ['image classification', 'CNN', 'TensorFlow', 'Vit', 'Flask'],
+      codeHref: 'https://github.com/haldies/personalization-engine',
+      liveHref: 'https://demo.haldies.com/personalization'
+    }
+  ];
+
 
 const ProjectsShowcase = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -115,19 +68,13 @@ const ProjectsShowcase = () => {
         />
       </Helmet>
       <Header />
-      <section className="pt-48 pb-12 px-4 sm:px-6 lg:px-8">
+      <section className="pt-36 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1 text-xs uppercase tracking-[0.3em] text-muted-foreground">
-              Gerhardien Labs
-            </span>
             <h1 className="mt-6 mb-4 text-4xl font-semibold text-foreground md:text-5xl">
               Crafting purposeful AI research and product experiments
             </h1>
-            <p className="mx-auto mb-10 max-w-3xl text-lg text-muted-foreground md:text-xl">
-              A curated collection of lab explorations, AI experiments, and platform builds that translate emerging
-              research into elegant, real-world experiences.
-            </p>
+          
           </div>
         </div>
       </section>
@@ -148,6 +95,7 @@ const ProjectsShowcase = () => {
               description={project.description}
               tags={project.tags}
               category={project.category}
+              detailHref={project.detailHref}
               codeHref={project.codeHref}
               liveHref={project.liveHref}
             />

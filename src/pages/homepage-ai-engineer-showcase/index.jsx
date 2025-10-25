@@ -5,6 +5,7 @@ import HeroSection from './components/HeroSection';
 import AchievementBadges from './components/AchievementBadges';
 import ProjectShowcase from './components/ProjectShowcase';
 import TikTokIntegration from './components/TikTokIntegration';
+import FooterCTA from '../../components/ui/FooterCTA';
 
 const HomepageAIEngineerShowcase = () => {
   useEffect(() => {
@@ -61,37 +62,7 @@ const HomepageAIEngineerShowcase = () => {
         <TikTokIntegration />
 
         {/* Footer CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-slate-100 via-white to-slate-100 border-t border-slate-200/70">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground mb-4">
-              Ready to Build the Future with AI?
-            </h2>
-            <p className="text-lg text-text-secondary mb-10 max-w-2xl mx-auto">
-              Let's collaborate on thoughtful AI solutions that create meaningful impact.
-              From concept to deployment, I'm here to help bring your vision to life.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/contact"
-                className="inline-flex items-center space-x-2 px-8 py-4 bg-foreground text-white rounded-full font-medium hover:bg-foreground/90 transition-colors text-base"
-              >
-                <span>Start Your AI Project</span>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-              <a
-                href="/ai-playground"
-                className="inline-flex items-center space-x-2 px-8 py-4 border border-slate-300 text-foreground rounded-full font-medium hover:bg-slate-100 transition-colors text-base"
-              >
-                <span>Explore AI Playground</span>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </section>
+        <FooterCTA />
       </main>
     </div>
   );

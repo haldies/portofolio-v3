@@ -15,7 +15,7 @@ const ProjectShowcase = () => {
       image: '/assets/Projekan/llmmaganghub.png',
       category: 'Large Language Model',
       tags: ['Llm', 'React.js', 'tailwind', 'vite'],
-      codeHref: 'https://github.com/haldies/maganghub-llm',
+      detailHref: '/projects/llm-maganghub',
       liveHref: 'https://maganghub-genz.vercel.app'
     },
     {
@@ -32,7 +32,7 @@ const ProjectShowcase = () => {
       id: 3,
       title: 'Image classification Skin Type',
       description: 'Membangun model klasifikasi citra untuk mengidentifikasi tipe kulit manusia menggunakan CNN, dengan akurasi mencapai 92% pada dataset yang beragam.',
-      image: '/assets/images/logobangkit.png',
+      image: '/assets/images/CSkin_Skin_Classification.webp',
       category: 'Machine Learning',
       tags: ['image classification', 'CNN', 'TensorFlow', 'Vit', 'Flask'],
       codeHref: 'https://github.com/haldies/personalization-engine',
@@ -40,7 +40,7 @@ const ProjectShowcase = () => {
     }
   ];
 
-  // Compute categories and filtered list
+
   const categories = useMemo(
     () => ['All', ...Array.from(new Set(projects?.map(p => p?.category).filter(Boolean)))],
     [projects]
@@ -78,17 +78,17 @@ const ProjectShowcase = () => {
               <ProjectCard
                 key={project?.id}
                 image={project?.image}
-                title={project?.title}
-                description={project?.description}
-                tags={project?.tags}
-                category={project?.category}
-                codeHref={project?.codeHref}
-                liveHref={project?.liveHref}
-              />
-            ))}
+              title={project?.title}
+              description={project?.description}
+              tags={project?.tags}
+              category={project?.category}
+              detailHref={project?.detailHref}
+              codeHref={project?.codeHref}
+              liveHref={project?.liveHref}
+            />
+          ))}
           </div>
 
-          {/* View All Projects CTA */}
           <div className="text-center mt-12">
             <Button
               variant="outline"

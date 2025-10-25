@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import Header from '../../components/ui/Header';
 import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
+import FooterCTA from '../../components/ui/FooterCTA';
 import TimelineItem from './components/TimelineItem';
 import SkillsAssessment from './components/SkillsAssessment';
 import CertificationBadges from './components/CertificationBadges';
@@ -355,40 +356,22 @@ const ProfessionalJourneyAchievements = () => {
           )}
         </div>
       </section>
-      {/* Call to Action */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-16">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-brand-gradient rounded-brand-lg p-8 md:p-12 text-center text-white">
-            <h2 className="text-3xl font-bold mb-4">Ready to Collaborate?</h2>
-            <p className="text-xl mb-8 opacity-90">
-              Let's discuss how my AI/ML expertise can contribute to your next project or team.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                variant="secondary"
-                size="lg"
-                iconName="MessageCircle"
-                iconPosition="left"
-                asChild
-              >
-                <a href="/contact">
-                  Start a Conversation
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                iconName="Download"
-                iconPosition="left"
-                onClick={() => setActiveSection('download')}
-                className="bg-white/10 border-white/20 text-white hover:bg-white/20"
-              >
-                Download CV
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FooterCTA
+        title="Ready to Collaborate?"
+        description="Let's discuss how my AI/ML expertise can contribute to your next project or team."
+        primaryAction={{
+          href: '/contact',
+          label: 'Start a Conversation',
+          icon: <Icon name="MessageCircle" size={18} />
+        }}
+        secondaryAction={{
+          label: 'Download CV',
+          onClick: () => setActiveSection('download'),
+          icon: <Icon name="Download" size={18} />,
+          type: 'button'
+        }}
+        containerClassName="max-w-4xl"
+      />
 
     </div>
   );

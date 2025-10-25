@@ -132,10 +132,6 @@ const KnowledgeHubEducationalContent = () => {
       <main className="pb-24">
         <header className="border-b border-border/60 bg-card/70 backdrop-blur">
           <div className="mx-auto max-w-6xl px-6 py-16 text-center sm:px-8">
-            <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-accent">
-              <Icon name="BookOpen" size={16} />
-              Knowledge Hub
-            </span>
             <h1 className="mt-6 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
               Kurasi Belajar AI Satu Halaman
             </h1>
