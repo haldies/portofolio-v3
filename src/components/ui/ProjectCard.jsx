@@ -7,6 +7,7 @@ const ProjectCard = ({
   image,
   title,
   description,
+  year,
   tags = [],
   category,
   className,
@@ -17,18 +18,19 @@ const ProjectCard = ({
   codeHref,
   detailLabel = 'Detail Project',
   liveLabel = 'Live Demo',
-  detailIcon = 'FileText',
+  detailIcon,
   liveIcon = 'ExternalLink',
   children
 }) => {
   const detailLink = detailHref || codeHref;
-  const renderActionButton = (href, label, iconName) => {
+  const renderActionButton = (href, label, { iconName } = {}) => {
     if (!href) return null;
     const isInternalLink = href.startsWith('/');
+    const buttonProps = iconName ? { iconName } : {};
 
     if (isInternalLink) {
       return (
-        <Button variant="outline" size="sm" iconName={iconName} asChild>
+        <Button variant="outline" size="sm" {...buttonProps} asChild>
           <a href={href}>{label}</a>
         </Button>
       );
@@ -38,7 +40,7 @@ const ProjectCard = ({
       <Button
         variant="outline"
         size="sm"
-        iconName={iconName}
+        {...buttonProps}
         onClick={() => {
           if (typeof window !== 'undefined') {
             window.open(href, '_blank', 'noopener,noreferrer');
@@ -64,8 +66,13 @@ const ProjectCard = ({
           className={cn('h-full w-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-105', imageClassName)}
         />
         {category && (
-          <span className="absolute top-7 left-6 rounded-full bg-background/80 px-3 py-1 text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground backdrop-blur">
+          <span className="absolute top-7 left-6 rounded-full bg-foreground/80 px-3 py-1 text-xs font-medium uppercase tracking-[0.3em] text-white backdrop-blur">
             {category}
+          </span>
+        )}
+        {year && (
+          <span className="absolute top-7 right-6 rounded-full bg-primary/90 px-3 py-1 text-xs font-semibold text-primary-foreground shadow-sm backdrop-blur">
+            {year}
           </span>
         )}
       </div>
@@ -88,8 +95,8 @@ const ProjectCard = ({
         )}
         {(detailLink || liveHref) && (
           <div className="mt-6 flex flex-wrap gap-2">
-            {renderActionButton(detailLink, detailLabel, detailIcon)}
-            {renderActionButton(liveHref, liveLabel, liveIcon)}
+            {renderActionButton(detailLink, detailLabel, { iconName: detailIcon })}
+            {renderActionButton(liveHref, liveLabel, { iconName: liveIcon })}
           </div>
         )}
         {children}

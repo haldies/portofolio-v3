@@ -116,16 +116,7 @@ const SocialConnect = () => {
                 {platform?.description}
               </p>
 
-              {/* Recent Activity */}
-              <div className="bg-muted rounded-brand p-4">
-                <div className="flex items-center space-x-2 mb-2">
-                  <Icon name="MessageSquare" size={14} className="text-accent" />
-                  <span className="text-sm font-medium text-foreground">Recent Activity</span>
-                </div>
-                <p className="text-sm text-text-secondary leading-relaxed">
-                  {platform?.recentPost}
-                </p>
-              </div>
+         
             </div>
           ))}
         </div>

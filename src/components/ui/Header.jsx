@@ -101,7 +101,7 @@ const Header = () => {
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <div className="lg:hidden">
+                    <div className="lg:hidden ml-auto">
                         <Button
                             variant="ghost"
                             size="icon"

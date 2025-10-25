@@ -4,55 +4,20 @@ import Header from '../../components/ui/Header';
 import CategoryScroller from '../../components/ui/CategoryScroller';
 import ProjectCard from '../../components/ui/ProjectCard';
 import FooterCTA from '../../components/ui/FooterCTA';
-
-  const projects = [
-    {
-      id: 1,
-      title: 'MagangHub LLM ',
-      description: 'Implementasi Large Language Model (LLM) untuk platform MagangHub guna meningkatkan interaksi pengguna melalui fitur  rekomendasi lowongan berbasis AI.',
-      image: '/assets/Projekan/llmmaganghub.png',
-      category: 'Large Language Model',
-      tags: ['Llm', 'React.js', 'tailwind', 'vite'],
-      detailHref: '/projects/llm-maganghub',
-      liveHref: 'https://maganghub-genz.vercel.app'
-    },
-    {
-      id: 2,
-      title: 'Google lens clone',
-      description: 'Mengembangkan fitur pencarian gambar mirip seperti Google Lens, menggunakan MobileNet sebagai feature extractor dan dataset 33.000 gambar produk.',
-      image: '/assets/images/google_lens.png',
-      category: 'Computer Vision',
-      tags: ['YOLOv8', 'TensorRT', 'MLOps', 'Edge Deployment'],
-      detailHref: '/projects/google-lens-clone',
-      codeHref: 'https://github.com/haldies/vision-quality-inspector',
-      liveHref: 'https://demo.haldies.com/vision-quality'
-    },
-    {
-      id: 3,
-      title: 'Image classification Skin Type',
-      description: 'Membangun model klasifikasi citra untuk mengidentifikasi tipe kulit manusia menggunakan CNN, dengan akurasi mencapai 92% pada dataset yang beragam.',
-      image: '/assets/images/CSkin_Skin_Classification.webp',
-      category: 'Machine Learning',
-      tags: ['image classification', 'CNN', 'TensorFlow', 'Vit', 'Flask'],
-      detailHref: '/projects/image-classification-skin-type',
-      codeHref: 'https://github.com/haldies/personalization-engine',
-      liveHref: 'https://demo.haldies.com/personalization'
-    }
-  ];
-
+import aiEngineerProjects from '../../data/aiEngineerProjects';
 
 const ProjectsShowcase = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   const categories = useMemo(
-    () => ['All', ...Array.from(new Set(projects.map(project => project.category)))],
+    () => ['All', ...Array.from(new Set(aiEngineerProjects.map(project => project.category)))],
     []
   );
 
   const filteredProjects = useMemo(
     () => (selectedCategory === 'All'
-      ? projects
-      : projects.filter(project => project.category === selectedCategory)),
+      ? aiEngineerProjects
+      : aiEngineerProjects.filter(project => project.category === selectedCategory)),
     [selectedCategory]
   );
 
@@ -91,12 +56,13 @@ const ProjectsShowcase = () => {
         <div className="mx-auto grid max-w-7xl gap-3 md:grid-cols-2 md:gap-3 xl:grid-cols-3">
           {filteredProjects.map((project) => (
             <ProjectCard
-              key={project.id}
-              image={project.image}
-              title={project.title}
-              description={project.description}
-              tags={project.tags}
-              category={project.category}
+          key={project.id}
+          image={project.image}
+          title={project.title}
+          description={project.description}
+          year={project.year}
+          tags={project.tags}
+          category={project.category}
               detailHref={project.detailHref}
               codeHref={project.codeHref}
               liveHref={project.liveHref}
