@@ -1,17 +1,22 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
+import { useLocation } from 'react-router-dom';
 import Header from '../../components/ui/Header';
 import HeroSection from './components/HeroSection';
 import AchievementBadges from './components/AchievementBadges';
 import ProjectShowcase from './components/ProjectShowcase';
+import ProjectsSection from './components/ProjectsSection';
 import TikTokIntegration from './components/TikTokIntegration';
 import FooterCTA from '../../components/ui/FooterCTA';
 
 const HomepageAIEngineerShowcase = () => {
+  const location = useLocation();
+
   useEffect(() => {
 
     const handleSmoothScroll = (e) => {
-      const target = e?.target?.getAttribute('href');
+      const clickable = e?.target?.closest ? e.target.closest('a') : null;
+      const target = clickable?.getAttribute('href');
       if (target && target?.startsWith('#')) {
         e?.preventDefault();
         const element = document.querySelector(target);
@@ -25,23 +30,36 @@ const HomepageAIEngineerShowcase = () => {
     return () => document.removeEventListener('click', handleSmoothScroll);
   }, []);
 
+  useEffect(() => {
+    if (!location.hash) return;
+
+    const id = window.setTimeout(() => {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 80);
+
+    return () => window.clearTimeout(id);
+  }, [location]);
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Haldies Gerhardien Pasya - AI Engineer & Educator | Making AI Accessible</title>
+        <title>Gerhardien Studio - Website & AI Automation Agency</title>
         <meta
           name="description"
-          content="AI Engineer specializing in Machine Learning, Computer Vision, and NLP. Top 10% Bangkit Academy graduate creating accessible AI education for 50K+ learners worldwide."
+          content="Personal web and AI automation studio by Haldies Gerhardien Pasya. Building polished websites, internal tools, and practical automations for growing businesses."
         />
         <meta
           name="keywords"
-          content="AI Engineer, Machine Learning, Computer Vision, NLP, Bangkit Academy, TikTok AI Education, Haldies Pasya"
+          content="website agency, AI automation, web development, automation consultant, Haldies Gerhardien Pasya"
         />
         <meta name="author" content="Haldies Gerhardien Pasya" />
-        <meta property="og:title" content="Haldies Gerhardien Pasya - AI Engineer & Educator" />
+        <meta property="og:title" content="Gerhardien Studio - Website & AI Automation Agency" />
         <meta
           property="og:description"
-          content="Making AI Work for Real Problems. Explore interactive AI demos, educational content, and innovative projects."
+          content="Professional, personal website and AI automation services for businesses that want cleaner systems and sharper digital presence."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://haldies.dev/home" />
@@ -49,20 +67,25 @@ const HomepageAIEngineerShowcase = () => {
       </Helmet>
       <Header />
       <main className="relative">
-        {/* Hero Section with Interactive AI Demo */}
         <HeroSection />
-
-
-        {/* Featured Project Showcase */}
         <ProjectShowcase />
-        {/* Achievement Badges with Hover Details */}
+        <ProjectsSection />
         <AchievementBadges />
-
-        {/* TikTok Content Integration */}
         <TikTokIntegration />
-
-        {/* Footer CTA Section */}
-        <FooterCTA />
+        <FooterCTA
+          title="Punya website atau workflow yang perlu dibereskan?"
+          description="Ceritakan kondisi bisnismu. Saya bantu petakan solusi yang realistis: mulai dari landing page, dashboard internal, sampai automasi AI yang benar-benar kepakai."
+          primaryAction={{
+            href: '/contact',
+            label: 'Mulai Konsultasi',
+          }}
+          secondaryAction={{
+            href: 'https://wa.me/6289632579100',
+            label: 'Chat WhatsApp',
+            target: '_blank',
+            rel: 'noreferrer',
+          }}
+        />
       </main>
     </div>
   );

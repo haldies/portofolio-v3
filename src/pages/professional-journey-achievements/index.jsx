@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Header from '../../components/ui/Header';
-import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
-import FooterCTA from '../../components/ui/FooterCTA';
 import TimelineItem from './components/TimelineItem';
 import SkillsAssessment from './components/SkillsAssessment';
 import CertificationBadges from './components/CertificationBadges';
-import TestimonialsSection from './components/TestimonialsSection';
-import DownloadableCV from './components/DownloadableCV';
 
 import TranscriptApp from './components/TranskriptApp';
 import { BookOpen, FileText } from 'lucide-react';
@@ -213,8 +209,7 @@ const ProfessionalJourneyAchievements = () => {
     { id: 'skills', name: 'Skills Assessment', icon: 'TrendingUp' },
     { id: 'certifications', name: 'Certifications', icon: 'Award' },
     { id: 'testimonials', name: 'Transcript', icon: 'MessageSquare' },
-    { id: 'download', name: 'Download CV', icon: 'Download' }
-  ];
+  ]
 
   if (isLoading) {
     return (
@@ -239,9 +234,9 @@ const ProfessionalJourneyAchievements = () => {
       <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
               Building Excellence in
-              <span className="text-accent block">AI & Machine Learning</span>
+              <span className="text-primary block">AI & Machine Learning</span>
             </h1>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
               From academic foundations to industry recognition, explore my journey of continuous learning,
@@ -276,7 +271,7 @@ const ProfessionalJourneyAchievements = () => {
           {activeSection === 'timeline' && (
             <div>
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-foreground mb-4">Professional Timeline</h2>
+                <h2 className="text-3xl font-bold text-primary mb-4">Professional Timeline</h2>
                 <p className="text-text-secondary max-w-2xl mx-auto">
                   Key milestones, achievements, and learning experiences that shaped my AI/ML expertise
                 </p>
@@ -296,7 +291,7 @@ const ProfessionalJourneyAchievements = () => {
           {activeSection === 'skills' && (
             <div>
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-foreground mb-4">Skills Assessment</h2>
+                <h2 className="text-3xl font-bold text-primary mb-4">Skills Assessment</h2>
                 <p className="text-text-secondary max-w-2xl mx-auto">
                   Technical proficiency across programming languages, frameworks, and tools
                 </p>
@@ -308,7 +303,7 @@ const ProfessionalJourneyAchievements = () => {
           {activeSection === 'certifications' && (
             <div>
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-foreground mb-4">Certifications & Badges</h2>
+                <h2 className="text-3xl font-bold text-primary mb-4">Certifications & Badges</h2>
                 <p className="text-text-secondary max-w-2xl mx-auto">
                   Professional credentials from leading technology companies and educational platforms
                 </p>
@@ -321,18 +316,18 @@ const ProfessionalJourneyAchievements = () => {
           {activeSection === 'testimonials' && (
             <div>
               {/* Header */}
-              <header className="bg-white shadow-lg border-b-4 border-blue-600">
+              <header className="bg-card shadow-brand-large border-b-4 border-primary">
                 <div className="max-w-7xl mx-auto px-4 py-8">
                   <div className="text-center">
                     <div className="flex justify-center mb-4">
-                      <div className="p-4 bg-blue-600 rounded-full">
-                        <BookOpen className="w-8 h-8 text-white" />
+                      <div className="p-4 bg-primary rounded-full">
+                        <BookOpen className="w-8 h-8 text-primary-foreground" />
                       </div>
                     </div>
-                    <h1 className="text-4xl font-bold text-gray-900 mb-2">
+                    <h1 className="text-4xl font-bold text-primary mb-2">
                       Professional Journey & Achievements
                     </h1>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    <p className="text-xl text-text-secondary max-w-3xl mx-auto">
                       Comprehensive academic and professional development records showcasing excellence in Computer Science,
                       AI/ML specialization, and continuous learning through distinguished programs.
                     </p>
@@ -343,35 +338,9 @@ const ProfessionalJourneyAchievements = () => {
             </div>
           )}
 
-          {activeSection === 'download' && (
-            <div>
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-foreground mb-4">Download CV</h2>
-                <p className="text-text-secondary max-w-2xl mx-auto">
-                  Get my resume in your preferred format, customized for different roles and industries
-                </p>
-              </div>
-              <DownloadableCV />
-            </div>
-          )}
         </div>
       </section>
-      <FooterCTA
-        title="Ready to Collaborate?"
-        description="Let's discuss how my AI/ML expertise can contribute to your next project or team."
-        primaryAction={{
-          href: '/contact',
-          label: 'Start a Conversation',
-          icon: <Icon name="MessageCircle" size={18} />
-        }}
-        secondaryAction={{
-          label: 'Download CV',
-          onClick: () => setActiveSection('download'),
-          icon: <Icon name="Download" size={18} />,
-          type: 'button'
-        }}
-        containerClassName="max-w-4xl"
-      />
+
 
     </div>
   );

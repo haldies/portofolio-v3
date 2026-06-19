@@ -73,7 +73,7 @@ const ContactOptions = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">
             Choose Your Collaboration Path
           </h2>
           <p className="text-lg text-text-secondary max-w-3xl mx-auto">
@@ -98,7 +98,7 @@ const ContactOptions = () => {
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-semibold text-foreground mb-2">
+              <h3 className="text-xl font-semibold text-primary mb-2">
                 {option?.title}
               </h3>
               <p className="text-text-secondary mb-4">
@@ -120,7 +120,7 @@ const ContactOptions = () => {
               {/* Expandable Details */}
               {selectedOption === option?.id && (
                 <div className="border-t border-border pt-4 mt-4">
-                  <h4 className="font-medium text-foreground mb-3">What I'll provide:</h4>
+                  <h4 className="font-medium text-primary mb-3">What I'll provide:</h4>
                   <ul className="space-y-2">
                     {option?.features?.map((feature, index) => (
                       <li key={index} className="flex items-center space-x-2 text-sm text-text-secondary">

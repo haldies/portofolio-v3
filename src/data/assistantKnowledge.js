@@ -39,7 +39,7 @@ export const assistantKnowledge = [
     intent: 'project_maganhub',
     keywords: ['maganghub', 'llm', 'magang', 'project detail'],
     response:
-      'LLM MagangHub adalah eksperimen conversational agent untuk membantu mahasiswa menavigasi magang dan job matching. Fitur utamanya termasuk sistem rekomendasi lowongan, kurasi skill gap, dan mode percakapan persona. Kamu bisa kunjungi halaman Projects lalu pilih MagangHub untuk cerita lengkapnya.'
+      'MagangHub Tracker adalah aplikasi untuk membantu peserta MagangHub memantau lowongan, kuota, jumlah pelamar, dan menyimpan kandidat posisi sebelum apply. Ada eksperimen AI/LLM untuk rekomendasi lowongan, tapi inti produknya adalah tracker dan discovery tool MagangHub. Kamu bisa kunjungi halaman Projects lalu pilih MagangHub untuk cerita lengkapnya.'
   },
   {
     intent: 'collaboration',
@@ -93,7 +93,7 @@ export const assistantKnowledge = [
 
 export const assistantQuickPrompts = [
   'Apa spesialisasi AI yang lagi difokuskan?',
-  'Bisa jelasin proyek LLM MagangHub?',
+  'Bisa jelasin proyek MagangHub Tracker?',
   'Cara terbaik untuk mulai kolaborasi sama Haldies?',
   'Sertifikasi apa saja yang sudah diselesaikan?',
   'Di mana bisa download CV terbaru?'

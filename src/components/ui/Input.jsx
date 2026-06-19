@@ -57,7 +57,7 @@ const Input = React.forwardRef(({
                     htmlFor={inputId}
                     className={cn(
                         "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
-                        error ? "text-destructive" : "text-foreground"
+                        error ? "text-destructive" : "text-primary"
                     )}
                 >
                     {label}

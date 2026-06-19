@@ -12,18 +12,15 @@ const ContactForm = () => {
     company: "",
     role: "",
     message: "",
-    newsletter: false,
-    updates: false,
   });
 
   const inquiryTypes = [
-    { value: "hiring", label: "Hiring & Recruitment" },
-    { value: "collaboration", label: "Project Collaboration" },
-    { value: "consulting", label: "AI Consulting" },
-    { value: "mentorship", label: "Learning & Mentorship" },
-    { value: "speaking", label: "Speaking Engagements" },
-    { value: "media", label: "Media & Interviews" },
-    { value: "general", label: "General Inquiry" },
+    { value: "website", label: "Website / Landing Page" },
+    { value: "automation", label: "AI Automation" },
+    { value: "internal-tools", label: "Dashboard / Internal Tools" },
+    { value: "integration", label: "System Integration" },
+    { value: "maintenance", label: "Maintenance & Optimization" },
+    { value: "general", label: "General Discussion" },
   ];
 
   const handleInputChange = (field, value) => {
@@ -34,7 +31,7 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     await new Promise((resolve) => setTimeout(resolve, 1500));
-    alert("Thanks for reaching out! I’ll reply within 24 hours.");
+    alert("Thanks for reaching out! I'll reply within 24 hours.");
     setIsSubmitting(false);
     setFormData({
       inquiryType: "",
@@ -43,31 +40,31 @@ const ContactForm = () => {
       company: "",
       role: "",
       message: "",
-      newsletter: false,
-      updates: false,
     });
   };
 
   return (
     <section className="py-16 lg:py-20 bg-muted/30">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
-        {/* Header */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-foreground mb-2">
-            Let’s Start the Conversation
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.32em] text-muted-foreground">
+            Start a Project
+          </p>
+          <h2 className="text-3xl font-bold text-primary mb-2">
+            Ceritakan project yang ingin dibereskan
           </h2>
           <p className="text-text-secondary">
-            Fill out the form below - I’ll get back to you soon.
+            Isi singkat saja. Saya akan bantu baca kebutuhanmu dan balas dengan langkah berikutnya.
           </p>
         </div>
 
         <form
           onSubmit={handleSubmit}
-          className="bg-card border border-border rounded-2xl p-6 lg:p-8 shadow-brand-subtle space-y-6"
+          className="bg-card border border-border rounded-lg p-6 lg:p-8 shadow-brand-subtle space-y-6"
         >
           <Select
-            label="Inquiry Type"
-            placeholder="Select inquiry type"
+            label="Project Type"
+            placeholder="Pilih kebutuhan utama"
             options={inquiryTypes}
             value={formData.inquiryType}
             onChange={(value) => handleInputChange("inquiryType", value)}
@@ -77,7 +74,7 @@ const ContactForm = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Input
               label="Full Name"
-              placeholder="Enter your name"
+              placeholder="Nama kamu"
               value={formData.name}
               onChange={(e) => handleInputChange("name", e.target.value)}
               required
@@ -94,27 +91,27 @@ const ContactForm = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Input
-              label="Company / Organization"
-              placeholder="Your company (optional)"
+              label="Business / Brand"
+              placeholder="Nama bisnis atau brand"
               value={formData.company}
               onChange={(e) => handleInputChange("company", e.target.value)}
             />
             <Input
-              label="Role / Title"
-              placeholder="e.g., Student, Recruiter, Engineer"
+              label="Timeline / Budget"
+              placeholder="Contoh: bulan ini, 2 minggu, retainer"
               value={formData.role}
               onChange={(e) => handleInputChange("role", e.target.value)}
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-foreground mb-1">
+            <label className="block text-sm font-medium text-primary mb-1">
               Message
             </label>
             <textarea
               rows={5}
               className="w-full px-3 py-2 border border-border rounded-brand focus:outline-none focus:ring-2 focus:ring-accent resize-none"
-              placeholder="Write your message here..."
+              placeholder="Ceritakan tujuan, masalah yang ingin diselesaikan, dan referensi jika ada..."
               value={formData.message}
               onChange={(e) => handleInputChange("message", e.target.value)}
               required
@@ -130,7 +127,7 @@ const ContactForm = () => {
               iconName="Send"
               iconPosition="left"
             >
-              Send Message
+              Send Project Brief
             </Button>
           </div>
         </form>
@@ -139,7 +136,7 @@ const ContactForm = () => {
           <p>
             Prefer email?{" "}
             <a
-              href="mailto:haldies.pasya@example.com"
+              href="mailto:gerhardien.p@gmail.com"
               className="text-accent hover:underline"
             >
               gerhardien.p@gmail.com

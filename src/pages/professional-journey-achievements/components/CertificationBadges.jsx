@@ -1,31 +1,11 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useCallback, useMemo, useState, useEffect } from 'react';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 
-const certificateFiles = import.meta.glob('../../../../public/assets/certificate/*.pdf', {
-  eager: true,
+const certificateFiles = import.meta.glob('../../../../public/assets/certificate/jpg/*.jpg', {
+  eager: false,
   as: 'url',
 });
-
-let pdfjsLoaderPromise;
-
-const loadPdfPreviewer = async () => {
-  if (!pdfjsLoaderPromise) {
-    pdfjsLoaderPromise = Promise.all([
-      import('pdfjs-dist'),
-      import('pdfjs-dist/build/pdf.worker.min.mjs?url').catch(() =>
-        import('pdfjs-dist/build/pdf.worker.mjs?url'),
-      ),
-    ]).then(([pdfjsLib, workerModule]) => {
-      if (pdfjsLib?.GlobalWorkerOptions) {
-        pdfjsLib.GlobalWorkerOptions.workerSrc = workerModule?.default;
-      }
-      return pdfjsLib;
-    });
-  }
-  return pdfjsLoaderPromise;
-};
 
 const KNOWN_ORGANIZATIONS = [
   'AWS',
@@ -68,7 +48,7 @@ const LEARNING_PARTNERS = [
 
 const formatCertificateName = (fileName = '') => {
   const cleaned = fileName
-    .replace(/\.pdf$/i, '')
+    .replace(/\.jpg$/i, '')
     .replace(/[\[\]]/g, '')
     .replace(/[_-]+/g, ' ')
     .replace(/\s+/g, ' ')
@@ -90,7 +70,7 @@ const normalizeCertificateUrl = (url = '') => {
     return url;
   }
 
-  const assetPathMatch = url.match(/assets\/certificate\/.*$/);
+  const assetPathMatch = url.match(/assets\/certificate\/jpg\/.*$/);
   if (assetPathMatch) {
     return `/${assetPathMatch[0].replace(/\/\/+/g, '/')}`;
   }
@@ -99,124 +79,82 @@ const normalizeCertificateUrl = (url = '') => {
 };
 
 const CertificateCard = React.memo(({ certificate, onOpen }) => {
-  const containerRef = useRef(null);
-  const [canRenderPreview, setCanRenderPreview] = useState(false);
-  const [previewAttempted, setPreviewAttempted] = useState(false);
-  const [previewSrc, setPreviewSrc] = useState(null);
-  const [previewError, setPreviewError] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
+  const [shouldLoad, setShouldLoad] = useState(false);
+  const imgRef = React.useRef(null);
 
-  useEffect(() => {
-    const element = containerRef.current;
-    if (!element) return undefined;
+  React.useEffect(() => {
+    if (!imgRef.current) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setCanRenderPreview(true);
+            setShouldLoad(true);
             observer.disconnect();
           }
         });
       },
-      { threshold: 0.25 },
+      {
+        rootMargin: '50px', // Load 50px before entering viewport
+        threshold: 0.01,
+      }
     );
 
-    observer.observe(element);
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (canRenderPreview) {
-      setPreviewAttempted(true);
-    }
-  }, [canRenderPreview]);
-
-  useEffect(() => {
-    if (!previewAttempted || previewSrc || previewError) return undefined;
-    let cancelled = false;
-
-    const renderPreview = async () => {
-      try {
-        const pdfjsLib = await loadPdfPreviewer();
-        if (!pdfjsLib?.getDocument) {
-          throw new Error('PDF loader unavailable');
-        }
-        const loadingTask = pdfjsLib.getDocument(certificate.url);
-        const pdf = await loadingTask.promise;
-        const page = await pdf.getPage(1);
-        const viewport = page.getViewport({ scale: 1.3 });
-
-        const canvas = document.createElement('canvas');
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
-        const context = canvas.getContext('2d', { alpha: false });
-
-        await page.render({ canvasContext: context, viewport }).promise;
-
-        const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
-        if (!cancelled) {
-          setPreviewSrc(dataUrl);
-        }
-        loadingTask.destroy();
-      } catch (error) {
-        if (!cancelled) {
-          setPreviewError(true);
-        }
-      }
-    };
-
-    renderPreview();
+    observer.observe(imgRef.current);
 
     return () => {
-      cancelled = true;
+      observer.disconnect();
     };
-  }, [certificate.url, previewAttempted, previewError, previewSrc]);
+  }, []);
 
   return (
     <div
-      ref={containerRef}
+      ref={imgRef}
       className="group flex flex-col overflow-hidden rounded-brand-lg border border-border bg-background shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg"
     >
       <div className="relative h-48 overflow-hidden bg-muted">
-        {previewSrc ? (
-          <div
-            className="h-full w-full bg-center bg-cover"
-            style={{ backgroundImage: `url(${previewSrc})` }}
-          />
-        ) : previewAttempted && previewError ? (
-          <div className="flex h-full w-full items-center justify-center bg-card px-4 text-center text-xs text-text-secondary">
-            Preview unavailable.
-            <button
-              type="button"
-              className="ml-1 text-accent underline underline-offset-2"
-              onClick={() => onOpen(certificate.url)}
-            >
-              Open PDF
-            </button>
-          </div>
+        {!imageError ? (
+          <>
+            {!imageLoaded && (
+              <div className="flex h-full w-full items-center justify-center bg-card">
+                <div className="h-24 w-24 animate-pulse rounded-full bg-muted-foreground/20" />
+              </div>
+            )}
+            {shouldLoad && (
+              <img
+                src={certificate.url}
+                alt={certificate.displayName}
+                className={`h-full w-full object-cover transition-opacity duration-300 ${
+                  imageLoaded ? 'opacity-100' : 'opacity-0'
+                }`}
+                onLoad={() => setImageLoaded(true)}
+                onError={() => setImageError(true)}
+                loading="lazy"
+                decoding="async"
+              />
+            )}
+          </>
         ) : (
-          <div className="flex h-full w-full items-center justify-center bg-card">
-            <div className="h-24 w-24 animate-pulse rounded-full bg-muted-foreground/20" />
+          <div className="flex h-full w-full items-center justify-center bg-card px-4 text-center text-xs text-muted-foreground">
+            Image unavailable
           </div>
         )}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
         <div className="absolute top-3 right-3 rounded-full border border-accent/20 bg-background/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-accent shadow-sm backdrop-blur">
-          PDF
+          Certificate
         </div>
       </div>
 
       <div className="flex flex-1 flex-col p-4">
         <div className="flex items-start justify-between gap-3">
-          <h3 className="text-base font-semibold text-foreground">
+          <h3 className="text-base font-semibold text-primary">
             {certificate.displayName}
           </h3>
         </div>
-        <p className="mt-2 break-all text-xs text-text-secondary">
-          {certificate.fileName}
-        </p>
 
-        <div className="mt-auto space-y-2 pt-4">
+        <div className="mt-auto pt-4">
           <Button
             variant="outline"
             size="sm"
@@ -227,18 +165,6 @@ const CertificateCard = React.memo(({ certificate, onOpen }) => {
           >
             View Certificate
           </Button>
-          <Button
-            variant="ghost"
-            size="xs"
-            iconName="Download"
-            iconPosition="left"
-            asChild
-            className="w-full justify-center text-xs"
-          >
-            <a href={certificate.url} download>
-              Download PDF
-            </a>
-          </Button>
         </div>
       </div>
     </div>
@@ -246,42 +172,57 @@ const CertificateCard = React.memo(({ certificate, onOpen }) => {
 });
 
 const CertificationBadges = () => {
+  const [certificates, setCertificates] = useState([]);
+  const [organizations, setOrganizations] = useState(new Set());
+  const [isLoading, setIsLoading] = useState(true);
+
   const marqueeItems = useMemo(
     () => [...LEARNING_PARTNERS, ...LEARNING_PARTNERS],
     [],
   );
 
-  const { certificates, organizations } = useMemo(() => {
-    const entries = Object.entries(certificateFiles || {});
+  useEffect(() => {
+    const loadCertificates = async () => {
+      try {
+        const entries = Object.entries(certificateFiles || {});
+        
+        const certificateList = await Promise.all(
+          entries.map(async ([path, importFn], index) => {
+            const url = await importFn();
+            const fileName = path.split('/').pop() || `certificate-${index + 1}.jpg`;
+            const displayName = formatCertificateName(fileName);
 
-    const certificateList = entries
-      .map(([path, url], index) => {
-        const fileName = path.split('/').pop() || `certificate-${index + 1}.pdf`;
-        const displayName = formatCertificateName(fileName);
+            return {
+              id: index + 1,
+              fileName,
+              displayName,
+              url: normalizeCertificateUrl(url),
+            };
+          })
+        );
 
-        return {
-          id: index + 1,
-          fileName,
-          displayName,
-          url: normalizeCertificateUrl(url),
-        };
-      })
-      .sort((a, b) => a.displayName.localeCompare(b.displayName));
+        certificateList.sort((a, b) => a.displayName.localeCompare(b.displayName));
 
-    const organizationSet = new Set();
-    certificateList.forEach((certificate) => {
-      const name = certificate.displayName.toLowerCase();
-      KNOWN_ORGANIZATIONS.forEach((org) => {
-        if (name.includes(org.toLowerCase())) {
-          organizationSet.add(org);
-        }
-      });
-    });
+        const organizationSet = new Set();
+        certificateList.forEach((certificate) => {
+          const name = certificate.displayName.toLowerCase();
+          KNOWN_ORGANIZATIONS.forEach((org) => {
+            if (name.includes(org.toLowerCase())) {
+              organizationSet.add(org);
+            }
+          });
+        });
 
-    return {
-      certificates: certificateList,
-      organizations: organizationSet,
+        setCertificates(certificateList);
+        setOrganizations(organizationSet);
+      } catch (error) {
+        console.error('Error loading certificates:', error);
+      } finally {
+        setIsLoading(false);
+      }
     };
+
+    loadCertificates();
   }, []);
 
   const handleOpenCertificate = useCallback((url) => {
@@ -293,7 +234,17 @@ const CertificationBadges = () => {
   const totalCertificates = certificates.length;
   const totalOrganizations = organizations.size;
   const previewCoverage = totalCertificates > 0 ? 100 : 0;
-  const storagePath = 'assets/certificate';
+  const storagePath = 'assets/certificate/jpg';
+
+  if (isLoading) {
+    return (
+      <div className="bg-card rounded-brand-lg p-6 shadow-brand-subtle border border-border">
+        <div className="flex items-center justify-center py-20">
+          <div className="h-12 w-12 animate-spin rounded-full border-4 border-accent border-t-transparent" />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-card rounded-brand-lg p-6 shadow-brand-subtle border border-border">
@@ -303,13 +254,13 @@ const CertificationBadges = () => {
             <Icon name="Award" size={20} className="text-accent" />
           </div>
           <div>
-            <h2 className="text-xl font-semibold text-foreground">Certifications & Badges</h2>
-            <p className="text-sm text-text-secondary">Professional credentials and achievements</p>
+            <h2 className="text-xl font-semibold text-primary">Certifications & Badges</h2>
+            <p className="text-sm text-muted-foreground">Professional credentials and achievements</p>
           </div>
         </div>
         <div className="text-right">
           <div className="text-2xl font-bold text-accent">{totalCertificates}</div>
-          <div className="text-sm text-text-secondary">Certifications</div>
+          <div className="text-sm text-muted-foreground">Certifications</div>
         </div>
       </div>
 
@@ -324,8 +275,8 @@ const CertificationBadges = () => {
           ))}
         </div>
       ) : (
-        <div className="rounded-brand-lg border border-dashed border-border bg-muted/30 p-10 text-center text-sm text-text-secondary">
-          No certificate PDFs found in <span className="font-medium text-foreground">{storagePath}</span>.
+        <div className="rounded-brand-lg border border-dashed border-border bg-muted/30 p-10 text-center text-sm text-muted-foreground">
+          No certificate images found in <span className="font-medium text-primary">{storagePath}</span>.
         </div>
       )}
 
@@ -333,19 +284,19 @@ const CertificationBadges = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
           <div className="rounded-brand-lg border border-accent/20 bg-card/70 p-4 text-center shadow-sm">
             <div className="text-2xl font-semibold text-accent">{totalCertificates}</div>
-            <div className="text-sm text-text-secondary">Certificates</div>
+            <div className="text-sm text-muted-foreground">Certificates</div>
           </div>
-          <div className="rounded-brand-lg border border-success/20 bg-card/70 p-4 text-center shadow-sm">
-            <div className="text-2xl font-semibold text-success">{totalOrganizations}</div>
-            <div className="text-sm text-text-secondary">Highlight Organizations</div>
+          <div className="rounded-brand-lg border border-secondary/20 bg-card/70 p-4 text-center shadow-sm">
+            <div className="text-2xl font-semibold text-secondary">{totalOrganizations}</div>
+            <div className="text-sm text-muted-foreground">Highlight Organizations</div>
           </div>
           <div className="rounded-brand-lg border border-primary/20 bg-card/70 p-4 text-center shadow-sm">
             <div className="text-2xl font-semibold text-primary">{previewCoverage}%</div>
-            <div className="text-sm text-text-secondary">Preview Coverage</div>
+            <div className="text-sm text-muted-foreground">Preview Coverage</div>
           </div>
           <div className="rounded-brand-lg border border-warning/20 bg-card/70 p-4 text-center shadow-sm">
-            <div className="text-xs font-semibold text-foreground break-all">{storagePath}</div>
-            <div className="mt-1 text-sm text-text-secondary">Storage Path</div>
+            <div className="text-xs font-semibold text-primary break-all">{storagePath}</div>
+            <div className="mt-1 text-sm text-muted-foreground">Storage Path</div>
           </div>
         </div>
       </div>

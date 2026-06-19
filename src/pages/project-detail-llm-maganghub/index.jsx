@@ -7,8 +7,8 @@ import NotFound from '../NotFound';
 
 const projectDetails = {
   'llm-maganghub': {
-    badgeLabel: 'Conversational AI',
-    title: 'MagangHub LLM Assistant',
+    badgeLabel: 'Internship Tracker',
+    title: 'MagangHub Tracker',
     summary:
       'Gak nyangka iseng-iseng bikin website malah dipakai banyak orang. Awalnya cuma mau daftar MagangHub Kemnaker sambil live TikTok, tapi proses cari lowongan dan cek kuota terasa ribet, jadi gue bikin versi sendiri yang lebih simple buat semua orang.',
     impactMetrics: [
@@ -47,22 +47,23 @@ const projectDetails = {
       'Stack ringan buat shipping cepat: React + Vite untuk front-end interaktif, Tailwind buat styling dan Gemini LLM sebagai rekomendasi lowongan makin personal.',
     videoSrc: '/assets/Projekan/video/demovideop1.mp4',
     seo: {
-      title: 'MagangHub LLM Assistant Project Detail',
+      title: 'MagangHub Tracker Project Detail',
       description:
-        'Deep dive into the MagangHub conversational AI assistant built for internship onboarding, featuring secure knowledge retrieval and an interactive demo.'
+        'Deep dive into the MagangHub tracker built to monitor internship quotas, applicants, saved opportunities, and AI-assisted recommendations.'
     },
     cta: {
       primaryLabel: 'Book a Discovery Call',
       primaryHref: '/contact',
-    secondaryLabel: 'Back to AI Playground',
-    secondaryHref: '/ai-playground'
-    }
+      secondaryLabel: 'Back to Projects',
+      secondaryHref: '/home#projects',
+      demoHref: 'https://maganghub-genz.vercel.app'
+    },
   },
   'google-lens-clone': {
     badgeLabel: 'Computer Vision',
-    title: 'Google Lens Clone - Visual Search',
+    title: 'Pencarian Produk Berbasis Gambar',
     summary:
-      'Eksperimen mengkloning pengalaman Google Lens untuk membantu pengguna menemukan produk serupa hanya dengan memotret gambar. Sistem ini memanfaatkan embedding visual agar pencarian terasa instan dan relevan.',
+      'Fitur pencarian produk menggunakan gambar untuk membantu pengguna menemukan item serupa hanya dari foto. Sistem ini memanfaatkan embedding visual agar pencarian terasa instan dan relevan.',
     impactMetrics: [
       { label: 'Search Latency', value: '~120 ms' },
       { label: 'Image Library', value: '33k products' },
@@ -92,22 +93,23 @@ const projectDetails = {
       'Frontend ringan berbasis React menangkap gambar, mengirimkannya ke service inference Node.js yang memanggil model MobileNet teroptimasi.',
     videoSrc: '',
     seo: {
-      title: 'Google Lens Clone - Project Detail',
+      title: 'Pencarian Produk Berbasis Gambar - Project Detail',
       description:
-        'Detail implementasi Google Lens Clone dengan MobileNet dan Faiss untuk pencarian produk berbasis gambar secara real-time.'
+        'Detail implementasi pencarian produk berbasis gambar dengan MobileNet untuk menemukan produk serupa secara real-time.'
     },
     cta: {
       primaryLabel: 'Schedule Vision Demo',
       primaryHref: '/contact',
-      secondaryLabel: 'Back to AI Playground',
-      secondaryHref: '/ai-playground'
+      secondaryLabel: 'Back to Projects',
+      secondaryHref: '/home#projects',
+      demoHref: 'https://demo.haldies.com/vision-quality'
     }
   },
   'image-classification-skin-type': {
     badgeLabel: 'Machine Learning',
-    title: 'Skin Type Image Classification',
+    title: 'AI Skin Analysis for Skincare Brands',
     summary:
-      'Model CNN untuk mengklasifikasikan tipe kulit manusia berdasarkan citra wajah, membantu brand skincare memberikan rekomendasi produk yang lebih personal.',
+      'Solusi analisis kulit berbasis AI untuk membantu brand skincare memahami kondisi pelanggan dari gambar wajah dan mengubahnya menjadi rekomendasi produk yang lebih personal.',
     impactMetrics: [
       { label: 'Model Accuracy', value: '80%' },
       { label: 'Inference Time', value: '180 ms' },
@@ -115,19 +117,19 @@ const projectDetails = {
     ],
     highlights: [
       {
-        title: 'Balanced Dataset Strategy',
+        title: 'Customer Insight Engine',
         description:
-          'Kurasi dataset multi-etnis dengan augmentasi adaptif agar model tidak bias terhadap warna kulit tertentu.'
+          'Mengubah gambar wajah menjadi insight tipe kulit yang bisa dipakai brand untuk segmentasi pelanggan dan rekomendasi produk.'
       },
       {
-        title: 'Explainable Predictions',
+        title: 'Explainable Recommendations',
         description:
-          'Menggunakan Grad-CAM heatmaps untuk menampilkan area wajah yang menjadi fokus model sehingga hasil lebih mudah dipercaya.'
+          'Menggunakan visual explanation agar hasil analisis lebih mudah dipahami oleh tim produk, beauty consultant, dan pengguna akhir.'
       },
       {
-        title: 'Seamless Product Hand-off',
+        title: 'Product Recommendation Hand-off',
         description:
-          'Output model langsung terhubung ke API rekomendasi produk sehingga pengguna mendapatkan rekomendasi skincare secara instan.'
+          'Output analisis dapat dihubungkan ke katalog produk sehingga brand bisa memberi rekomendasi skincare secara instan.'
       }
     ],
     techStack: [
@@ -144,22 +146,23 @@ const projectDetails = {
       'Pipeline training menggunakan TensorFlow dengan augmentasi kuat, sementara inference disajikan melalui Flask API. Dashboard React memonitor hasil klasifikasi dan mengemas rekomendasi produk ke pengguna akhir.',
     videoSrc: '',
     seo: {
-      title: 'Skin Type Classifier - Project Detail',
+      title: 'AI Skin Analysis for Skincare Brands - Project Detail',
       description:
-        'Pelajari arsitektur sistem klasifikasi tipe kulit berbasis CNN dan Grad-CAM untuk rekomendasi skincare yang lebih personal.'
+        'Pelajari solusi analisis kulit berbasis AI untuk membantu brand skincare memberi rekomendasi produk yang lebih personal.'
     },
     cta: {
       primaryLabel: 'Discuss ML Deployment',
       primaryHref: '/contact',
-      secondaryLabel: 'Back to AI Playground',
-      secondaryHref: '/ai-playground'
+      secondaryLabel: 'Back to Projects',
+      secondaryHref: '/home#projects',
+      demoHref: 'https://demo.haldies.com/personalization'
     }
   },
   'zushi-nft': {
     badgeLabel: 'Frontend Experience',
-    title: 'Zushi - NFT Landing Page',
+    title: 'Zushi Company Profile',
     summary:
-      'Landing page interaktif untuk memperkenalkan Zushi, proyek kripto yang menggabungkan narasi futuristik dengan desain neon minimalis. Dirancang agar tim marketing bisa mengkampanyekan token perdana secara cepat.',
+      'Company profile responsif untuk memperkenalkan Zushi sebagai brand digital dengan narasi futuristik, positioning bisnis yang jelas, dan pengalaman visual yang mudah dipahami calon partner.',
     impactMetrics: [
       { label: 'Time to Build', value: '7 day' }
     ],
@@ -167,7 +170,7 @@ const projectDetails = {
       {
         title: 'Immersive Storytelling',
         description:
-          'Konten hero "Introducing Zushi" dioptimasi dengan tipografi gradien dan micro-interactions untuk menanamkan rasa percaya sejak awal.'
+          'Konten utama "Introducing Zushi" dioptimasi dengan tipografi gradien dan micro-interactions untuk menanamkan rasa percaya sejak awal.'
       },
       {
         title: 'Responsive Motion Layouts',
@@ -181,20 +184,296 @@ const projectDetails = {
       'Vanilla JavaScript micro-interactions',
     ],
     problemStatement:
-      'Tim Zushi membutuhkan landing page kripto yang mampu menjelaskan diferensiasi proyek sekaligus mengajak investor awal bergabung, semuanya harus diselesaikan dalam waktu singkat.',
+      'Tim Zushi membutuhkan company profile digital yang mampu menjelaskan diferensiasi brand, nilai produk, dan peluang kolaborasi bisnis dalam format yang ringkas dan kredibel.',
     architectureNotes:
       'Proyek dibangun dengan fondasi HTML semantik dan Tailwind untuk styling cepat. Interaksi animasi dikelola menggunakan Vanila JavaScript ringan.',
     videoSrc: '',
     seo: {
-      title: 'Zushi NFT Landing Page - Project Detail',
+      title: 'Zushi Company Profile - Project Detail',
       description:
-        'Detail desain dan implementasi landing page Zushi yang menonjolkan narasi kripto futuristik dengan performa tinggi.'
+        'Detail desain dan implementasi company profile Zushi yang menonjolkan positioning brand digital dengan performa tinggi.'
     },
     cta: {
       primaryLabel: 'Request UX Review',
       primaryHref: '/contact',
       secondaryLabel: 'View All Projects',
-      secondaryHref: '/ai-playground'
+      secondaryHref: '/home#projects',
+      demoHref: 'https://web-nft-ten.vercel.app/'
+    }
+  },
+  lokerhub: {
+    badgeLabel: 'Career Management',
+    title: 'LokerHub',
+    summary:
+      'Platform all-in-one untuk pencari kerja Indonesia: buat CV profesional yang ATS-friendly, lacak seluruh lamaran, dan kelola perjalanan karier dengan lebih cerdas.',
+    impactMetrics: [
+      { label: 'CV Creation', value: 'Dalam menit' },
+      { label: 'CV Format', value: 'ATS-Friendly' },
+      { label: 'Job Tracking', value: 'Satu dashboard' }
+    ],
+    highlights: [
+      {
+        title: 'Application Pipeline',
+        description:
+          'Pantau semua lamaran dalam satu tampilan, termasuk status, jadwal interview, dan progress seleksi agar tidak ada peluang yang terlewat.'
+      },
+      {
+        title: 'CV Management',
+        description:
+          'Buat CV dengan template profesional yang modern dan rapi. Simpan beberapa versi untuk setiap posisi tanpa perlu mengetik ulang dari nol.'
+      },
+      {
+        title: 'Career Dashboard',
+        description:
+          'Dashboard statistik merangkum perjalanan pencarian kerja sehingga pengguna dapat fokus pada karier, bukan pada spreadsheet yang berantakan.'
+      }
+    ],
+    techStack: [
+      'ATS-friendly CV builder',
+      'Professional CV templates',
+      'Job application tracking',
+      'Career statistics dashboard',
+      'Multi-version CV management',
+      'Deployed on Vercel'
+    ],
+    problemStatement:
+      'Pencari kerja sering menghadapi format CV yang berantakan, deskripsi yang sulit ditulis, template yang kaku, serta status lamaran yang mudah terlupa. LokerHub menyatukan pembuatan CV dan pelacakan lamaran agar proses mencari kerja lebih terstruktur.',
+    architectureNotes:
+      'LokerHub dirancang sebagai workspace karier personal yang menyatukan CV builder, job tracker, manajemen riwayat CV, dan statistik progres dalam satu pengalaman web yang ringkas.',
+    videoSrc: '',
+    seo: {
+      title: 'LokerHub - Project Detail',
+      description:
+        'LokerHub adalah dashboard personal untuk melacak lamaran kerja dan mengelola versi CV.'
+    },
+    cta: {
+      primaryLabel: 'Discuss a Similar Product',
+      primaryHref: '/contact',
+      secondaryLabel: 'Back to Projects',
+      secondaryHref: '/home#projects',
+      demoHref: 'https://lokerhub-mu.vercel.app'
+    }
+  },
+  'kasir-ai': {
+    badgeLabel: 'Mobile Point of Sale',
+    title: 'KasirAi',
+    summary:
+      'Aplikasi kasir mobile yang membantu pelaku usaha mengelola transaksi penjualan dengan lebih praktis, dan telah dipublikasikan di Google Play Store.',
+    impactMetrics: [
+      { label: 'Platform', value: 'Android' },
+      { label: 'Availability', value: 'Play Store' },
+      { label: 'Use Case', value: 'Point of Sale' }
+    ],
+    highlights: [
+      {
+        title: 'Kasir dalam Genggaman',
+        description:
+          'Menghadirkan pengalaman point-of-sale yang praktis melalui aplikasi mobile untuk mendukung aktivitas transaksi harian.'
+      },
+      {
+        title: 'Siap Digunakan Pengguna',
+        description:
+          'Aplikasi telah melalui proses publikasi dan tersedia untuk diunduh melalui Google Play Store.'
+      },
+      {
+        title: 'Berorientasi pada Operasional',
+        description:
+          'Dibuat untuk membantu proses kasir dan penjualan terasa lebih ringkas dalam penggunaan sehari-hari.'
+      }
+    ],
+    techStack: [
+      'Android mobile application',
+      'Point-of-sale workflow',
+      'Google Play Store distribution'
+    ],
+    problemStatement:
+      'Pelaku usaha membutuhkan alat kasir yang mudah dijangkau untuk membantu proses transaksi harian. KasirAi hadir sebagai aplikasi mobile agar proses penjualan dapat dikelola secara lebih praktis.',
+    architectureNotes:
+      'KasirAi dikemas sebagai aplikasi Android yang didistribusikan melalui Google Play Store, dengan alur yang difokuskan untuk kebutuhan point-of-sale sehari-hari.',
+    videoSrc: '',
+    seo: {
+      title: 'KasirAi - Project Detail',
+      description:
+        'KasirAi adalah aplikasi kasir mobile yang telah tersedia di Google Play Store.'
+    },
+    cta: {
+      primaryLabel: 'Discuss a Similar Product',
+      primaryHref: '/contact',
+      secondaryLabel: 'Back to Projects',
+      secondaryHref: '/home#projects',
+      demoLabel: 'Lihat di Play Store',
+      demoHref: 'https://play.google.com/store/apps/details?id=com.kasirai.kasir&hl=id'
+    }
+  },
+  'ingat-uang': {
+    badgeLabel: 'Personal Finance',
+    title: 'Ingat Uang',
+    summary:
+      'Platform keuangan personal untuk mencatat transaksi, split bill otomatis, dan memahami pola pengeluaran melalui analisis yang mudah dibaca.',
+    impactMetrics: [
+      { label: 'Active Users', value: '1000+' },
+      { label: 'Transactions', value: '50K+' },
+      { label: 'Rating', value: '4.8★' }
+    ],
+    highlights: [
+      {
+        title: 'Smart Expense Recording',
+        description:
+          'Catat pengeluaran dengan cepat, termasuk melalui integrasi Siri Shortcuts untuk pencatatan berbasis suara.'
+      },
+      {
+        title: 'AI OCR Receipt Scanner',
+        description:
+          'Foto struk belanja dan biarkan AI membaca item serta harga untuk mempercepat pencatatan transaksi.'
+      },
+      {
+        title: 'Split Bill Tanpa Hitung Manual',
+        description:
+          'Bagikan tagihan bersama teman secara otomatis agar pembagian biaya lebih praktis dan adil.'
+      },
+      {
+        title: 'Insights & Budget Tracking',
+        description:
+          'Dashboard dan laporan visual membantu pengguna memahami pola pengeluaran, mengatur budget, serta menerima pengingat.'
+      }
+    ],
+    techStack: [
+      'Personal finance web application',
+      'AI OCR receipt processing',
+      'Siri Shortcuts integration',
+      'Interactive financial reports',
+      'CSV and Excel data export',
+      'Google authentication'
+    ],
+    problemStatement:
+      'Pencatatan keuangan pribadi sering terasa merepotkan, terutama saat harus memasukkan struk satu per satu atau membagi tagihan bersama teman. Ingat Uang menyederhanakan proses tersebut agar pengguna dapat fokus pada keputusan finansialnya.',
+    architectureNotes:
+      'Platform ini menyatukan pencatatan transaksi, pemindaian struk berbasis OCR, split bill, laporan visual, dan pengelolaan budget dalam satu pengalaman web yang aman dan mudah diakses.',
+    videoSrc: '',
+    seo: {
+      title: 'Ingat Uang - Project Detail',
+      description:
+        'Ingat Uang adalah platform cerdas untuk pencatatan pengeluaran, AI OCR struk, split bill, dan analisis keuangan personal.'
+    },
+    cta: {
+      primaryLabel: 'Discuss a Similar Product',
+      primaryHref: '/contact',
+      secondaryLabel: 'Back to Projects',
+      secondaryHref: '/home#projects',
+      demoHref: 'https://ingatuang.vercel.app/'
+    }
+  },
+  pdfindo: {
+    badgeLabel: 'Privacy-First PDF Tools',
+    title: 'PDFIndo',
+    summary:
+      'Kumpulan tools PDF gratis yang bekerja langsung di browser. File tidak pernah diunggah ke server, sehingga proses terasa cepat sekaligus menjaga privasi pengguna.',
+    impactMetrics: [
+      { label: 'File Upload', value: 'Tidak perlu' },
+      { label: 'Processing', value: 'Client-side' },
+      { label: 'Mode', value: 'Offline-ready' }
+    ],
+    highlights: [
+      {
+        title: 'PDF Tools Lengkap',
+        description:
+          'Menyediakan gabung, pisah, atur, kompres, beri nomor halaman, watermark, tanda tangan, serta konversi PDF ke JPG dan JPG ke PDF.'
+      },
+      {
+        title: '100% Private',
+        description:
+          'Semua pemrosesan terjadi di perangkat pengguna, jadi dokumen tidak perlu meninggalkan browser atau dikirim ke server.'
+      },
+      {
+        title: 'Cepat Tanpa Batas Ukuran',
+        description:
+          'Tanpa waktu unggah dan tanpa batas ukuran file dari sisi layanan, sehingga pekerjaan PDF dapat diselesaikan lebih cepat.'
+      },
+      {
+        title: 'Dapat Digunakan Offline',
+        description:
+          'Setelah aplikasi dimuat, PDFIndo tetap dapat digunakan tanpa koneksi internet untuk kebutuhan pemrosesan dokumen dasar.'
+      }
+    ],
+    techStack: [
+      'Browser-based PDF processing',
+      'Client-side file handling',
+      'Offline-ready web application',
+      'Privacy-first architecture'
+    ],
+    problemStatement:
+      'Banyak tools PDF mengharuskan pengguna mengunggah dokumen pribadi ke server dan menunggu proses selesai. PDFIndo menawarkan alternatif yang lebih aman dan cepat dengan memproses dokumen langsung di perangkat pengguna.',
+    architectureNotes:
+      'Seluruh alur pemrosesan dirancang berjalan di browser agar file tetap berada di perangkat pengguna. Pendekatan client-side ini mengurangi waktu tunggu dan mendukung penggunaan offline setelah aplikasi dimuat.',
+    videoSrc: '',
+    seo: {
+      title: 'PDFIndo - Project Detail',
+      description:
+        'PDFIndo menyediakan tools PDF gratis, cepat, dan private yang diproses sepenuhnya di browser.'
+    },
+    cta: {
+      primaryLabel: 'Discuss a Similar Product',
+      primaryHref: '/contact',
+      secondaryLabel: 'Back to Projects',
+      secondaryHref: '/home#projects',
+      demoHref: 'https://pdfindo.vercel.app/'
+    }
+  },
+  motosense: {
+    badgeLabel: 'Audio AI Diagnosis',
+    title: 'MotoSense',
+    summary:
+      'Diagnosis awal suara mesin motor berbasis AI. MotoSense menganalisis rekaman idle selama delapan detik untuk memberi indikasi dari delapan pola suara kerusakan.',
+    impactMetrics: [
+      { label: 'Recording', value: '8 detik' },
+      { label: 'Damage Classes', value: '8 kelas' },
+      { label: 'AI Engine', value: 'YAMNet' }
+    ],
+    highlights: [
+      {
+        title: 'Audio-guided Diagnosis',
+        description:
+          'Pengguna cukup merekam atau mengunggah suara mesin motor dalam kondisi idle untuk memperoleh indikasi awal kondisi komponen.'
+      },
+      {
+        title: 'YAMNet Embedding Pipeline',
+        description:
+          'Audio dinormalisasi menjadi mono 16 kHz, lalu YAMNet mengekstrak embedding 1.024 dimensi sebagai dasar klasifikasi.'
+      },
+      {
+        title: 'Eight Damage Indicators',
+        description:
+          'Model mengenali indikasi kampas kopling, stang seher, drive belt, piston slap, rantai tensioner, slider CVT, roller CVT, dan face drive.'
+      },
+      {
+        title: 'Private Local History',
+        description:
+          'Riwayat diagnosis disimpan secara lokal di perangkat, sementara audio diproses sementara di server dan tidak disimpan.'
+      }
+    ],
+    techStack: [
+      'YAMNet audio embeddings',
+      'Sequential TensorFlow Lite classifier',
+      'Librosa audio normalization',
+      '16 kHz mono audio pipeline',
+      'LocalStorage diagnosis history'
+    ],
+    problemStatement:
+      'Suara mesin dapat menjadi sinyal awal adanya masalah, tetapi sulit dikenali tanpa pengalaman teknis. MotoSense membantu pengguna memperoleh indikasi awal berbasis rekaman audio, bukan sebagai pengganti pemeriksaan mekanik langsung.',
+    architectureNotes:
+      'Rekaman audio berdurasi maksimal delapan detik dikirim ke backend untuk dinormalisasi menggunakan librosa. YAMNet menghasilkan embedding 1.024 dimensi, kemudian model Sequential TFLite menghitung probabilitas delapan kelas indikasi kerusakan.',
+    videoSrc: '',
+    seo: {
+      title: 'MotoSense - Project Detail',
+      description:
+        'MotoSense adalah diagnosis awal suara mesin motor dengan YAMNet dan Sequential TensorFlow Lite.'
+    },
+    cta: {
+      primaryLabel: 'Discuss an AI Solution',
+      primaryHref: '/contact',
+      secondaryLabel: 'Back to Projects',
+      secondaryHref: '/home#projects',
+      demoHref: 'https://motosenseofficial.vercel.app/'
     }
   }
 };
@@ -208,7 +487,7 @@ const ProjectDetailLLMMagangHub = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-primary">
       <Helmet>
         <title>{project.seo.title}</title>
         <meta name="description" content={project.seo.description} />
@@ -276,7 +555,7 @@ const ProjectDetailLLMMagangHub = () => {
               <ul className="mt-6 space-y-4 text-sm text-muted-foreground">
                 {project.highlights.map(item => (
                   <li key={item.title} className="rounded-2xl border border-border/80 bg-background/60 p-4">
-                    <h3 className="text-base font-semibold text-foreground">{item.title}</h3>
+                    <h3 className="text-base font-semibold text-primary">{item.title}</h3>
                     <p className="mt-2 leading-relaxed">{item.description}</p>
                   </li>
                 ))}
@@ -305,6 +584,11 @@ const ProjectDetailLLMMagangHub = () => {
               I build production-ready conversational experiences that respect your knowledge assets and operational constraints.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-4">
+              {project.cta.demoHref && (
+                <Button variant="default" size="lg" iconName="ExternalLink" iconPosition="right" asChild>
+                  <a href={project.cta.demoHref} target="_blank" rel="noreferrer">{project.cta.demoLabel || 'Lihat Demo'}</a>
+                </Button>
+              )}
               <Button variant="default" size="lg" iconName="MessageCircle" iconPosition="left" asChild>
                 <a href={project.cta.primaryHref}>{project.cta.primaryLabel}</a>
               </Button>

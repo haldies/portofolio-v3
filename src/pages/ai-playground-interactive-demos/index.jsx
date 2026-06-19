@@ -38,7 +38,7 @@ const ProjectsShowcase = () => {
       <section className="pt-36 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="mt-6 mb-4 text-4xl font-semibold text-foreground md:text-5xl">
+            <h1 className="mt-6 mb-4 text-4xl font-semibold text-primary md:text-5xl">
               Crafting purposeful AI research and product experiments
             </h1>
           

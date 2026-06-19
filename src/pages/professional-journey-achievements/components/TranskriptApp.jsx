@@ -6,7 +6,7 @@ import TranscriptSection from 'components/TranscriptSection';
 
 function TranscriptApp() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-background to-muted">
     
 
       {/* Main Content */}
@@ -46,29 +46,29 @@ function TranscriptApp() {
         />
 
         {/* Additional Laskar AI Courses */}
-        <div className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden mb-8">
-          <div className="bg-gradient-to-r from-purple-600 to-purple-700 p-4 text-white">
+        <div className="bg-card rounded-xl shadow-brand-large border border-border overflow-hidden mb-8">
+          <div className="p-4 bg-primary text-primary-foreground">
             <h3 className="text-lg font-bold">Additional Laskar AI Courses</h3>
           </div>
           <div className="p-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-              <div className="text-center p-4 bg-purple-50 rounded-lg">
-                <div className="text-2xl font-bold text-purple-600">3</div>
-                <div className="text-sm text-gray-600">Extra Courses</div>
+              <div className="text-center p-4 bg-muted rounded-lg">
+                <div className="text-2xl font-bold text-trust-purple">3</div>
+                <div className="text-sm text-text-secondary">Extra Courses</div>
               </div>
-              <div className="text-center p-4 bg-purple-50 rounded-lg">
-                <div className="text-2xl font-bold text-purple-600">95.50</div>
-                <div className="text-sm text-gray-600">Average Score</div>
+              <div className="text-center p-4 bg-muted rounded-lg">
+                <div className="text-2xl font-bold text-trust-purple">95.50</div>
+                <div className="text-sm text-text-secondary">Average Score</div>
               </div>
-              <div className="text-center p-4 bg-purple-50 rounded-lg">
-                <div className="text-2xl font-bold text-purple-600">A</div>
-                <div className="text-sm text-gray-600">Grade</div>
+              <div className="text-center p-4 bg-muted rounded-lg">
+                <div className="text-2xl font-bold text-trust-purple">A</div>
+                <div className="text-sm text-text-secondary">Grade</div>
               </div>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-gray-100 border-b-2 border-gray-200">
+                  <tr className="bg-muted border-b-2 border-border">
                     <th className="p-3 text-left font-semibold">KODE</th>
                     <th className="p-3 text-left font-semibold">KELAS/AKTIVITAS</th>
                     <th className="p-3 text-center font-semibold">NILAI</th>
@@ -77,11 +77,11 @@ function TranscriptApp() {
                 </thead>
                 <tbody>
                   {laskarAIAdditional.map((course, index) => (
-                    <tr key={index} className="border-b border-gray-100 hover:bg-gray-50 transition-colors bg-green-50">
-                      <td className="p-3 font-medium text-blue-600">{course.code}</td>
+                    <tr key={index} className="border-b border-border hover:bg-muted/50 transition-colors bg-accent/10">
+                      <td className="p-3 font-medium text-primary">{course.code}</td>
                       <td className="p-3">{course.name}</td>
                       <td className="p-3 text-center">
-                        <span className="px-2 py-1 rounded font-bold bg-green-100 text-green-800">
+                        <span className="px-2 py-1 rounded font-bold bg-accent/20 text-accent">
                           {course.grade}
                         </span>
                       </td>
@@ -94,7 +94,6 @@ function TranscriptApp() {
           </div>
         </div>
 
-        {/* Bangkit Academy */}
         <TranscriptSection
           title="Bangkit Academy 2024"
           institution="Google × GoTo × Traveloka"
@@ -109,60 +108,7 @@ function TranscriptApp() {
             "Comprehensive ML specialization with hands-on projects"
           ]}
         />
-
-        {/* Summary Section */}
-        <div className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
-          <div className="bg-gradient-to-r from-green-600 to-green-700 p-6 text-white">
-            <h2 className="text-2xl font-bold mb-2">Achievement Summary</h2>
-            <p className="text-green-100">Key metrics and accomplishments across all programs</p>
-          </div>
-          <div className="p-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg">
-                <GraduationCap className="w-12 h-12 text-blue-600 mx-auto mb-3" />
-                <div className="text-2xl font-bold text-blue-600">3.47 IPK</div>
-                <div className="text-sm text-gray-600">Bachelor's Degree</div>
-                <div className="text-xs text-gray-500 mt-1">147 SKS Completed</div>
-              </div>
-              <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg">
-                <Brain className="w-12 h-12 text-purple-600 mx-auto mb-3" />
-                <div className="text-2xl font-bold text-purple-600">97.34</div>
-                <div className="text-sm text-gray-600">Laskar AI Average</div>
-                <div className="text-xs text-gray-500 mt-1">Top 10% + Best Capstone</div>
-              </div>
-              <div className="text-center p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg">
-                <Rocket className="w-12 h-12 text-orange-600 mx-auto mb-3" />
-                <div className="text-2xl font-bold text-orange-600">96.20</div>
-                <div className="text-sm text-gray-600">Bangkit Academy</div>
-                <div className="text-xs text-gray-500 mt-1">Top 10% + 50 Best Capstone</div>
-              </div>
-            </div>
-
-            <div className="mt-8 p-6 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg border border-yellow-200">
-              <h3 className="text-lg font-bold text-orange-800 mb-3">Distinguished Achievements</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                <div>
-                  <h4 className="font-semibold text-orange-700 mb-2">Academic Excellence</h4>
-                  <ul className="space-y-1 text-orange-600">
-                    <li>✓ Bachelor's Degree with 3.47 IPK</li>
-                    <li>✓ Strong foundation in Computer Science</li>
-                    <li>✓ 147 credit hours completed</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-orange-700 mb-2">Professional Recognition</h4>
-                  <ul className="space-y-1 text-orange-600">
-                    <li>✓ Top 10% in multiple competitive programs</li>
-                    <li>✓ Best Capstone Project awards</li>
-                    <li>✓ Industry partnership program completion</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </main>
-
 
     </div>
   );

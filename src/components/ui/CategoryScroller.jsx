@@ -18,7 +18,7 @@ const CategoryScroller = ({
     selectedClassName || 'border-foreground bg-foreground text-background';
   const baseUnselectedClass =
     unselectedClassName ||
-    'border-border bg-card text-muted-foreground hover:border-foreground/50 hover:text-foreground border-2 border-gray-300' ;
+    'border-border bg-card text-muted-foreground hover:border-foreground/50 hover:text-primary border-2 border-gray-300' ;
 
   return (
     <div

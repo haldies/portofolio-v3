@@ -49,8 +49,8 @@ const FooterCTA = ({
     if (!label) return null;
     const baseClasses =
       variant === 'primary'
-        ? 'inline-flex items-center space-x-2 px-8 py-4 bg-foreground text-white rounded-full font-medium hover:bg-foreground/90 transition-colors text-base'
-        : 'inline-flex items-center space-x-2 px-8 py-4 border border-slate-300 text-foreground rounded-full font-medium hover:bg-slate-100 transition-colors text-base';
+        ? 'inline-flex items-center space-x-2 px-8 py-4 bg-foreground text-white rounded-brand-lg font-medium hover:bg-foreground/90 transition-colors text-base'
+        : 'inline-flex items-center space-x-2 px-8 py-4 border border-slate-300 text-primary rounded-brand-lg font-medium hover:bg-slate-100 transition-colors text-base';
 
     const content = (
       <>
@@ -100,7 +100,7 @@ const FooterCTA = ({
         )}
       >
         {title && (
-          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-primary mb-4">
             {title}
           </h2>
         )}

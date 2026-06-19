@@ -8,9 +8,9 @@ const TimelineItem = ({ item, isLast }) => {
   const getStatusColor = (status) => {
     switch (status) {
       case 'completed':
-        return 'bg-success text-success-foreground';
+        return 'bg-accent text-accent-foreground';
       case 'in-progress':
-        return 'bg-warning text-warning-foreground';
+        return 'bg-muted';
       case 'upcoming':
         return 'bg-muted text-muted-foreground';
       default:
@@ -38,7 +38,7 @@ const TimelineItem = ({ item, isLast }) => {
       {/* Journey Line (dashed, map-like) */}
       {!isLast && (
         <div
-          className="absolute left-6 top-14 w-[2px] h-[calc(100%-2rem)] bg-repeat-y bg-[length:2px_12px] bg-[linear-gradient(to_bottom,rgba(148,163,184,0.6)_8px,transparent_8px)] group-hover:bg-[linear-gradient(to_bottom,rgba(56,189,248,0.8)_8px,transparent_8px)] transition-colors duration-300"
+          className="absolute left-6 top-14 w-[2px] h-[calc(100%-2rem)] bg-repeat-y bg-[length:2px_12px] bg-[linear-gradient(to_bottom,var(--color-muted-foreground)_8px,transparent_8px)] group-hover:bg-[linear-gradient(to_bottom,var(--color-accent)_8px,transparent_8px)] transition-colors duration-300"
         />
       )}
       {/* Timeline Icon */}
@@ -48,15 +48,16 @@ const TimelineItem = ({ item, isLast }) => {
       </div>
       {/* Content */}
       <div className="flex-1 min-w-0">
-        <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-card/90 shadow-[0_20px_60px_-24px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_32px_70px_-20px_rgba(56,189,248,0.35)] backdrop-blur-sm">
+        <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-card/90 shadow-brand-large transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_32px_70px_-20px_rgba(16,185,129,0.35)] backdrop-blur-sm">
           {/* Subtle map grid background */}
           <div
             className="pointer-events-none absolute inset-0 opacity-40 mix-blend-luminosity"
             aria-hidden="true"
             style={{
               backgroundImage:
-                "linear-gradient(to right, rgba(148,163,184,0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(148,163,184,0.07) 1px, transparent 1px)",
+                "linear-gradient(to right, var(--color-muted-foreground) 1px, transparent 1px), linear-gradient(to bottom, var(--color-muted-foreground) 1px, transparent 1px)",
               backgroundSize: '24px 24px',
+              opacity: 0.07
             }}
           />
           <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
@@ -76,7 +77,7 @@ const TimelineItem = ({ item, isLast }) => {
                     </div>
                   )}
                 </div>
-                <h3 className="text-xl font-semibold text-foreground tracking-tight">
+                <h3 className="text-xl font-semibold text-primary tracking-tight">
                   {item?.title}
                 </h3>
                 <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-sm text-text-secondary">
@@ -167,7 +168,7 @@ const TimelineItem = ({ item, isLast }) => {
                     <div className="grid gap-3 sm:grid-cols-2">
                       {item?.details?.projects?.map((project, index) => (
                         <div key={index} className="rounded-2xl border border-border/60 bg-muted/50 px-4 py-3">
-                          <h5 className="text-sm font-semibold text-foreground mb-1">
+                          <h5 className="text-sm font-semibold text-primary mb-1">
                             {project?.name}
                           </h5>
                           <p className="text-xs text-text-secondary leading-relaxed">

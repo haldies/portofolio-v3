@@ -1,76 +1,49 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 import Image from '../../../components/AppImage';
 import Meteors from '../../../components/ui/meteors';
 
-const learningPartners = [
+const serviceSignals = [
   {
-    name: 'Amazon Web Services',
-    program: 'Generative AI & Cloud Practitioner',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg'
+    name: 'Websites',
+    program: 'Landing page, company profile, product pages',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
   },
   {
-    name: 'Google',
-    program: 'Google Cloud Skills Boost',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg'
+    name: 'AI Automation',
+    program: 'Chatbot, workflow assistant, document automation',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'
   },
   {
-    name: 'Bangkit Academy',
-    program: 'Machine Learning Cohort',
-    logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyxwyUDWjolHziF0tAR-ehPWMui5dJyHWMzQ&s'
+    name: 'Internal Tools',
+    program: 'Admin panel, CRM light, reporting dashboard',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'
   },
   {
-    name: 'Oracle',
-    program: 'Oracle Cloud Infrastructure',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg'
+    name: 'Integrations',
+    program: 'API, spreadsheet, WhatsApp, database sync',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg'
   },
   {
-    name: 'Coursera',
-    program: 'Deep Learning Specializations',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Coursera_logo_%282020%29.svg/2560px-Coursera_logo_%282020%29.svg.png'
+    name: 'Content Systems',
+    program: 'SEO pages, CMS setup, reusable content blocks',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'
   },
   {
-    name: 'Dicoding',
-    program: 'Dicoding Academy Paths',
-    logo: 'https://dicoding-assets.sgp1.cdn.digitaloceanspaces.com/blog/wp-content/uploads/2014/12/dicoding-header-logo.png'
+    name: 'Care Plan',
+    program: 'Maintenance, analytics, optimization support',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg'
   }
 ];
 
 const HeroSection = () => {
-  const [currentSpecialization, setCurrentSpecialization] = useState(0);
   const sectionRef = useRef(null);
   const [parallax, setParallax] = useState({ bg: 0, mid1: 0, mid2: 0, x: 0 });
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
 
-  const specializations = [
-    'Data Scientist',
-    'AI Engineer',
-    'Machine Learning Engineer',
-    'Computer Vision Specialist', 
-    'AI Research',
-  ];
-  const partnerLoop = [...learningPartners, ...learningPartners];
-
-  const mockSentimentAnalysis = (text) => {
-    const sentiments = [
-      { label: 'Positive', score: 0.85, color: 'text-green-600', bgColor: 'bg-green-100' },
-      { label: 'Negative', score: 0.72, color: 'text-red-600', bgColor: 'bg-red-100' },
-      { label: 'Neutral', score: 0.68, color: 'text-gray-600', bgColor: 'bg-gray-100' }
-    ];
-    
-    const randomSentiment = sentiments?.[Math.floor(Math.random() * sentiments?.length)];
-    return randomSentiment;
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSpecialization((prev) => (prev + 1) % specializations?.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
+  const partnerLoop = [...serviceSignals, ...serviceSignals];
 
   // Scroll-based parallax for background and accents (smoothed)
   useEffect(() => {
@@ -124,18 +97,6 @@ const HeroSection = () => {
   };
 
   const handleMouseLeave = () => setTilt({ x: 0, y: 0 });
-
-  const handleSentimentAnalysis = async () => {
-    if (!sentimentInput?.trim()) return;
-    
-    setIsAnalyzing(true);
-    
-    setTimeout(() => {
-      const result = mockSentimentAnalysis(sentimentInput);
-      setSentimentResult(result);
-      setIsAnalyzing(false);
-    }, 1500);
-  };
 
   return (
     <section
@@ -211,7 +172,7 @@ const HeroSection = () => {
       </div>
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         <div
-          className="flex flex-col items-center justify-center min-h-[calc(100vh-6rem)] will-change-transform"
+          className="flex flex-col items-center justify-center min-h-[calc(100vh-6rem)] will-change-transform space-y-12"
           style={{
             transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
             transition: 'transform 120ms ease-out',
@@ -219,111 +180,72 @@ const HeroSection = () => {
         >
           {/* Centered Content */}
           <div className="space-y-8 w-full max-w-3xl text-center animate-fade-slide-up">
-            <div className="space-y-6">
-              <div className="inline-flex items-center justify-center space-x-2 bg-slate-200 text-slate-600 px-4 py-2 rounded-full text-sm font-medium mx-auto">
-                <div className="w-2 h-2 bg-slate-500 rounded-full animate-pulse"></div>
-                <span>Available for New Opportunities</span>
-              </div>
-
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Making AI Work for{' '}
+            <div className="space-y-5">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight">
+                Website profesional dan automasi AI untuk bisnis yang ingin{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-600">
-                  Real Problems
+                  terlihat siap tumbuh
                 </span>
               </h1>
 
-              <div className="text-lg sm:text-2xl text-text-secondary font-medium min-h-[2rem]">
-                <span className="inline-block transition-transform duration-500 ease-in-out will-change-transform"
-                  style={{ transform: `translate3d(${parallax.x * 0.1}px, 0, 0)` }}
-                >
-                  {specializations?.[currentSpecialization]}
-                </span>
-              </div>
-
-              <p className="text-base sm:text-lg text-text-secondary leading-relaxed max-w-2xl mx-auto">
-                Hi, I'm <strong className="text-foreground">Haldies Gerhardien Pasya</strong>, an AI Engineer passionate about bridging the gap between cutting-edge research and practical applications. I transform complex AI concepts into accessible solutions that drive real business value.
+              <p className="text-base sm:text-xl text-text-secondary leading-relaxed max-w-xl mx-auto">
+                Saya Haldies. Saya merancang website, sistem internal, dan workflow AI yang rapi, personal, dan langsung kepakai.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-xs sm:max-w-none mx-auto">
               <Button
                 variant="default"
-                size="lg"
-                iconName="Zap"
-                iconPosition="left"
+                size="xl"
                 asChild
-                className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto"
+                className="w-full sm:w-auto"
               >
-                <Link to="/ai-playground">
-                  Project AI
+                <Link to="/contact">
+                  Konsultasi Project
                 </Link>
               </Button>
 
               <Button
                 variant="outline"
-                size="lg"
-                iconName="User"
-                iconPosition="left"
+                size="xl"
                 asChild
-                className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto"
+                className="w-full sm:w-auto"
               >
-                <Link to="/achievements">
-                  My Journey
-                </Link>
+                <a href="#services">
+                  Lihat Layanan
+                </a>
               </Button>
             </div>
+          </div>
 
-            {/* Quick Stats */}
-            <div className="grid grid-cols-3 sm:grid-cols-3 gap-6 sm:gap-8 pt-8 border-t border-border text-center">
-              <div className="space-y-1">
-                <div className="text-xl sm:text-3xl font-bold text-foreground">19.2k</div>
-                <div className="text-sm sm:text-base text-text-secondary">TikTok Followers</div>
-              </div>
-              <div className="space-y-1">
-                <div className="text-xl sm:text-3xl font-bold text-foreground">Top 10%</div>
-                <div className="text-sm sm:text-base text-text-secondary">Bangkit Academy & Laskar Ai</div>
-              </div>
-              <div className="space-y-1">
-                <div className="text-xl sm:text-3xl font-bold text-foreground">15+</div>
-                <div className="text-sm sm:text-base text-text-secondary">AI Projects</div>
-              </div>
+          {/* Learning Partners Marquee - Moved inside Hero for better layout spacing */}
+          <div className="w-full max-w-5xl mx-auto px-4 animate-fade-slide-up" style={{ animationDelay: '100ms' }}>
+            <div className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
+              What I Build
             </div>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <Icon name="ChevronDown" size={24} className="text-text-secondary" />
-        </div>
-      </div>
-      {/* Learning Partners Marquee */}
-      <div className="relative z-10 px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
-            Learning Journey & Learning Programs
-          </div>
-          <div className="relative overflow-hidden rounded-[28px] border border-border bg-card/80 shadow-brand-subtle backdrop-blur">
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background via-background to-transparent" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background via-background to-transparent" />
-            <div className="marquee-track items-center gap-8 px-10 py-6">
-              {partnerLoop.map((brand, index) => {
-                const isDuplicate = index >= learningPartners.length;
-                return (
-                  <div
-                    key={`${brand.name}-${index}`}
-                    aria-hidden={isDuplicate}
-                    className="flex min-w-[220px] items-center gap-3 rounded-2xl border border-border bg-background px-4 py-3 shadow-sm backdrop-blur-sm transition-colors duration-300 hover:border-foreground"
-                  >
-                    <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-border bg-card">
-                      <Image src={brand.logo} alt={`${brand.name} logo`} className="h-10 w-10 object-contain" />
+            <div className="relative overflow-hidden rounded-[28px] border border-border bg-card/80 shadow-brand-subtle backdrop-blur">
+              <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white via-white to-transparent z-10" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white via-white to-transparent z-10" />
+              <div className="marquee-track items-center gap-8 px-10 py-6">
+                {partnerLoop.map((brand, index) => {
+                  const isDuplicate = index >= serviceSignals.length;
+                  return (
+                    <div
+                      key={`${brand.name}-${index}`}
+                      aria-hidden={isDuplicate}
+                      className="flex min-w-[220px] items-center gap-3 rounded-2xl border border-border bg-background px-4 py-3 shadow-sm backdrop-blur-sm transition-colors duration-300 hover:border-foreground"
+                    >
+                      <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-border bg-card">
+                        <Image src={brand.logo} alt="" className="h-10 w-10 object-contain" />
+                      </div>
+                      <div className="text-left">
+                        <p className="text-sm font-semibold text-primary">{brand.name}</p>
+                        <p className="text-xs text-text-secondary">{brand.program}</p>
+                      </div>
                     </div>
-                    <div className="text-left">
-                      <p className="text-sm font-semibold text-foreground">{brand.name}</p>
-                      <p className="text-xs text-text-secondary">{brand.program}</p>
-                    </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>

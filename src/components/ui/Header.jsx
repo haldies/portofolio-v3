@@ -10,9 +10,10 @@ const Header = () => {
 
     const navigationItems = [
         { name: 'Home', path: '/home' },
-        { name: 'Journey', path: '/achievements'},
-        { name: 'Projects', path: '/ai-playground'},
-        { name: 'Educational', path: '/educational-content' }
+        { name: 'Services', path: '/home#services'},
+        { name: 'Projects', path: '/home#projects'},
+        { name: 'Process', path: '/home#process'},
+        { name: 'Contact', path: '/contact' }
     ];
 
     useEffect(() => {
@@ -54,7 +55,7 @@ const Header = () => {
                                 to={item?.path}
                                 className={`flex items-center space-x-2 px-4 py-2 rounded-brand text-sm font-medium transition-brand focus-brand ${isActivePath(item?.path)
                                     ? 'bg-accent text-accent-foreground shadow-brand-subtle'
-                                    : 'text-foreground hover:bg-muted hover:text-foreground'
+                                    : 'text-primary hover:bg-muted hover:text-primary'
                                     }`}
                             > 
                                 <span>{item?.name}</span>
@@ -66,27 +67,17 @@ const Header = () => {
                             to="/home"
                             className="inline-flex flex-col items-center text-center transition-opacity hover:opacity-80 pointer-events-auto"
                         >
-                            <h1 className="text-lg font-semibold uppercase tracking-[0.35em] text-foreground">
-                                Gerhardien
+                            <h1 className="text-lg font-semibold uppercase tracking-[0.35em] text-primary">
+                               BUATAI
                             </h1>
                             <p className="mt-1 text-sm uppercase tracking-[0.48em] text-text-secondary">
-                                AI Engineer
+                                Web & AI Studio
                             </p>
                         </Link>
                     </div>
 
                     {/* CTA Button - Desktop */}
                     <div className="hidden lg:flex items-center space-x-4">
-                        <Button
-                            variant="outline"
-                            size="sm"
-                            iconName="Github"
-                            iconPosition="left"
-                            onClick={() => window.open('https://github.com/@haldies', '_blank')}
-                            className="text-sm"
-                        >
-                            GitHub
-                        </Button>
                         <Button
                             variant="default"
                             size="sm"
@@ -95,7 +86,7 @@ const Header = () => {
                             asChild
                         >
                             <Link to="/contact">
-                                Let's Connect
+                                Book a Call
                             </Link>
                         </Button>
                     </div>
@@ -132,28 +123,15 @@ const Header = () => {
                                 onClick={closeMenu}
                                 className={`flex items-center space-x-3 px-4 py-3 rounded-brand text-base font-medium transition-brand focus-brand ${isActivePath(item?.path)
                                     ? 'bg-accent text-accent-foreground shadow-brand-subtle'
-                                    : 'text-foreground hover:bg-muted'
+                                    : 'text-primary hover:bg-muted'
                                     }`}
                             >
-                       
                                 <span>{item?.name}</span>
                             </Link>
                         ))}
 
                         {/* Mobile CTA Buttons */}
                         <div className="pt-4 space-y-3 border-t border-border">
-                            <Button
-                                variant="outline"
-                                fullWidth
-                                iconName="Github"
-                                iconPosition="left"
-                                onClick={() => {
-                                    window.open('https://github.com', '_blank');
-                                    closeMenu();
-                                }}
-                            >
-                                View GitHub
-                            </Button>
                             <Button
                                 variant="default"
                                 fullWidth
@@ -162,7 +140,7 @@ const Header = () => {
                                 asChild
                             >
                                 <Link to="/contact" onClick={closeMenu}>
-                                    Let's Connect
+                                    Book a Call
                                 </Link>
                             </Button>
                         </div>

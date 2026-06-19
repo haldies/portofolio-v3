@@ -1,78 +1,83 @@
-import React, { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
-import CategoryScroller from '../../../components/ui/CategoryScroller';
-import Button from '../../../components/ui/Button';
-import ProjectCard from '../../../components/ui/ProjectCard';
-import aiEngineerProjects from '../../../data/aiEngineerProjects';
+import React from 'react';
+
+const services = [
+  {
+    icon: 'Globe',
+    title: 'Website Profesional',
+    description: 'Company profile, landing page, portfolio brand, dan halaman campaign yang cepat, responsif, dan enak dibaca.',
+    points: ['Copywriting struktur halaman', 'Desain responsif', 'SEO dasar dan analytics']
+  },
+  {
+    icon: 'Cpu',
+    title: 'AI Automation',
+    description: 'Automasi untuk pekerjaan berulang: balas lead, ringkas dokumen, susun laporan, atau bantu operasional harian.',
+    points: ['Chatbot internal', 'Workflow AI assistant', 'Integrasi form dan spreadsheet']
+  },
+  {
+    icon: 'Layers',
+    title: 'Dashboard & Internal Tools',
+    description: 'Tool sederhana untuk admin, sales, operasional, atau reporting agar data tim lebih rapi dan mudah dipakai.',
+    points: ['Admin panel', 'Tracking data', 'Export dan laporan']
+  },
+  {
+    icon: 'Link',
+    title: 'Integrasi Sistem',
+    description: 'Menghubungkan website, database, WhatsApp, API, email, dan tools bisnis lain supaya alur kerja tidak tercecer.',
+    points: ['API integration', 'Database sync', 'Notification workflow']
+  },
+  {
+    icon: 'Activity',
+    title: 'Perawatan & Optimasi',
+    description: 'Bantuan teknis berkelanjutan untuk menjaga website tetap aman, cepat, dan relevan setelah launch.',
+    points: ['Maintenance ringan', 'Performance check', 'Iterasi fitur']
+  },
+  {
+    icon: 'Sparkles',
+    title: 'AI-Ready Content System',
+    description: 'Struktur konten, FAQ, knowledge base, dan aset digital yang siap dipakai oleh chatbot atau pencarian AI.',
+    points: ['Knowledge base', 'CMS setup', 'Reusable content blocks']
+  }
+];
 
 const ProjectShowcase = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All');
-
-
-  const categories = useMemo(
-    () => ['All', ...Array.from(new Set(aiEngineerProjects?.map(p => p?.category).filter(Boolean)))],
-    []
-  );
-
-  const filteredProjects = useMemo(
-    () =>
-      selectedCategory === 'All'
-        ? aiEngineerProjects
-        : aiEngineerProjects?.filter(p => p?.category === selectedCategory),
-    [selectedCategory]
-  );
-
   return (
-    <section className="py-16 bg-muted/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Featured AI Projects
-          </h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            Explore my latest AI solutions that solve real-world problems with measurable impact
-          </p>
-        </div>
-
-        <div className="max-w-6xl mx-auto">
-          {/* Category Filter */}
-          <CategoryScroller
-            categories={categories}
-            selectedCategory={selectedCategory}
-            onSelect={setSelectedCategory}
-            className="mb-8"
-          />
-
-          {/* Projects Grid */}
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredProjects?.map((project) => (
-              <ProjectCard
-                key={project?.id}
-                image={project?.image}
-              title={project?.title}
-              description={project?.description}
-              year={project?.year}
-              tags={project?.tags}
-              category={project?.category}
-              detailHref={project?.detailHref}
-              codeHref={project?.codeHref}
-              liveHref={project?.liveHref}
-            />
-          ))}
+    <section id="services" className="scroll-mt-24 py-20 bg-slate-50 relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          {/* Sticky Left Column: Section Header */}
+          <div className="lg:col-span-4 lg:sticky lg:top-28 space-y-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-muted-foreground">
+              Services
+            </p>
+            <h2 className="text-3xl font-bold tracking-tight text-primary leading-tight">
+              Satu partner teknis untuk website, sistem, dan automasi
+            </h2>
+            <p className="text-base text-text-secondary leading-relaxed">
+              Membantu bisnis meningkatkan kredibilitas digital sekaligus mengautomasi alur kerja internal agar lebih efisien.
+            </p>
           </div>
 
-          <div className="text-center mt-12">
-            <Button
-              variant="outline"
-              size="lg"
-              iconPosition="left"
-              asChild
-            >
-              <Link to="/ai-playground">
-                View All Projects
-              </Link>
-            </Button>
+          {/* Right Column: Vertical stack of detailed service cards */}
+          <div className="lg:col-span-8 space-y-6">
+            {services.map((service) => (
+              <article
+                key={service.title}
+                className="group flex flex-col p-6 sm:p-8 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-200"
+              >
+                {/* Card details */}
+                <div className="space-y-3 flex-grow text-left">
+                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors duration-150">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-slate-600">
+                    {service.description}
+                  </p>
+                </div>
+              </article>
+            ))}
           </div>
+
         </div>
       </div>
     </section>

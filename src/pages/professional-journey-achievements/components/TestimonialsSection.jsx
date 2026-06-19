@@ -77,7 +77,7 @@ const TestimonialsSection = () => {
         key={index}
         name="Star"
         size={16}
-        className={index < rating ? "text-warning fill-current" : "text-muted"}
+        className={index < rating ? "fill-current" : "text-muted"}
       />
     ));
   };
@@ -89,7 +89,7 @@ const TestimonialsSection = () => {
           <Icon name="MessageSquare" size={20} className="text-accent" />
         </div>
         <div>
-          <h2 className="text-xl font-semibold text-foreground">Testimonials & Recommendations</h2>
+          <h2 className="text-xl font-semibold text-primary">Testimonials & Recommendations</h2>
           <p className="text-sm text-text-secondary">What colleagues and mentors say about working with me</p>
         </div>
       </div>
@@ -103,7 +103,7 @@ const TestimonialsSection = () => {
 
           {/* Content */}
           <div className="mb-6">
-            <p className="text-foreground leading-relaxed whitespace-pre-line">
+            <p className="text-primary leading-relaxed whitespace-pre-line">
               {testimonials?.[activeTestimonial]?.content}
             </p>
           </div>
@@ -127,7 +127,7 @@ const TestimonialsSection = () => {
                 className="w-12 h-12 rounded-full object-cover"
               />
               <div>
-                <h4 className="font-semibold text-foreground">
+                <h4 className="font-semibold text-primary">
                   {testimonials?.[activeTestimonial]?.name}
                 </h4>
                 <p className="text-sm text-text-secondary">
@@ -189,11 +189,11 @@ const TestimonialsSection = () => {
           <div className="text-sm text-text-secondary">Recommendations</div>
         </div>
         <div className="text-center">
-          <div className="text-2xl font-bold text-warning">5.0</div>
+          <div className="text-2xl font-bold">5.0</div>
           <div className="text-sm text-text-secondary">Average Rating</div>
         </div>
         <div className="text-center">
-          <div className="text-2xl font-bold text-success">100%</div>
+          <div className="text-2xl font-bold text-accent">100%</div>
           <div className="text-sm text-text-secondary">Would Recommend</div>
         </div>
         <div className="text-center">

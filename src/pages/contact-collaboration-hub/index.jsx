@@ -9,14 +9,14 @@ const ContactCollaborationHub = () => {
   return (
     <>
       <Helmet>
-        <title>Contact & Collaboration Hub - Haldies Portfolio</title>
+        <title>Contact - Gerhardien Studio</title>
         <meta 
           name="description" 
-          content="Connect with Haldies for AI consulting, project collaboration, mentorship, or hiring opportunities. Multiple contact pathways and direct scheduling available." 
+          content="Start a website or AI automation project with Gerhardien Studio. Share your business needs and get a practical next step." 
         />
-        <meta name="keywords" content="AI consultant, machine learning expert, project collaboration, mentorship, hiring, contact" />
-        <meta property="og:title" content="Contact & Collaboration Hub - Haldies Portfolio" />
-        <meta property="og:description" content="Connect with Haldies for AI consulting, project collaboration, mentorship, or hiring opportunities." />
+        <meta name="keywords" content="website agency contact, AI automation consultant, web development Indonesia" />
+        <meta property="og:title" content="Contact - Gerhardien Studio" />
+        <meta property="og:description" content="Discuss a website, internal tool, or AI automation project with Haldies." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="/contact" />
       </Helmet>

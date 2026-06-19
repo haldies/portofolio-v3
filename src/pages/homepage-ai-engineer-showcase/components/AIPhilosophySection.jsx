@@ -107,7 +107,7 @@ const AIPhilosophySection = () => {
       </div>
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
             My AI Philosophy
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
@@ -138,7 +138,7 @@ const AIPhilosophySection = () => {
                 `}>
                   <Icon name={philosophy?.icon} size={20} className="text-white" />
                 </div>
-                <h3 className="font-semibold text-foreground text-sm mb-1">
+                <h3 className="font-semibold text-primary text-sm mb-1">
                   {philosophy?.title}
                 </h3>
                 <p className="text-xs text-text-secondary">
@@ -164,7 +164,7 @@ const AIPhilosophySection = () => {
                     <Icon name={currentPhilosophy?.icon} size={24} className="text-white" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-foreground">
+                    <h3 className="text-2xl font-bold text-primary">
                       {currentPhilosophy?.title}
                     </h3>
                     <p className="text-text-secondary">
@@ -179,7 +179,7 @@ const AIPhilosophySection = () => {
 
                 {/* Core Principles */}
                 <div>
-                  <h4 className="font-semibold text-foreground mb-4">
+                  <h4 className="font-semibold text-primary mb-4">
                     Core Principles:
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -199,7 +199,7 @@ const AIPhilosophySection = () => {
 
               {/* Stats & Metrics */}
               <div className="space-y-6">
-                <h4 className="font-semibold text-foreground text-center">
+                <h4 className="font-semibold text-primary text-center">
                   Impact Metrics
                 </h4>
                 
@@ -213,7 +213,7 @@ const AIPhilosophySection = () => {
                       <span className="text-text-secondary capitalize">
                         {key?.replace(/([A-Z])/g, ' $1')?.trim()}:
                       </span>
-                      <span className="font-bold text-foreground">
+                      <span className="font-bold text-primary">
                         {value}
                       </span>
                     </div>
@@ -237,7 +237,7 @@ const AIPhilosophySection = () => {
                 {/* Quote */}
                 <blockquote className="border-l-4 border-accent pl-4 italic text-text-secondary">
                   "AI is not about replacing human intelligence, but augmenting it to solve problems we couldn't tackle before."
-                  <footer className="text-sm mt-2 text-foreground font-medium">
+                  <footer className="text-sm mt-2 text-primary font-medium">
                     - Haldies Gerhardien Pasya
                   </footer>
                 </blockquote>
@@ -286,7 +286,7 @@ const AIPhilosophySection = () => {
               </a>
               <a
                 href="/knowledge-hub-educational-content"
-                className="inline-flex items-center space-x-2 px-6 py-3 border border-border text-foreground rounded-brand font-medium hover:bg-muted transition-colors"
+                className="inline-flex items-center space-x-2 px-6 py-3 border border-border text-primary rounded-brand font-medium hover:bg-muted transition-colors"
               >
                 <Icon name="BookOpen" size={16} />
                 <span>Explore My Content</span>
