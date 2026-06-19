@@ -46,17 +46,17 @@ const HomepageAIEngineerShowcase = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Gerhardien Studio - Website & AI Automation Agency</title>
+        <title>Buatai Studio - Website & AI Automation Agency</title>
         <meta
           name="description"
-          content="Personal web and AI automation studio by Haldies Gerhardien Pasya. Building polished websites, internal tools, and practical automations for growing businesses."
+          content="Buatai Studio builds polished websites, internal tools, and practical AI automations for growing businesses."
         />
         <meta
           name="keywords"
-          content="website agency, AI automation, web development, automation consultant, Haldies Gerhardien Pasya"
+          content="website agency, AI automation, web development, automation consultant, Buatai Studio"
         />
-        <meta name="author" content="Haldies Gerhardien Pasya" />
-        <meta property="og:title" content="Gerhardien Studio - Website & AI Automation Agency" />
+        <meta name="author" content="Buatai Studio" />
+        <meta property="og:title" content="Buatai Studio - Website & AI Automation Agency" />
         <meta
           property="og:description"
           content="Professional, personal website and AI automation services for businesses that want cleaner systems and sharper digital presence."

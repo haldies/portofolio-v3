@@ -9,7 +9,7 @@ export const assistantKnowledge = [
     intent: 'identity',
     keywords: ['siapa', 'kamu', 'perkenalan', 'tentang', 'profil'],
     response:
-      'Aku adalah asisten AI untuk portofolio Haldies Gerhardien Pasya - AI Engineer yang fokus di Machine Learning, Computer Vision, dan AI produk terapan. Aku bantu jelaskan highlight dan bantu arahkan kamu ke bagian yang relevan.'
+      'Aku adalah asisten AI untuk Buatai Studio—studio yang fokus di Machine Learning, Computer Vision, dan produk AI terapan. Aku bantu jelaskan highlight dan mengarahkan kamu ke bagian yang relevan.'
   },
   {
     intent: 'specialization',

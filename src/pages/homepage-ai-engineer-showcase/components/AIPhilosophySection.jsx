@@ -238,7 +238,7 @@ const AIPhilosophySection = () => {
                 <blockquote className="border-l-4 border-accent pl-4 italic text-text-secondary">
                   "AI is not about replacing human intelligence, but augmenting it to solve problems we couldn't tackle before."
                   <footer className="text-sm mt-2 text-primary font-medium">
-                    - Haldies Gerhardien Pasya
+                    - Buatai Studio
                   </footer>
                 </blockquote>
               </div>

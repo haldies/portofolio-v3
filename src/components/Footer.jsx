@@ -25,7 +25,7 @@ const FooterPage = () => {
                 <div className="grid md:grid-cols-4 gap-8">
                     <div className="space-y-4">
                         <div>
-                            <h3 className="font-bold text-lg">Gerhardien</h3>
+                            <h3 className="font-bold text-lg">Buatai Studio</h3>
                             <p className="text-sm text-background/70">Web & AI Studio</p>
                         </div>
                         <p className="text-background/70 text-sm">
@@ -77,7 +77,7 @@ const FooterPage = () => {
 
                 <div className="border-t border-background/20 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
                     <p className="text-background/70 text-sm">
-                        © {new Date()?.getFullYear()} Gerhardien. All rights reserved.
+                        © {new Date()?.getFullYear()} Buatai Studio. All rights reserved.
                     </p>
                     <div className="flex space-x-6 mt-4 sm:mt-0">
                         <a href="/privacy" className="text-background/70 hover:text-background text-sm transition-colors">Privacy</a>
