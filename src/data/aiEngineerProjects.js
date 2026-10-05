@@ -64,7 +64,7 @@ const aiEngineerProjects = [
     id: 1,
     title: 'MagangHub Tracker',
     description:
-      'Dipakai 186 ribu pengguna, 1,9 juta view, 34 ribu login.',
+      'Dipakai 316 ribu pengguna, 2,7 juta tampilan.',
     image: '/assets/Projekan/llmmaganghub.png',
     category: 'Large Language Model',
     year: '2025',

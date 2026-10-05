@@ -32,14 +32,11 @@ const projectDetails = {
   'llm-maganghub': {
     title: 'MagangHub Tracker',
     summary:
-      'Website ini telah digunakan oleh 186 ribu pengguna aktif, meraih lebih dari 1,9 juta view, dan mencatat 34 ribu pengguna yang login.',
-    stats: [
-      { value: '186 rb', label: 'Pengguna aktif' },
-      { value: '1,9 jt', label: 'View' },
-      { value: '34 rb', label: 'Pengguna login' }
-    ],
+      'Website ini telah digunakan oleh 316 ribu pengguna aktif, meraih lebih dari 2,7 juta tampilan, dan mencatat 34 ribu pengguna yang login.',
     previewImage: '/assets/Projekan/llmmaganghub.png',
     videoSrc: '/assets/Projekan/video/demovideop1.mp4',
+    proofImage: '/assets/Projekan/analitik-maganghub-tracker.png',
+    proofCaption: 'Data pengunjung MagangHub Tracker dari Google Analytics.',
     seo: {
       title: 'MagangHub Tracker Project Detail',
       description: 'Preview MagangHub Tracker.'
@@ -207,11 +204,6 @@ const ProjectDetailLLMMagangHub = () => {
             <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
               {project.summary}
             </p>
-            {project.stats?.length > 0 && (
-              <p className="mx-auto mt-3 max-w-3xl text-sm text-muted-foreground">
-                {project.stats.map((s) => `${s.value} ${s.label}`).join(' • ')}
-              </p>
-            )}
 
             <div className="mt-8">
               {project.videoSrc ? (
@@ -268,6 +260,22 @@ const ProjectDetailLLMMagangHub = () => {
                     <Button variant="outline" size="lg" iconName="Download" iconPosition="left" asChild>
                       <a href={project.cta.apkHref} target="_blank" rel="noreferrer">{project.cta.apkLabel || 'Download Aplikasi'}</a>
                     </Button>
+                  )}
+                </div>
+              )}
+
+              {project.proofImage && (
+                <div className="mx-auto mt-10 max-w-5xl">
+                  <img
+                    src={project.proofImage}
+                    alt={`${project.title} analytics`}
+                    className="h-auto w-full object-contain"
+                    loading="lazy"
+                  />
+                  {project.proofCaption && (
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      {project.proofCaption}
+                    </p>
                   )}
                 </div>
               )}
