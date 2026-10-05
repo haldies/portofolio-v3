@@ -61,6 +61,18 @@ const aiEngineerProjects = [
     liveHref: 'https://isvandiarylawfirm.com'
   },
   {
+    id: 1,
+    title: 'MagangHub Tracker',
+    description:
+      'Dipakai 186 ribu pengguna, 1,9 juta view, 34 ribu login.',
+    image: '/assets/Projekan/llmmaganghub.png',
+    category: 'Large Language Model',
+    year: '2025',
+    tags: ['Llm', 'React.js', 'tailwind', 'vite'],
+    detailHref: '/projects/llm-maganghub',
+    liveHref: 'https://maganghub-genz.vercel.app'
+  },
+  {
     id: 5,
     title: 'LokerHub',
     description:
@@ -71,18 +83,6 @@ const aiEngineerProjects = [
     tags: ['CV Builder', 'Job Tracker', 'ATS-Friendly'],
     detailHref: '/projects/lokerhub',
     liveHref: 'https://lokerhub-mu.vercel.app'
-  },
-  {
-    id: 1,
-    title: 'MagangHub Tracker',
-    description:
-      'Tracker lowongan MagangHub untuk memantau kuota, jumlah pelamar, dan menyimpan kandidat lowongan, dengan eksperimen rekomendasi berbasis AI.',
-    image: '/assets/Projekan/llmmaganghub.png',
-    category: 'Large Language Model',
-    year: '2025',
-    tags: ['Llm', 'React.js', 'tailwind', 'vite'],
-    detailHref: '/projects/llm-maganghub',
-    liveHref: 'https://maganghub-genz.vercel.app'
   },
   {
     id: 4,

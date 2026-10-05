@@ -32,7 +32,12 @@ const projectDetails = {
   'llm-maganghub': {
     title: 'MagangHub Tracker',
     summary:
-      'Tracker lowongan MagangHub untuk memantau kuota, jumlah pelamar, dan menyimpan kandidat lowongan, dengan eksperimen rekomendasi berbasis AI.',
+      'Website ini telah digunakan oleh 186 ribu pengguna aktif, meraih lebih dari 1,9 juta view, dan mencatat 34 ribu pengguna yang login.',
+    stats: [
+      { value: '186 rb', label: 'Pengguna aktif' },
+      { value: '1,9 jt', label: 'View' },
+      { value: '34 rb', label: 'Pengguna login' }
+    ],
     previewImage: '/assets/Projekan/llmmaganghub.png',
     videoSrc: '/assets/Projekan/video/demovideop1.mp4',
     seo: {
@@ -202,6 +207,11 @@ const ProjectDetailLLMMagangHub = () => {
             <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
               {project.summary}
             </p>
+            {project.stats?.length > 0 && (
+              <p className="mx-auto mt-3 max-w-3xl text-sm text-muted-foreground">
+                {project.stats.map((s) => `${s.value} ${s.label}`).join(' • ')}
+              </p>
+            )}
 
             <div className="mt-8">
               {project.videoSrc ? (

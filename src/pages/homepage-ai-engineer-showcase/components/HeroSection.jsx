@@ -38,7 +38,7 @@ const serviceSignals = [
   }
 ];
 
-const HeroSection = () => {
+const HeroSection = ({ ready = true }) => {
   const sectionRef = useRef(null);
   const [parallax, setParallax] = useState({ bg: 0, mid1: 0, mid2: 0, x: 0 });
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
@@ -143,21 +143,21 @@ const HeroSection = () => {
         {/* Readability Overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/75 via-white/65 to-white/75" />
         <div className="absolute inset-0">
-          <Meteors number={15} className="opacity-80" />
+          {ready && <Meteors number={15} className="opacity-80" />}
         </div>
       </div>
       {/* Subtle Accents */}
       <div className="absolute inset-0 opacity-10">
         <div
-          className="absolute -top-10 -left-10 w-64 h-64 bg-slate-200 rounded-full blur-3xl animate-float-soft will-change-transform"
+          className={`absolute -top-10 -left-10 w-64 h-64 bg-slate-200 rounded-full blur-3xl will-change-transform ${ready ? 'animate-float-soft' : ''}`}
           style={{ transform: `translate3d(${parallax.x}px, ${parallax.mid1}px, 0)` }}
         />
         <div
-          className="absolute top-32 right-0 w-80 h-80 bg-slate-300 rounded-full blur-3xl animate-float-soft will-change-transform"
+          className={`absolute top-32 right-0 w-80 h-80 bg-slate-300 rounded-full blur-3xl will-change-transform ${ready ? 'animate-float-soft' : ''}`}
           style={{ animationDelay: '2s', transform: `translate3d(${parallax.x * -0.6}px, ${parallax.mid2}px, 0)` }}
         />
         <div
-          className="absolute bottom-10 left-1/2 w-72 h-72 bg-slate-200 rounded-full blur-3xl animate-float-soft will-change-transform"
+          className={`absolute bottom-10 left-1/2 w-72 h-72 bg-slate-200 rounded-full blur-3xl will-change-transform ${ready ? 'animate-float-soft' : ''}`}
           style={{ animationDelay: '4s', transform: `translate3d(${parallax.x * 0.3}px, ${parallax.mid1 * 0.6}px, 0)` }}
         />
         {/* Diagonal light streak for depth */}
@@ -179,13 +179,10 @@ const HeroSection = () => {
           }}
         >
           {/* Centered Content */}
-          <div className="space-y-8 w-full max-w-3xl text-center animate-fade-slide-up">
+          <div className={`space-y-8 w-full max-w-3xl text-center ${ready ? 'animate-fade-slide-up' : 'opacity-0'}`}>
             <div className="space-y-5">
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight">
-                Website profesional dan automasi AI untuk bisnis yang ingin{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-600">
-                  terlihat siap tumbuh
-                </span>
+                Website profesional dan automasi AI untuk bisnis yang ingin
               </h1>
 
               <p className="text-base sm:text-xl text-text-secondary leading-relaxed max-w-xl mx-auto">
@@ -219,14 +216,14 @@ const HeroSection = () => {
           </div>
 
           {/* Learning Partners Marquee - Moved inside Hero for better layout spacing */}
-          <div className="w-full max-w-5xl mx-auto px-4 animate-fade-slide-up" style={{ animationDelay: '100ms' }}>
+          <div className={`w-full max-w-5xl mx-auto px-4 ${ready ? 'animate-fade-slide-up' : 'opacity-0'}`} style={{ animationDelay: '100ms' }}>
             <div className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
               What I Build
             </div>
             <div className="relative overflow-hidden rounded-[28px] border border-border bg-card/80 shadow-brand-subtle backdrop-blur">
               <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white via-white to-transparent z-10" />
               <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white via-white to-transparent z-10" />
-              <div className="marquee-track items-center gap-8 px-10 py-6">
+              <div className={`${ready ? 'marquee-track' : 'flex'} items-center gap-8 px-10 py-6`}>
                 {partnerLoop.map((brand, index) => {
                   const isDuplicate = index >= serviceSignals.length;
                   return (
