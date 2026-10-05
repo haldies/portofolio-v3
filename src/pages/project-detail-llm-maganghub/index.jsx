@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
 import Header from '../../components/ui/Header';
@@ -112,7 +112,9 @@ const projectDetails = {
     },
     cta: {
       demoLabel: 'Lihat di Play Store',
-      demoHref: 'https://play.google.com/store/apps/details?id=com.kasirai.kasir&hl=id'
+      demoHref: 'https://play.google.com/store/apps/details?id=com.kasirai.kasir&hl=id',
+      noticeTitle: 'KasirAi sementara tidak tersedia di Play Store',
+      noticeMessage: 'Aplikasi KasirAi saat ini di-remove oleh Google karena kebijakan verifikasi yang mewajibkan upload buku tabungan bank. Kami sedang memperbaiki dan mengajukan ulang, estimasi review dari Google 1-3 hari. Terima kasih atas pengertiannya.'
     }
   },
   'isvandiary-lawfirm': {
@@ -176,10 +178,13 @@ const projectDetails = {
 const ProjectDetailLLMMagangHub = () => {
   const { projectId } = useParams();
   const project = projectDetails?.[projectId];
+  const [showNotice, setShowNotice] = useState(false);
 
   if (!project) {
     return <NotFound />;
   }
+
+  const hasNotice = Boolean(project.cta?.noticeMessage);
 
   return (
     <div className="min-h-screen bg-background text-primary">
@@ -213,6 +218,20 @@ const ProjectDetailLLMMagangHub = () => {
                 >
                   Your browser does not support the video tag.
                 </video>
+              ) : hasNotice ? (
+                <button
+                  type="button"
+                  onClick={() => setShowNotice(true)}
+                  aria-label={`Buka demo ${project.title}`}
+                  className="block w-full cursor-pointer"
+                >
+                  <img
+                    src={project.previewImage}
+                    alt={project.title}
+                    className="h-auto w-full object-contain"
+                    loading="lazy"
+                  />
+                </button>
               ) : (
                 <a href={project.cta.demoHref} target="_blank" rel="noreferrer" aria-label={`Buka demo ${project.title}`}>
                   <img
@@ -226,9 +245,15 @@ const ProjectDetailLLMMagangHub = () => {
 
               {project.cta.demoHref && (
                 <div className="mt-6 flex flex-wrap justify-center gap-3">
-                  <Button variant="default" size="lg" iconName="ExternalLink" iconPosition="right" asChild>
-                    <a href={project.cta.demoHref} target="_blank" rel="noreferrer">{project.cta.demoLabel || 'Lihat Demo'}</a>
-                  </Button>
+                  {hasNotice ? (
+                    <Button variant="default" size="lg" iconName="ExternalLink" iconPosition="right" onClick={() => setShowNotice(true)}>
+                      {project.cta.demoLabel || 'Lihat Demo'}
+                    </Button>
+                  ) : (
+                    <Button variant="default" size="lg" iconName="ExternalLink" iconPosition="right" asChild>
+                      <a href={project.cta.demoHref} target="_blank" rel="noreferrer">{project.cta.demoLabel || 'Lihat Demo'}</a>
+                    </Button>
+                  )}
                   {project.cta.apkHref && project.cta.apkHref !== '#' && (
                     <Button variant="outline" size="lg" iconName="Download" iconPosition="left" asChild>
                       <a href={project.cta.apkHref} target="_blank" rel="noreferrer">{project.cta.apkLabel || 'Download Aplikasi'}</a>
@@ -254,6 +279,29 @@ const ProjectDetailLLMMagangHub = () => {
           </div>
         </section>
       </main>
+      {hasNotice && showNotice && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-4"
+          onClick={() => setShowNotice(false)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="w-full max-w-md bg-background p-6 text-left"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h2 className="text-xl font-semibold">{project.cta.noticeTitle || 'Informasi'}</h2>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              {project.cta.noticeMessage}
+            </p>
+            <div className="mt-6 flex flex-wrap justify-end gap-3">
+              <Button variant="outline" size="default" onClick={() => setShowNotice(false)}>
+                Tutup
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
