@@ -70,9 +70,6 @@ const Header = () => {
                             <h1 className="text-lg font-semibold uppercase tracking-[0.35em] text-primary">
                                BUATAI
                             </h1>
-                            <p className="mt-1 text-sm uppercase tracking-[0.48em] text-text-secondary">
-                                Web & AI Studio
-                            </p>
                         </Link>
                     </div>
 

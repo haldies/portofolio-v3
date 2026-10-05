@@ -26,7 +26,6 @@ const FooterPage = () => {
                     <div className="space-y-4">
                         <div>
                             <h3 className="font-bold text-lg">Buatai Studio</h3>
-                            <p className="text-sm text-background/70">Web & AI Studio</p>
                         </div>
                         <p className="text-background/70 text-sm">
                             Website profesional, sistem internal, dan automasi AI untuk bisnis yang ingin bergerak lebih rapi.

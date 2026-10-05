@@ -1,84 +1,40 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
-const services = [
-  {
-    icon: 'Globe',
-    title: 'Website Profesional',
-    description: 'Company profile, landing page, portfolio brand, dan halaman campaign yang cepat, responsif, dan enak dibaca.',
-    points: ['Copywriting struktur halaman', 'Desain responsif', 'SEO dasar dan analytics']
-  },
-  {
-    icon: 'Cpu',
-    title: 'AI Automation',
-    description: 'Automasi untuk pekerjaan berulang: balas lead, ringkas dokumen, susun laporan, atau bantu operasional harian.',
-    points: ['Chatbot internal', 'Workflow AI assistant', 'Integrasi form dan spreadsheet']
-  },
-  {
-    icon: 'Layers',
-    title: 'Dashboard & Internal Tools',
-    description: 'Tool sederhana untuk admin, sales, operasional, atau reporting agar data tim lebih rapi dan mudah dipakai.',
-    points: ['Admin panel', 'Tracking data', 'Export dan laporan']
-  },
-  {
-    icon: 'Link',
-    title: 'Integrasi Sistem',
-    description: 'Menghubungkan website, database, WhatsApp, API, email, dan tools bisnis lain supaya alur kerja tidak tercecer.',
-    points: ['API integration', 'Database sync', 'Notification workflow']
-  },
-  {
-    icon: 'Activity',
-    title: 'Perawatan & Optimasi',
-    description: 'Bantuan teknis berkelanjutan untuk menjaga website tetap aman, cepat, dan relevan setelah launch.',
-    points: ['Maintenance ringan', 'Performance check', 'Iterasi fitur']
-  },
-  {
-    icon: 'Sparkles',
-    title: 'AI-Ready Content System',
-    description: 'Struktur konten, FAQ, knowledge base, dan aset digital yang siap dipakai oleh chatbot atau pencarian AI.',
-    points: ['Knowledge base', 'CMS setup', 'Reusable content blocks']
-  }
+const sentences = [
+  'Website cepat, automasi AI, dan dashboard yang rapi.',
+  'Sistem terhubung, aman, dan siap untuk AI.',
 ];
 
 const ProjectShowcase = () => {
   return (
-    <section id="services" className="scroll-mt-24 py-20 bg-slate-50 relative">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
-          {/* Sticky Left Column: Section Header */}
-          <div className="lg:col-span-4 lg:sticky lg:top-28 space-y-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-muted-foreground">
-              Services
-            </p>
-            <h2 className="text-3xl font-bold tracking-tight text-primary leading-tight">
-              Satu partner teknis untuk website, sistem, dan automasi
-            </h2>
-            <p className="text-base text-text-secondary leading-relaxed">
-              Membantu bisnis meningkatkan kredibilitas digital sekaligus mengautomasi alur kerja internal agar lebih efisien.
-            </p>
-          </div>
+    <section id="services" className="scroll-mt-24 py-28 md:py-36">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-left">
+        <motion.h2
+          initial={{ opacity: 0, y: 32, filter: 'blur(8px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          viewport={{ once: true, margin: '-15% 0px' }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 leading-tight"
+        >
+          Satu partner teknis untuk website, sistem, dan automasi
+        </motion.h2>
 
-          {/* Right Column: Vertical stack of detailed service cards */}
-          <div className="lg:col-span-8 space-y-6">
-            {services.map((service) => (
-              <article
-                key={service.title}
-                className="group flex flex-col p-6 sm:p-8 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-200"
-              >
-                {/* Card details */}
-                <div className="space-y-3 flex-grow text-left">
-                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors duration-150">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-slate-600">
-                    {service.description}
-                  </p>
-                </div>
-              </article>
-            ))}
-          </div>
-
-        </div>
+        <p className="mt-5 text-base md:text-lg leading-relaxed tracking-tight text-slate-500 font-medium">
+          {sentences.map((s, i) => (
+            <motion.span
+              key={i}
+              initial={{ opacity: 0, y: 36, filter: 'blur(10px)' }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              viewport={{ once: true, margin: '-10% 0px' }}
+              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: i * 0.08 }}
+              className="inline"
+            >
+              <span className="text-slate-900">{s.split('.')[0]}</span>
+              <span>. </span>
+            </motion.span>
+          ))}
+        </p>
       </div>
     </section>
   );

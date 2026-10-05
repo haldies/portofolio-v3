@@ -1,5 +1,78 @@
 const aiEngineerProjects = [
   {
+    id: 6,
+    title: 'KasirAi',
+    description:
+      'Aplikasi kasir mobile untuk membantu operasional penjualan secara praktis. Sudah diinstall 400+ orang dengan 20 pengguna aktif setiap harinya, kini tersedia di Google Play Store.',
+    image: '/assets/Projekan/kasirai.png',
+    category: 'Mobile Application',
+    year: '2026',
+    tags: ['POS', 'Mobile App', 'Google Play'],
+    detailHref: '/projects/kasir-ai',
+    liveHref: 'https://play.google.com/store/apps/details?id=com.kasirai.kasir&hl=id'
+  },
+  {
+    id: 10,
+    title: 'DetoxMove',
+    description:
+      'Tukar 1 push-up dengan 5 menit main TikTok. Dihitung otomatis pakai AI.',
+    image: '/assets/Projekan/projek-detox/Screenshot_2026-10-05-16-24-31-068_com.detoxmove.jpg',
+    category: 'Mobile Application',
+    year: '2026',
+    tags: ['Digital Detox', 'AI Fitness', 'Android'],
+    detailHref: '/projects/detoxmove',
+    liveHref: 'https://github.com/haldies/detoxmove'
+  },
+  {
+    id: 8,
+    title: 'PDFIndo',
+    description:
+      'Kumpulan tools PDF gratis yang diproses langsung di browser aman, cepat, dan tanpa mengunggah file ke server.',
+    image: '/assets/Projekan/pdfindo.png',
+    category: 'Web Utility',
+    year: '2026',
+    tags: ['PDF Tools', 'Privacy-First', 'Client-Side', 'Offline'],
+    detailHref: '/projects/pdfindo',
+    liveHref: 'https://pdfindo.vercel.app/'
+  },
+  {
+    id: 2,
+    title: 'Pencarian Produk Berbasis Gambar',
+    description:
+      'Mengembangkan fitur pencarian produk menggunakan gambar, dengan MobileNet sebagai feature extractor dan dataset 33.000 gambar produk.',
+    image: '/assets/images/google_lens.png',
+    category: 'Computer Vision',
+    year: '2024',
+    tags: ['YOLOv8', 'TensorRT', 'MLOps', 'Edge Deployment'],
+    detailHref: '/projects/google-lens-clone',
+    codeHref: 'https://github.com/haldies/vision-quality-inspector',
+    liveHref: 'https://github.com/haldies/Google-lens-Clone'
+  },
+  {
+    id: 11,
+    title: 'Isvandiary Law Firm',
+    description:
+      'Company profile kantor hukum untuk sengketa tambang dan lingkungan.',
+    image: '/assets/Projekan/isvandiary.png',
+    category: 'Company Profile',
+    year: '2026',
+    tags: ['Law Firm', 'Company Profile', 'Landing Page'],
+    detailHref: '/projects/isvandiary-lawfirm',
+    liveHref: 'https://isvandiarylawfirm.com'
+  },
+  {
+    id: 5,
+    title: 'LokerHub',
+    description:
+      'Platform all-in-one untuk melacak lamaran kerja dan membuat CV profesional yang ATS-friendly dengan mudah dan cepat.',
+    image: '/assets/Projekan/lokerhub.png',
+    category: 'Web Application',
+    year: '2026',
+    tags: ['CV Builder', 'Job Tracker', 'ATS-Friendly'],
+    detailHref: '/projects/lokerhub',
+    liveHref: 'https://lokerhub-mu.vercel.app'
+  },
+  {
     id: 1,
     title: 'MagangHub Tracker',
     description:
@@ -24,30 +97,6 @@ const aiEngineerProjects = [
     liveHref: 'https://web-nft-ten.vercel.app/'
   },
   {
-    id: 5,
-    title: 'LokerHub',
-    description:
-      'Platform all-in-one untuk melacak lamaran kerja dan membuat CV profesional yang ATS-friendly dengan mudah dan cepat.',
-    image: '/assets/Projekan/lokerhub.png',
-    category: 'Web Application',
-    year: '2026',
-    tags: ['CV Builder', 'Job Tracker', 'ATS-Friendly'],
-    detailHref: '/projects/lokerhub',
-    liveHref: 'https://lokerhub-mu.vercel.app'
-  },
-  {
-    id: 6,
-    title: 'KasirAi',
-    description:
-      'Aplikasi kasir mobile untuk membantu operasional penjualan secara praktis, kini telah tersedia di Google Play Store.',
-    image: '/assets/Projekan/kasirai.png',
-    category: 'Mobile Application',
-    year: '2026',
-    tags: ['POS', 'Mobile App', 'Google Play'],
-    detailHref: '/projects/kasir-ai',
-    liveHref: 'https://play.google.com/store/apps/details?id=com.kasirai.kasir&hl=id'
-  },
-  {
     id: 7,
     title: 'Ingat Uang',
     description:
@@ -58,18 +107,6 @@ const aiEngineerProjects = [
     tags: ['Personal Finance', 'AI OCR', 'Split Bill', 'Siri Shortcuts'],
     detailHref: '/projects/ingat-uang',
     liveHref: 'https://ingatuang.vercel.app/'
-  },
-  {
-    id: 8,
-    title: 'PDFIndo',
-    description:
-      'Kumpulan tools PDF gratis yang diproses langsung di browser—aman, cepat, dan tanpa mengunggah file ke server.',
-    image: '/assets/Projekan/pdfindo.png',
-    category: 'Web Utility',
-    year: '2026',
-    tags: ['PDF Tools', 'Privacy-First', 'Client-Side', 'Offline'],
-    detailHref: '/projects/pdfindo',
-    liveHref: 'https://pdfindo.vercel.app/'
   },
   {
     id: 9,
@@ -84,19 +121,6 @@ const aiEngineerProjects = [
     liveHref: 'https://motosenseofficial.vercel.app/'
   },
   {
-    id: 2,
-    title: 'Pencarian Produk Berbasis Gambar',
-    description:
-      'Mengembangkan fitur pencarian produk menggunakan gambar, dengan MobileNet sebagai feature extractor dan dataset 33.000 gambar produk.',
-    image: '/assets/images/google_lens.png',
-    category: 'Computer Vision',
-    year: '2024',
-    tags: ['YOLOv8', 'TensorRT', 'MLOps', 'Edge Deployment'],
-    detailHref: '/projects/google-lens-clone',
-    codeHref: 'https://github.com/haldies/vision-quality-inspector',
-    liveHref: 'https://demo.haldies.com/vision-quality'
-  },
-  {
     id: 3,
     title: 'AI Skin Analysis for Skincare Brands',
     description:
@@ -106,8 +130,8 @@ const aiEngineerProjects = [
     year: '2025',
     tags: ['image classification', 'CNN', 'TensorFlow', 'Vit', 'Flask'],
     detailHref: '/projects/image-classification-skin-type',
-    codeHref: 'https://github.com/haldies/personalization-engine',
-    liveHref: 'https://demo.haldies.com/personalization'
+    codeHref: 'https://github.com/C-Skin',
+    liveHref: 'https://github.com/C-Skin'
   }
 ];
 

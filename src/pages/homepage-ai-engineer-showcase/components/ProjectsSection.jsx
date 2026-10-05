@@ -8,15 +8,6 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="scroll-mt-24 py-20 bg-slate-50 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-primary">
-            Project & Produk Digital
-          </h2>
-          <p className="mt-3 text-base text-text-secondary">
-            Koleksi aplikasi web, mobile, AI, dan tools produktivitas yang telah dibangun.
-          </p>
-        </div>
-
         {/* Projects List */}
         <div className="grid max-w-5xl grid-cols-1 gap-6 mx-auto lg:grid-cols-2">
           {aiEngineerProjects.map((project) => (
