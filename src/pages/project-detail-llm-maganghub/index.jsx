@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Header from '../../components/ui/Header';
 import Button from '../../components/ui/Button';
+import Icon from '../../components/AppIcon';
+import Image from '../../components/AppImage';
 import NotFound from '../NotFound';
+import aiEngineerProjects from '../../data/aiEngineerProjects';
 
 const projectDetails = {
   detoxmove: {
@@ -187,6 +190,10 @@ const ProjectDetailLLMMagangHub = () => {
   }
 
   const hasNotice = Boolean(project.cta?.noticeMessage);
+  const currentPath = `/projects/${projectId}`;
+  const otherProjects = aiEngineerProjects
+    .filter((item) => item.detailHref !== currentPath)
+    .slice(0, 4);
 
   return (
     <div className="min-h-screen bg-background text-primary">
@@ -296,6 +303,65 @@ const ProjectDetailLLMMagangHub = () => {
             </div>
           </div>
         </section>
+
+        {otherProjects.length > 0 && (
+          <section className="mt-20 border-t border-slate-200 px-4 pt-12 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-5xl">
+              <div className="flex flex-wrap items-end justify-between gap-4">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
+                    Jelajahi lainnya
+                  </p>
+                  <h2 className="mt-2 text-2xl font-bold md:text-3xl">
+                    Lihat detail proyek lain
+                  </h2>
+                </div>
+                <Link
+                  to="/#projects"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
+                >
+                  Semua proyek
+                  <Icon name="ArrowRight" size={16} />
+                </Link>
+              </div>
+
+              <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
+                {otherProjects.map((item) => (
+                  <article
+                    key={item.id}
+                    className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
+                  >
+                    <div className="relative h-52 w-full overflow-hidden bg-slate-100">
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        className="h-full w-full bg-slate-100 object-contain p-3"
+                      />
+                    </div>
+                    <div className="flex flex-grow flex-col p-6 text-left">
+                      <h3 className="text-xl font-bold text-slate-900 transition-colors duration-150 group-hover:text-primary">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-600">
+                        {item.description}
+                      </p>
+                      <div className="mt-6 flex flex-wrap gap-3">
+                        <Link
+                          to={item.detailHref}
+                          className="inline-flex w-fit items-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                          aria-label={`Lihat detail ${item.title}`}
+                        >
+                          Lihat detail proyek
+                          <Icon name="ArrowRight" size={16} />
+                        </Link>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
       </main>
       {hasNotice && showNotice && (
         <div
