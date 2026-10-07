@@ -89,21 +89,30 @@ const Header = () => {
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <div className="lg:hidden ml-auto">
-                        <Button
-                            variant="ghost"
-                            size="icon"
-                            onClick={toggleMenu}
-                            className="relative"
-                            aria-label="Toggle menu"
-                        >
-                            <Icon
-                                name={isMenuOpen ? "X" : "Menu"}
-                                size={24}
-                                className="transition-brand"
-                            />
-                        </Button>
-                    </div>
+                   <div className="lg:hidden ml-auto">
+    <button
+        type="button"
+        onClick={toggleMenu}
+        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        className="flex h-10 w-10 items-center justify-center"
+    >
+        <span className="relative h-3 w-6">
+            <span
+                className={`absolute left-0 top-0 h-0.5 w-6 rounded-full bg-primary transition-all duration-300 ${
+                    isMenuOpen ? "top-1/2 rotate-45" : ""
+                }`}
+            />
+
+            <span
+                className={`absolute left-0 bottom-0 h-0.5 w-6 rounded-full bg-primary transition-all duration-300 ${
+                    isMenuOpen ? "bottom-1/2 -rotate-45" : ""
+                }`}
+            />
+        </span>
+    </button>
+</div>
+
+
                 </div>
 
                 {/* Mobile Navigation Menu */}

@@ -34,9 +34,6 @@ const AchievementBadges = () => {
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-primary">
             Dibangun seperti partner, bukan sekadar vendor
           </h2>
-          <p className="mt-4 text-base text-text-secondary">
-            Saya menjaga prosesnya jelas, personal, dan cukup ringan untuk bisnis yang ingin bergerak cepat tanpa kehilangan kualitas.
-          </p>
         </div>
 
         <div className="grid gap-5 md:grid-cols-4">

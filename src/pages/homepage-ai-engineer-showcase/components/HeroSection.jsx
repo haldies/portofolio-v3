@@ -181,8 +181,8 @@ const HeroSection = ({ ready = true }) => {
           {/* Centered Content */}
           <div className={`space-y-8 w-full max-w-3xl text-center ${ready ? 'animate-fade-slide-up' : 'opacity-0'}`}>
             <div className="space-y-5">
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight">
-                Website profesional dan automasi AI untuk bisnis yang ingin
+              <h1 className="text-3xl sm:text-5xl lg:text-5xl font-bold text-primary leading-tight">
+                Otomatiskan Pekerjaan Kembangkan Bisnis Lebih Cepat
               </h1>
 
               <p className="text-base sm:text-xl text-text-secondary leading-relaxed max-w-xl mx-auto">
@@ -190,29 +190,34 @@ const HeroSection = ({ ready = true }) => {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-xs sm:max-w-none mx-auto">
-              <Button
-                variant="default"
-                size="xl"
-                asChild
-                className="w-full sm:w-auto"
-              >
-                <Link to="/contact">
-                  Konsultasi Project
-                </Link>
-              </Button>
+          <div className="flex flex-row items-center justify-center gap-6 w-full max-w-xs sm:max-w-none mx-auto">
+            <Button
+              variant="default"
+              size="xl"
+              asChild
+              className="w-auto rounded-full px-7"
+            >
+              <Link to="/contact">
+                Konsultasi
+              </Link>
+            </Button>
 
-              <Button
-                variant="outline"
-                size="xl"
-                asChild
-                className="w-full sm:w-auto"
-              >
-                <a href="#services">
-                  Lihat Layanan
-                </a>
-              </Button>
-            </div>
+            <a
+              href="#services"
+              className="
+                inline-flex items-center
+                text-base font-medium
+                text-foreground
+                whitespace-nowrap
+                transition-colors duration-200
+                hover:text-foreground/60
+              "
+            >
+              Lihat Layanan
+              <span className="ml-1 text-lg leading-none">›</span>
+            </a>
+          </div>
+
           </div>
 
           {/* Learning Partners Marquee - Moved inside Hero for better layout spacing */}
@@ -220,9 +225,7 @@ const HeroSection = ({ ready = true }) => {
             <div className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
               What I Build
             </div>
-            <div className="relative overflow-hidden rounded-[28px] border border-border bg-card/80 shadow-brand-subtle backdrop-blur">
-              <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white via-white to-transparent z-10" />
-              <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white via-white to-transparent z-10" />
+            <div className="relative overflow-hidden rounded-sm backdrop-blur">
               <div className={`${ready ? 'marquee-track' : 'flex'} items-center gap-8 px-10 py-6`}>
                 {partnerLoop.map((brand, index) => {
                   const isDuplicate = index >= serviceSignals.length;
@@ -230,14 +233,13 @@ const HeroSection = ({ ready = true }) => {
                     <div
                       key={`${brand.name}-${index}`}
                       aria-hidden={isDuplicate}
-                      className="flex min-w-[220px] items-center gap-3 rounded-2xl border border-border bg-background px-4 py-3 shadow-sm backdrop-blur-sm transition-colors duration-300 hover:border-foreground"
+                      className="flex min-w-[220px] items-center gap-3 px-4 py-3  backdrop-blur-sm transition-colors duration-300 hover:border-foreground"
                     >
-                      <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-border bg-card">
+                      <div className="flex h-12 w-12 items-center justify-center overflow-hidden ">
                         <Image src={brand.logo} alt="" className="h-10 w-10 object-contain" />
                       </div>
                       <div className="text-left">
                         <p className="text-sm font-semibold text-primary">{brand.name}</p>
-                        <p className="text-xs text-text-secondary">{brand.program}</p>
                       </div>
                     </div>
                   );

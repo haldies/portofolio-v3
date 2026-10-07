@@ -17,7 +17,7 @@ const ProjectShowcase = () => {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 leading-tight"
         >
-          Satu partner teknis untuk website, sistem, dan automasi
+          Solusi Digital untuk Bisnis yang Lebih Efisien
         </motion.h2>
 
         <p className="mt-5 text-base md:text-lg leading-relaxed tracking-tight text-slate-500 font-medium">
