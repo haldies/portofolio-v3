@@ -117,9 +117,7 @@ const projectDetails = {
     },
     cta: {
       demoLabel: 'Lihat di Play Store',
-      demoHref: 'https://play.google.com/store/apps/details?id=com.kasirai.kasir&hl=id',
-      noticeTitle: 'KasirAi sementara tidak tersedia di Play Store',
-      noticeMessage: 'Aplikasi KasirAi saat ini di-remove oleh Google karena kebijakan verifikasi yang mewajibkan upload buku tabungan bank. Kami sedang memperbaiki dan mengajukan ulang, estimasi review dari Google 1-3 hari. Terima kasih atas pengertiannya.'
+      demoHref: 'https://play.google.com/store/apps/details?id=com.kasirai.kasir&hl=id'
     }
   },
   'isvandiary-lawfirm': {
@@ -363,29 +361,6 @@ const ProjectDetailLLMMagangHub = () => {
           </section>
         )}
       </main>
-      {hasNotice && showNotice && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-4"
-          onClick={() => setShowNotice(false)}
-          role="dialog"
-          aria-modal="true"
-        >
-          <div
-            className="w-full max-w-md bg-background p-6 text-left"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <h2 className="text-xl font-semibold">{project.cta.noticeTitle || 'Informasi'}</h2>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              {project.cta.noticeMessage}
-            </p>
-            <div className="mt-6 flex flex-wrap justify-end gap-3">
-              <Button variant="outline" size="default" onClick={() => setShowNotice(false)}>
-                Tutup
-              </Button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
