@@ -8,78 +8,78 @@ const AIPhilosophySection = () => {
   const philosophies = [
     {
       id: 'accessible',
-      title: 'Making AI Accessible',
-      subtitle: 'Bridging the Gap Between Complex and Simple',
-      description: 'AI shouldn\'t be locked away in academic papers or corporate labs. My mission is to democratize AI knowledge, making cutting-edge concepts understandable and applicable for everyone - from students to business leaders.',
+      title: 'AI yang Mudah Diakses',
+      subtitle: 'Menjembatani Hal Rumit Jadi Sederhana',
+      description: 'AI tidak seharusnya terkunci di jurnal akademik atau lab perusahaan besar. Misi saya adalah mendemokratisasi pengetahuan AI, membuat konsep yang canggih jadi mudah dipahami dan bisa dipakai semua orang — dari pelajar sampai pemilik bisnis.',
       icon: 'Users',
       color: 'from-blue-500 to-indigo-600',
       stats: {
-        reach: '50K+ learners',
-        content: '200+ videos',
-        languages: '3 languages'
+        reach: '50rb+ pelajar',
+        content: '200+ video',
+        languages: '3 bahasa'
       },
       principles: [
-        'Complex concepts explained simply',
-        'Hands-on learning experiences',
-        'Real-world application focus',
-        'Community-driven education'
+        'Konsep rumit dijelaskan sederhana',
+        'Pengalaman belajar yang praktis',
+        'Fokus ke penerapan nyata',
+        'Edukasi berbasis komunitas'
       ]
     },
     {
       id: 'ethical',
-      title: 'Ethical AI Development',
-      subtitle: 'Building Responsible AI Solutions',
-      description: 'Every AI system I develop considers its impact on society. I believe in transparent, fair, and accountable AI that serves humanity while respecting privacy, diversity, and human values.',
+      title: 'Pengembangan AI yang Etis',
+      subtitle: 'Membangun Solusi AI yang Bertanggung Jawab',
+      description: 'Setiap sistem AI yang saya bangun mempertimbangkan dampaknya ke masyarakat. Saya percaya pada AI yang transparan, adil, dan akuntabel — yang melayani manusia sambil menghormati privasi, keberagaman, dan nilai kemanusiaan.',
       icon: 'Shield',
       color: 'from-green-500 to-emerald-600',
       stats: {
-        projects: '15+ ethical reviews',
-        bias: '< 5% variance',
-        transparency: '100% documented'
+        projects: '15+ tinjauan etis',
+        bias: 'variansi < 5%',
+        transparency: '100% terdokumentasi'
       },
       principles: [
-        'Bias detection and mitigation',
-        'Transparent decision processes',
-        'Privacy-first design',
-        'Inclusive AI development'
+        'Deteksi dan mitigasi bias',
+        'Proses keputusan yang transparan',
+        'Desain yang mengutamakan privasi',
+        'Pengembangan AI yang inklusif'
       ]
     },
     {
       id: 'practical',
-      title: 'Theory Meets Practice',
-      subtitle: 'Solving Real Problems with AI',
-      description: 'While I appreciate the elegance of theoretical AI, my passion lies in applying these concepts to solve tangible problems. Every project starts with a real-world challenge and ends with measurable impact.',
+      title: 'Teori Bertemu Praktik',
+      subtitle: 'Menyelesaikan Masalah Nyata dengan AI',
+      description: 'Saya menghargai keindahan teori AI, tapi passion saya ada di penerapannya untuk menyelesaikan masalah nyata. Setiap proyek dimulai dari tantangan dunia nyata dan diakhiri dengan dampak yang terukur.',
       icon: 'Target',
       color: 'from-purple-500 to-pink-600',
       stats: {
-        accuracy: '95%+ avg',
-        deployment: '12 production systems',
-        impact: '100K+ users served'
+        accuracy: 'rata-rata 95%+',
+        deployment: '12 sistem produksi',
+        impact: '100rb+ pengguna terbantu'
       },
       principles: [
-        'Problem-first approach',
-        'Measurable outcomes',
-        'Scalable solutions',
-        'User-centered design'
+        'Pendekatan berbasis masalah',
+        'Hasil yang terukur',
+        'Solusi yang skalabel',
+        'Desain berpusat ke pengguna'
       ]
     },
     {
       id: 'continuous',
-      title: 'Continuous Learning',
-      subtitle: 'Evolving with AI\'s Rapid Pace',
-      description: 'AI evolves at breakneck speed, and so must we. I\'m committed to lifelong learning, staying current with research, experimenting with new techniques, and sharing discoveries with the community.',
+      title: 'Belajar Terus-Menerus',
+      subtitle: 'Berkembang Secepat Laju AI',
+      description: 'AI berkembang sangat cepat, dan kita pun harus begitu. Saya berkomitmen untuk belajar seumur hidup, mengikuti riset terbaru, bereksperimen dengan teknik baru, dan berbagi temuan ke komunitas.',
       icon: 'TrendingUp',
       color: 'from-orange-500 to-red-600',
       stats: {
-        papers: '50+ research papers',
-        courses: '25+ certifications',
-        experiments: '100+ prototypes'
+        papers: '50+ makalah riset',
+        courses: '25+ sertifikasi',
+        experiments: '100+ prototipe'
       },
       principles: [
-        'Daily learning habit',
-        'Research-backed decisions',
-        'Experimental mindset',
-        'Knowledge sharing culture'
+        'Kebiasaan belajar tiap hari',
+        'Keputusan berbasis riset',
+        'Mindset eksperimental',
+        'Budaya berbagi pengetahuan'
       ]
     }
   ];
@@ -108,10 +108,10 @@ const AIPhilosophySection = () => {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
-            My AI Philosophy
+            Filosofi AI Saya
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            The principles and beliefs that guide my approach to artificial intelligence development and education
+            Prinsip dan keyakinan yang memandu cara saya membangun AI dan berbagi edukasi
           </p>
         </div>
 
@@ -180,7 +180,7 @@ const AIPhilosophySection = () => {
                 {/* Core Principles */}
                 <div>
                   <h4 className="font-semibold text-primary mb-4">
-                    Core Principles:
+                    Prinsip Utama:
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {currentPhilosophy?.principles?.map((principle, index) => (
@@ -200,7 +200,7 @@ const AIPhilosophySection = () => {
               {/* Stats & Metrics */}
               <div className="space-y-6">
                 <h4 className="font-semibold text-primary text-center">
-                  Impact Metrics
+                  Metrik Dampak
                 </h4>
                 
                 <div className="grid gap-4">
@@ -229,14 +229,14 @@ const AIPhilosophySection = () => {
                     ></div>
                   </div>
                   <div className="flex justify-between mt-2 text-xs text-text-secondary">
-                    <span>Philosophy Impact</span>
+                    <span>Dampak Filosofi</span>
                     <span>{(activePhilosophy + 1) * 25}%</span>
                   </div>
                 </div>
 
                 {/* Quote */}
                 <blockquote className="border-l-4 border-accent pl-4 italic text-text-secondary">
-                  "AI is not about replacing human intelligence, but augmenting it to solve problems we couldn't tackle before."
+                  "AI bukan soal menggantikan kecerdasan manusia, tapi memperkuatnya untuk menyelesaikan masalah yang sebelumnya tidak bisa kita atasi."
                   <footer className="text-sm mt-2 text-primary font-medium">
                     - Buatai Studio
                   </footer>
@@ -274,7 +274,7 @@ const AIPhilosophySection = () => {
           {/* Call to Action */}
           <div className="text-center mt-12">
             <p className="text-text-secondary mb-6">
-              Interested in collaborating on AI projects that align with these principles?
+              Tertarik berkolaborasi di proyek AI yang sejalan dengan prinsip ini?
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -282,14 +282,14 @@ const AIPhilosophySection = () => {
                 className="inline-flex items-center space-x-2 px-6 py-3 bg-accent text-accent-foreground rounded-brand font-medium hover:bg-accent/90 transition-colors"
               >
                 <Icon name="MessageCircle" size={16} />
-                <span>Let's Discuss Ideas</span>
+                <span>Mari Diskusikan Ide</span>
               </a>
               <a
                 href="/knowledge-hub-educational-content"
                 className="inline-flex items-center space-x-2 px-6 py-3 border border-border text-primary rounded-brand font-medium hover:bg-muted transition-colors"
               >
                 <Icon name="BookOpen" size={16} />
-                <span>Explore My Content</span>
+                <span>Jelajahi Konten Saya</span>
               </a>
             </div>
           </div>

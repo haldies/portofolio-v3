@@ -138,12 +138,12 @@ const CertificateCard = React.memo(({ certificate, onOpen }) => {
           </>
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-card px-4 text-center text-xs text-muted-foreground">
-            Image unavailable
+            Image tidak tersedia
           </div>
         )}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
         <div className="absolute top-3 right-3 rounded-full border border-accent/20 bg-background/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-accent shadow-sm backdrop-blur">
-          Certificate
+          Sertifikat
         </div>
       </div>
 
@@ -163,7 +163,7 @@ const CertificateCard = React.memo(({ certificate, onOpen }) => {
             className="w-full text-xs"
             onClick={() => onOpen(certificate.url)}
           >
-            View Certificate
+            Lihat Sertifikat
           </Button>
         </div>
       </div>
@@ -254,13 +254,13 @@ const CertificationBadges = () => {
             <Icon name="Award" size={20} className="text-accent" />
           </div>
           <div>
-            <h2 className="text-xl font-semibold text-primary">Certifications & Badges</h2>
-            <p className="text-sm text-muted-foreground">Professional credentials and achievements</p>
+            <h2 className="text-xl font-semibold text-primary">Sertifikasi & Lencana</h2>
+            <p className="text-sm text-muted-foreground">Kredensial dan pencapaian profesional</p>
           </div>
         </div>
         <div className="text-right">
           <div className="text-2xl font-bold text-accent">{totalCertificates}</div>
-          <div className="text-sm text-muted-foreground">Certifications</div>
+          <div className="text-sm text-muted-foreground">Sertifikasi</div>
         </div>
       </div>
 
@@ -276,7 +276,7 @@ const CertificationBadges = () => {
         </div>
       ) : (
         <div className="rounded-brand-lg border border-dashed border-border bg-muted/30 p-10 text-center text-sm text-muted-foreground">
-          No certificate images found in <span className="font-medium text-primary">{storagePath}</span>.
+          Tidak ada gambar sertifikat ditemukan di <span className="font-medium text-primary">{storagePath}</span>.
         </div>
       )}
 
@@ -284,19 +284,19 @@ const CertificationBadges = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
           <div className="rounded-brand-lg border border-accent/20 bg-card/70 p-4 text-center shadow-sm">
             <div className="text-2xl font-semibold text-accent">{totalCertificates}</div>
-            <div className="text-sm text-muted-foreground">Certificates</div>
+            <div className="text-sm text-muted-foreground">Sertifikat</div>
           </div>
           <div className="rounded-brand-lg border border-secondary/20 bg-card/70 p-4 text-center shadow-sm">
             <div className="text-2xl font-semibold text-secondary">{totalOrganizations}</div>
-            <div className="text-sm text-muted-foreground">Highlight Organizations</div>
+            <div className="text-sm text-muted-foreground">Organisasi Unggulan</div>
           </div>
           <div className="rounded-brand-lg border border-primary/20 bg-card/70 p-4 text-center shadow-sm">
             <div className="text-2xl font-semibold text-primary">{previewCoverage}%</div>
-            <div className="text-sm text-muted-foreground">Preview Coverage</div>
+            <div className="text-sm text-muted-foreground">Cakupan Pratinjau</div>
           </div>
           <div className="rounded-brand-lg border border-warning/20 bg-card/70 p-4 text-center shadow-sm">
             <div className="text-xs font-semibold text-primary break-all">{storagePath}</div>
-            <div className="mt-1 text-sm text-muted-foreground">Storage Path</div>
+            <div className="mt-1 text-sm text-muted-foreground">Lokasi Penyimpanan</div>
           </div>
         </div>
       </div>

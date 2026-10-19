@@ -26,7 +26,7 @@ const TikTokIntegration = () => {
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.32em] text-muted-foreground">
-              Personal Studio
+              Studio Personal
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-primary">
               Kecil, fokus, dan langsung dikerjakan oleh orang teknisnya

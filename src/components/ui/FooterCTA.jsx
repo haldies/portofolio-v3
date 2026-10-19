@@ -14,16 +14,16 @@ const defaultSecondaryIcon = (
 );
 
 const FooterCTA = ({
-  title = 'Ready to Build the Future with AI?',
-  description = "Let's collaborate on thoughtful AI solutions that create meaningful impact. From concept to deployment, I'm here to help bring your vision to life.",
+  title = 'Siap Membangun Masa Depan dengan AI?',
+  description = 'Mari berkolaborasi membangun solusi AI yang bermanfaat dan berdampak nyata. Dari konsep sampai deployment, saya bantu wujudkan idemu.',
   primaryAction = {
     href: '/contact',
-    label: 'Start Your AI Project',
+    label: 'Mulai Proyek AI-mu',
     icon: defaultPrimaryIcon
   },
   secondaryAction = {
     href: '/ai-playground',
-    label: 'Explore AI Playground',
+    label: 'Jelajahi AI Playground',
     icon: defaultSecondaryIcon
   },
   className,

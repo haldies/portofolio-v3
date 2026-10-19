@@ -46,20 +46,20 @@ const HomepageAIEngineerShowcase = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Buatai Studio - Website & AI Automation Agency</title>
+        <title>Buatai Studio - Jasa Website & Automasi AI</title>
         <meta
           name="description"
-          content="Buatai Studio builds polished websites, internal tools, and practical AI automations for growing businesses."
+          content="Buatai Studio membangun website yang rapi, sistem internal, dan automasi AI praktis untuk bisnis yang sedang berkembang."
         />
         <meta
           name="keywords"
-          content="website agency, AI automation, web development, automation consultant, Buatai Studio"
+          content="jasa website, automasi AI, web development, konsultan automasi, Buatai Studio"
         />
         <meta name="author" content="Buatai Studio" />
-        <meta property="og:title" content="Buatai Studio - Website & AI Automation Agency" />
+        <meta property="og:title" content="Buatai Studio - Jasa Website & Automasi AI" />
         <meta
           property="og:description"
-          content="Professional, personal website and AI automation services for businesses that want cleaner systems and sharper digital presence."
+          content="Layanan website profesional dan automasi AI untuk bisnis yang ingin sistem lebih rapi dan kehadiran digital yang lebih tajam."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://haldies.dev/home" />

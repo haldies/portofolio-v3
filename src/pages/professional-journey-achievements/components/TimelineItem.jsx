@@ -33,6 +33,25 @@ const TimelineItem = ({ item, isLast }) => {
     }
   };
 
+  const getTypeLabel = (type) => {
+    switch (type) {
+      case 'education':
+        return 'Pendidikan';
+      case 'certification':
+        return 'Sertifikasi';
+      case 'project':
+        return 'Proyek';
+      case 'achievement':
+        return 'Pencapaian';
+      case 'work_experience':
+        return 'Pengalaman Kerja';
+      case 'other_activity':
+        return 'Kegiatan Lain';
+      default:
+        return 'Kalender';
+    }
+  };
+
   return (
     <div className="group relative flex items-start gap-6 pb-12 last:pb-0">
       {/* Journey Line (dashed, map-like) */}
@@ -68,7 +87,7 @@ const TimelineItem = ({ item, isLast }) => {
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="inline-flex items-center gap-2 rounded-full bg-muted/60 px-3 py-1 text-xs font-medium uppercase tracking-wide text-text-secondary">
                     <Icon name={getIconName(item?.type)} size={14} />
-                    {item?.type?.replace('_', ' ')}
+                    {getTypeLabel(item?.type)}
                   </span>
                   {item?.achievement && (
                     <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent shadow-inner">
@@ -95,7 +114,7 @@ const TimelineItem = ({ item, isLast }) => {
                 <div className="hidden xs:block shrink-0 rounded-2xl border border-border/60 bg-background/80 p-3 shadow-inner">
                   <Image
                     src={item?.logo}
-                    alt={`${item?.organization} logo`}
+                    alt={`Logo ${item?.organization}`}
                     className="w-14 h-14 object-contain"
                   />
                 </div>
@@ -128,7 +147,7 @@ const TimelineItem = ({ item, isLast }) => {
                 className="flex items-center gap-2 text-sm font-medium text-accent transition-colors duration-200 focus-brand"
                 aria-expanded={isExpanded}
               >
-                <span>{isExpanded ? 'Show Less Details' : 'Show Full Impact'}</span>
+                <span>{isExpanded ? 'Tampilkan Lebih Sedikit' : 'Lihat Dampak Lengkap'}</span>
                 <Icon
                   name="ChevronDown"
                   size={16}
@@ -147,7 +166,7 @@ const TimelineItem = ({ item, isLast }) => {
                 {item?.details?.learningOutcomes && (
                   <div>
                     <h4 className="text-sm font-semibold uppercase tracking-wide text-text-secondary mb-3">
-                      Learning Outcomes
+                      Hasil Pembelajaran
                     </h4>
                     <ul className="space-y-2">
                       {item?.details?.learningOutcomes?.map((outcome, index) => (
@@ -163,7 +182,7 @@ const TimelineItem = ({ item, isLast }) => {
                 {item?.details?.projects && (
                   <div>
                     <h4 className="text-sm font-semibold uppercase tracking-wide text-text-secondary mb-3">
-                      Key Projects
+                      Proyek Utama
                     </h4>
                     <div className="grid gap-3 sm:grid-cols-2">
                       {item?.details?.projects?.map((project, index) => (
@@ -183,7 +202,7 @@ const TimelineItem = ({ item, isLast }) => {
                 {item?.details?.metrics && (
                   <div>
                     <h4 className="text-sm font-semibold uppercase tracking-wide text-text-secondary mb-3">
-                      Impact Metrics
+                      Metrik Dampak
                     </h4>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                       {item?.details?.metrics?.map((metric, index) => (

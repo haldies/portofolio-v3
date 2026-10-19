@@ -8,63 +8,63 @@ const ContactOptions = () => {
   const contactOptions = [
     {
       id: 'hiring',
-      title: 'Hiring & Recruitment',
-      description: 'Looking to hire AI talent for your team or organization',
+      title: 'Rekrutmen & Hiring',
+      description: 'Mau merekrut talenta AI untuk tim atau organisasimu',
       icon: 'Users',
       color: 'bg-primary',
-      features: ['Resume & Portfolio Review', 'Technical Interview Scheduling', 'Salary & Timeline Discussion', 'Reference Verification'],
-      responseTime: '4-6 hours',
+      features: ['Review CV & Portofolio', 'Jadwal Interview Teknis', 'Diskusi Gaji & Timeline', 'Verifikasi Referensi'],
+      responseTime: '4–6 jam',
       preferredMethod: 'Email + LinkedIn'
     },
     {
       id: 'collaboration',
-      title: 'Project Collaboration',
-      description: 'Fellow AI engineers seeking partnership on innovative projects',
+      title: 'Kolaborasi Proyek',
+      description: 'Sesama AI engineer yang mau kolaborasi di project inovatif',
       icon: 'GitBranch',
       color: 'bg-secondary',
-      features: ['Technical Scope Discussion', 'GitHub Repository Access', 'Code Review & Feedback', 'Joint Development Planning'],
-      responseTime: '2-4 hours',
+      features: ['Diskusi Scope Teknis', 'Akses Repositori GitHub', 'Review Kode & Feedback', 'Perencanaan Development Bersama'],
+      responseTime: '2–4 jam',
       preferredMethod: 'GitHub + Email'
     },
     {
       id: 'consulting',
-      title: 'AI Consulting',
-      description: 'Business leaders exploring AI implementation and strategy',
+      title: 'Konsultasi AI',
+      description: 'Pemilik bisnis yang mau eksplorasi implementasi dan strategi AI',
       icon: 'Lightbulb',
       color: 'bg-accent',
-      features: ['AI Strategy Development', 'Technical Feasibility Analysis', 'Implementation Roadmap', 'ROI Assessment'],
-      responseTime: '6-12 hours',
+      features: ['Penyusunan Strategi AI', 'Analisis Kelayakan Teknis', 'Roadmap Implementasi', 'Penilaian ROI'],
+      responseTime: '6–12 jam',
       preferredMethod: 'Video Call + Email'
     },
     {
       id: 'mentorship',
-      title: 'Learning & Mentorship',
-      description: 'Students and aspiring AI engineers seeking guidance',
+      title: 'Belajar & Mentorship',
+      description: 'Pelajar dan calon AI engineer yang butuh bimbingan',
       icon: 'GraduationCap',
       color: 'bg-trust-purple',
-      features: ['Career Path Guidance', 'Skill Development Planning', 'Project Review & Feedback', 'Industry Insights'],
-      responseTime: '1-2 days',
+      features: ['Arahan Jalur Karier', 'Rencana Pengembangan Skill', 'Review Proyek & Feedback', 'Insight Industri'],
+      responseTime: '1–2 hari',
       preferredMethod: 'Video Call + Discord'
     },
     {
       id: 'speaking',
-      title: 'Speaking Engagements',
-      description: 'Conference organizers and event planners',
+      title: 'Pembicara Acara',
+      description: 'Panitia konferensi dan penyelenggara acara',
       icon: 'Mic',
       color: 'bg-warning',
-      features: ['Keynote Presentations', 'Technical Workshops', 'Panel Discussions', 'Educational Content'],
-      responseTime: '12-24 hours',
-      preferredMethod: 'Email + Calendar'
+      features: ['Presentasi Keynote', 'Workshop Teknis', 'Diskusi Panel', 'Konten Edukasi'],
+      responseTime: '12–24 jam',
+      preferredMethod: 'Email + Kalender'
     },
     {
       id: 'media',
-      title: 'Media & Interviews',
-      description: 'Journalists, podcasters, and content creators',
+      title: 'Media & Wawancara',
+      description: 'Jurnalis, podcaster, dan kreator konten',
       icon: 'Camera',
       color: 'bg-error',
-      features: ['Technical Interviews', 'AI Industry Commentary', 'Educational Content Creation', 'Thought Leadership'],
-      responseTime: '6-12 hours',
-      preferredMethod: 'Email + Social Media'
+      features: ['Wawancara Teknis', 'Komentar Industri AI', 'Pembuatan Konten Edukasi', 'Insight Kepakaran'],
+      responseTime: '6–12 jam',
+      preferredMethod: 'Email + Media Sosial'
     }
   ];
 
@@ -74,11 +74,11 @@ const ContactOptions = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">
-            Choose Your Collaboration Path
+            Pilih Jalur Kolaborasimu
           </h2>
           <p className="text-lg text-text-secondary max-w-3xl mx-auto">
-            Select the option that best describes your needs, and I'll provide a tailored response 
-            with the most relevant information and next steps.
+            Pilih opsi yang paling sesuai dengan kebutuhanmu, dan saya akan balas
+            dengan info yang paling relevan plus langkah berikutnya.
           </p>
         </div>
 
@@ -120,7 +120,7 @@ const ContactOptions = () => {
               {/* Expandable Details */}
               {selectedOption === option?.id && (
                 <div className="border-t border-border pt-4 mt-4">
-                  <h4 className="font-medium text-primary mb-3">What I'll provide:</h4>
+                  <h4 className="font-medium text-primary mb-3">Yang akan saya bantu:</h4>
                   <ul className="space-y-2">
                     {option?.features?.map((feature, index) => (
                       <li key={index} className="flex items-center space-x-2 text-sm text-text-secondary">
@@ -136,7 +136,7 @@ const ContactOptions = () => {
                     iconPosition="right"
                     className="mt-4 w-full"
                   >
-                    Get Started
+                    Mulai
                   </Button>
                 </div>
               )}
@@ -156,7 +156,7 @@ const ContactOptions = () => {
         {/* Quick Contact CTA */}
         <div className="text-center">
           <p className="text-text-secondary mb-4">
-            Not sure which option fits? No problem!
+            Masih bingung pilih yang mana? Santai aja!
           </p>
           <Button
             variant="outline"
@@ -164,7 +164,7 @@ const ContactOptions = () => {
             iconName="MessageCircle"
             iconPosition="left"
           >
-            Send a General Inquiry
+            Kirim Pertanyaan Umum
           </Button>
         </div>
       </div>

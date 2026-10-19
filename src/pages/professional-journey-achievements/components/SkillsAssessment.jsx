@@ -4,7 +4,7 @@ import Icon from '../../../components/AppIcon';
 const SkillsAssessment = () => {
   const skillCategories = [
     {
-      category: "Programming Languages",
+      category: "Bahasa Pemrograman",
       icon: "Code",
       skills: [
         { name: "Python" },
@@ -13,7 +13,7 @@ const SkillsAssessment = () => {
       ]
     },
     {
-      category: "AI/ML Frameworks",
+      category: "Framework AI/ML",
       icon: "Brain",
       skills: [
         { name: "TensorFlow" },
@@ -24,7 +24,7 @@ const SkillsAssessment = () => {
       ]
     },
     {
-      category: "Data & Analytics",
+      category: "Data & Analitik",
       icon: "BarChart3",
       skills: [
         { name: "Pandas" },
@@ -35,7 +35,7 @@ const SkillsAssessment = () => {
       ]
     },
     {
-      category: "Tools & Platforms",
+      category: "Perkakas & Platform",
       icon: "Settings",
       skills: [
         { name: "Jupyter" },
@@ -54,8 +54,8 @@ const SkillsAssessment = () => {
           <Icon name="TrendingUp" size={20} className="text-accent" />
         </div>
         <div>
-          <h2 className="text-xl font-semibold text-primary">Skills Assessment</h2>
-          <p className="text-sm text-text-secondary">Technical proficiency across key domains</p>
+          <h2 className="text-xl font-semibold text-primary">Penilaian Keahlian</h2>
+          <p className="text-sm text-text-secondary">Kemahiran teknis di berbagai bidang utama</p>
         </div>
       </div>
       <div className="space-y-8">
@@ -88,11 +88,11 @@ const SkillsAssessment = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="rounded-brand-lg border border-accent/20 bg-card/70 p-4 text-center shadow-sm">
             <div className="text-2xl font-semibold text-accent">4</div>
-            <div className="text-sm text-text-secondary">Skill Categories</div>
+            <div className="text-sm text-text-secondary">Kategori Keahlian</div>
           </div>
           <div className="rounded-brand-lg border border-primary/20 bg-card/70 p-4 text-center shadow-sm">
             <div className="text-2xl font-semibold text-primary">23</div>
-            <div className="text-sm text-text-secondary">Total Skills</div>
+            <div className="text-sm text-text-secondary">Total Keahlian</div>
           </div>
         </div>
       </div>

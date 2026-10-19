@@ -5,9 +5,9 @@ const aiEngineerProjects = [
     description:
       'Aplikasi kasir mobile untuk membantu operasional penjualan secara praktis. Sudah diinstall 400+ orang dengan 20 pengguna aktif setiap harinya, kini tersedia di Google Play Store.',
     image: '/assets/Projekan/kasirai.png',
-    category: 'Mobile Application',
+    category: 'Aplikasi Mobile',
     year: '2026',
-    tags: ['POS', 'Mobile App', 'Google Play'],
+    tags: ['POS', 'Aplikasi Mobile', 'Google Play'],
     detailHref: '/projects/kasir-ai',
     liveHref: 'https://play.google.com/store/apps/details?id=com.kasirai.kasir&hl=id'
   },
@@ -17,9 +17,9 @@ const aiEngineerProjects = [
     description:
       'Tukar 1 push-up dengan 5 menit main TikTok. Dihitung otomatis pakai AI.',
     image: '/assets/Projekan/projek-detox/Screenshot_2026-10-05-16-24-31-068_com.detoxmove.jpg',
-    category: 'Mobile Application',
+    category: 'Aplikasi Mobile',
     year: '2026',
-    tags: ['Digital Detox', 'AI Fitness', 'Android'],
+    tags: ['Detox Digital', 'Kebugaran AI', 'Android'],
     detailHref: '/projects/detoxmove',
     liveHref: 'https://github.com/haldies/detoxmove'
   },
@@ -29,9 +29,9 @@ const aiEngineerProjects = [
     description:
       'Kumpulan tools PDF gratis yang diproses langsung di browser aman, cepat, dan tanpa mengunggah file ke server.',
     image: '/assets/Projekan/pdfindo.png',
-    category: 'Web Utility',
+    category: 'Utilitas Web',
     year: '2026',
-    tags: ['PDF Tools', 'Privacy-First', 'Client-Side', 'Offline'],
+    tags: ['Perkakas PDF', 'Privasi Utama', 'Sisi Klien', 'Offline'],
     detailHref: '/projects/pdfindo',
     liveHref: 'https://pdfindo.vercel.app/'
   },
@@ -41,7 +41,7 @@ const aiEngineerProjects = [
     description:
       'Mengembangkan fitur pencarian produk menggunakan gambar, dengan MobileNet sebagai feature extractor dan dataset 33.000 gambar produk.',
     image: '/assets/images/google_lens.png',
-    category: 'Computer Vision',
+    category: 'Visi Komputer',
     year: '2024',
     tags: ['YOLOv8', 'TensorRT', 'MLOps', 'Edge Deployment'],
     detailHref: '/projects/google-lens-clone',
@@ -52,11 +52,11 @@ const aiEngineerProjects = [
     id: 11,
     title: 'Isvandiary Law Firm',
     description:
-      'Company profile kantor hukum untuk sengketa tambang dan lingkungan.',
+      'Profil perusahaan kantor hukum untuk sengketa tambang dan lingkungan.',
     image: '/assets/Projekan/isvandiary.png',
-    category: 'Company Profile',
+    category: 'Profil Perusahaan',
     year: '2026',
-    tags: ['Law Firm', 'Company Profile', 'Landing Page'],
+    tags: ['Firma Hukum', 'Profil Perusahaan', 'Landing Page'],
     detailHref: '/projects/isvandiary-lawfirm',
     liveHref: 'https://isvandiarylawfirm.com'
   },
@@ -66,7 +66,7 @@ const aiEngineerProjects = [
     description:
       'Dipakai 316 ribu pengguna, 2,7 juta tampilan.',
     image: '/assets/Projekan/llmmaganghub.png',
-    category: 'Large Language Model',
+    category: 'Model Bahasa Besar',
     year: '2025',
     tags: ['Llm', 'React.js', 'tailwind', 'vite'],
     detailHref: '/projects/llm-maganghub',
@@ -76,11 +76,11 @@ const aiEngineerProjects = [
     id: 5,
     title: 'LokerHub',
     description:
-      'Platform all-in-one untuk melacak lamaran kerja dan membuat CV profesional yang ATS-friendly dengan mudah dan cepat.',
+      'Platform lengkap untuk melacak lamaran kerja dan membuat CV profesional yang ATS-friendly dengan mudah dan cepat.',
     image: '/assets/Projekan/lokerhub.png',
-    category: 'Web Application',
+    category: 'Aplikasi Web',
     year: '2026',
-    tags: ['CV Builder', 'Job Tracker', 'ATS-Friendly'],
+    tags: ['Pembuat CV', 'Pelacak Lamaran', 'ATS-Friendly'],
     detailHref: '/projects/lokerhub',
     liveHref: 'https://lokerhub-mu.vercel.app'
   },
@@ -88,9 +88,9 @@ const aiEngineerProjects = [
     id: 4,
     title: 'Zushi Company Profile',
     description:
-      'Company profile responsif untuk Zushi yang memperkenalkan visi brand, nilai produk, dan positioning bisnis digital secara profesional.',
+      'Profil perusahaan responsif untuk Zushi yang memperkenalkan visi brand, nilai produk, dan positioning bisnis digital secara profesional.',
     image: '/assets/Projekan/web-nft.jpg',
-    category: 'Frontend Development',
+    category: 'Pengembangan Frontend',
     year: '2023',
     tags: ['HTML', 'CSS', 'JavaScript', 'Tailwind CSS'],
     detailHref: '/projects/zushi-nft',
@@ -102,9 +102,9 @@ const aiEngineerProjects = [
     description:
       'Platform cerdas untuk mencatat pengeluaran, membagi tagihan otomatis, dan memahami kondisi keuangan personal dengan lebih mudah.',
     image: '/assets/Projekan/ingatuang.png',
-    category: 'Fintech Web App',
+    category: 'Aplikasi Web Fintech',
     year: '2026',
-    tags: ['Personal Finance', 'AI OCR', 'Split Bill', 'Siri Shortcuts'],
+    tags: ['Keuangan Personal', 'AI OCR', 'Bagi Tagihan', 'Siri Shortcuts'],
     detailHref: '/projects/ingat-uang',
     liveHref: 'https://ingatuang.vercel.app/'
   },
@@ -114,9 +114,9 @@ const aiEngineerProjects = [
     description:
       'Diagnosis awal suara mesin motor berbasis AI yang mengenali delapan indikasi kerusakan dari rekaman audio selama delapan detik.',
     image: '/assets/Projekan/motosense.png',
-    category: 'Audio AI',
+    category: 'AI Audio',
     year: '2026',
-    tags: ['YAMNet', 'TensorFlow Lite', 'Librosa', 'Audio Classification'],
+    tags: ['YAMNet', 'TensorFlow Lite', 'Librosa', 'Klasifikasi Audio'],
     detailHref: '/projects/motosense',
     liveHref: 'https://motosenseofficial.vercel.app/'
   },
@@ -126,9 +126,9 @@ const aiEngineerProjects = [
     description:
       'Solusi analisis kulit berbasis AI untuk membantu brand skincare memahami kebutuhan pelanggan dan memberi rekomendasi produk yang lebih personal.',
     image: '/assets/images/CSkin_Skin_Classification.webp',
-    category: 'Machine Learning',
+    category: 'Pembelajaran Mesin',
     year: '2025',
-    tags: ['image classification', 'CNN', 'TensorFlow', 'Vit', 'Flask'],
+    tags: ['Klasifikasi Gambar', 'CNN', 'TensorFlow', 'ViT', 'Flask'],
     detailHref: '/projects/image-classification-skin-type',
     codeHref: 'https://github.com/C-Skin',
     liveHref: 'https://github.com/C-Skin'

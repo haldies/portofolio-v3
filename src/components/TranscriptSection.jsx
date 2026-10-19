@@ -33,7 +33,7 @@ const TranscriptSection = ({
               className="ml-auto bg-background/20 hover:bg-background/30 text-primary-foreground px-4 py-2 rounded-lg flex items-center gap-2 transition-colors duration-200"
             >
               <Download className="w-4 h-4" />
-              Download PDF
+              Unduh PDF
             </button>
           )}
         </div>
@@ -43,7 +43,7 @@ const TranscriptSection = ({
           <div className="bg-background/10 rounded-lg p-4 mt-4">
             <div className="flex items-center gap-2 mb-2">
               <Trophy className="w-5 h-5" />
-              <span className="font-semibold">Key Achievements</span>
+              <span className="font-semibold">Pencapaian Utama</span>
             </div>
             <div className="flex flex-wrap gap-2">
               {achievements.map((achievement, index) => (

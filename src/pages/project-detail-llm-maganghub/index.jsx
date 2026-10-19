@@ -22,13 +22,13 @@ const projectDetails = {
       '/assets/Projekan/projek-detox/Screenshot_2026-10-05-14-24-16-632_com.google.android.apps.photos.jpg'
     ],
     seo: {
-      title: 'DetoxMove - Project Detail',
-      description: 'Preview DetoxMove.'
+      title: 'DetoxMove - Detail Proyek',
+      description: 'Pratinjau DetoxMove.'
     },
     cta: {
       demoLabel: 'Lihat GitHub',
       demoHref: 'https://github.com/haldies/detoxmove',
-      apkLabel: 'Download Aplikasi',
+      apkLabel: 'Unduh Aplikasi',
       apkHref: 'https://drive.google.com/file/d/1JFiAKtJUXD7t-HdzDPltUlEfZpE3NXJd/view?usp=drivesdk'
     },
   },
@@ -41,8 +41,8 @@ const projectDetails = {
     proofImage: '/assets/Projekan/analitik-maganghub-tracker.png',
     proofCaption: 'Data pengunjung MagangHub Tracker dari Google Analytics.',
     seo: {
-      title: 'MagangHub Tracker Project Detail',
-      description: 'Preview MagangHub Tracker.'
+      title: 'Detail Proyek MagangHub Tracker',
+      description: 'Pratinjau MagangHub Tracker.'
     },
     cta: {
       demoHref: 'https://maganghub-genz.vercel.app'
@@ -55,8 +55,8 @@ const projectDetails = {
     previewImage: '/assets/images/google_lens.png',
     videoSrc: '/assets/Projekan/video/google-lens-demo.mp4',
     seo: {
-      title: 'Pencarian Produk Berbasis Gambar - Project Detail',
-      description: 'Preview pencarian produk berbasis gambar.'
+      title: 'Pencarian Produk Berbasis Gambar - Detail Proyek',
+      description: 'Pratinjau pencarian produk berbasis gambar.'
     },
     cta: {
       demoHref: 'https://github.com/haldies/Google-lens-Clone'
@@ -69,8 +69,8 @@ const projectDetails = {
     previewImage: '/assets/images/CSkin_Skin_Classification.webp',
     videoSrc: '',
     seo: {
-      title: 'AI Skin Analysis for Skincare Brands - Project Detail',
-      description: 'Preview AI Skin Analysis.'
+      title: 'AI Skin Analysis for Skincare Brands - Detail Proyek',
+      description: 'Pratinjau AI Skin Analysis.'
     },
     cta: {
       demoLabel: 'Lihat GitHub',
@@ -80,12 +80,12 @@ const projectDetails = {
   'zushi-nft': {
     title: 'Zushi Company Profile',
     summary:
-      'Company profile responsif untuk Zushi yang memperkenalkan visi brand, nilai produk, dan positioning bisnis digital secara profesional.',
+      'Profil perusahaan responsif untuk Zushi yang memperkenalkan visi brand, nilai produk, dan positioning bisnis digital secara profesional.',
     previewImage: '/assets/Projekan/web-nft.jpg',
     videoSrc: '',
     seo: {
-      title: 'Zushi Company Profile - Project Detail',
-      description: 'Preview Zushi Company Profile.'
+      title: 'Zushi Company Profile - Detail Proyek',
+      description: 'Pratinjau Zushi Company Profile.'
     },
     cta: {
       demoHref: 'https://web-nft-ten.vercel.app/'
@@ -94,12 +94,12 @@ const projectDetails = {
   lokerhub: {
     title: 'LokerHub',
     summary:
-      'Platform all-in-one untuk melacak lamaran kerja dan membuat CV profesional yang ATS-friendly dengan mudah dan cepat.',
+      'Platform lengkap untuk melacak lamaran kerja dan membuat CV profesional yang ATS-friendly dengan mudah dan cepat.',
     previewImage: '/assets/Projekan/lokerhub.png',
     videoSrc: '',
     seo: {
-      title: 'LokerHub - Project Detail',
-      description: 'Preview LokerHub.'
+      title: 'LokerHub - Detail Proyek',
+      description: 'Pratinjau LokerHub.'
     },
     cta: {
       demoHref: 'https://lokerhub-mu.vercel.app'
@@ -112,8 +112,8 @@ const projectDetails = {
     previewImage: '/assets/Projekan/kasirai.png',
     videoSrc: '',
     seo: {
-      title: 'KasirAi - Project Detail',
-      description: 'Preview KasirAi.'
+      title: 'KasirAi - Detail Proyek',
+      description: 'Pratinjau KasirAi.'
     },
     cta: {
       demoLabel: 'Lihat di Play Store',
@@ -123,12 +123,12 @@ const projectDetails = {
   'isvandiary-lawfirm': {
     title: 'Isvandiary Law Firm',
     summary:
-      'Company profile kantor hukum Isvandiary & Rekan untuk sengketa tambang dan lingkungan di Bandung dan Jakarta.',
+      'Profil perusahaan kantor hukum Isvandiary & Rekan untuk sengketa tambang dan lingkungan di Bandung dan Jakarta.',
     previewImage: '/assets/Projekan/isvandiary.png',
     videoSrc: '',
     seo: {
-      title: 'Isvandiary Law Firm - Project Detail',
-      description: 'Preview Isvandiary Law Firm.'
+      title: 'Isvandiary Law Firm - Detail Proyek',
+      description: 'Pratinjau Isvandiary Law Firm.'
     },
     cta: {
       demoHref: 'https://isvandiarylawfirm.com'
@@ -141,8 +141,8 @@ const projectDetails = {
     previewImage: '/assets/Projekan/ingatuang.png',
     videoSrc: '',
     seo: {
-      title: 'Ingat Uang - Project Detail',
-      description: 'Preview Ingat Uang.'
+      title: 'Ingat Uang - Detail Proyek',
+      description: 'Pratinjau Ingat Uang.'
     },
     cta: {
       demoHref: 'https://ingatuang.vercel.app/'
@@ -155,8 +155,8 @@ const projectDetails = {
     previewImage: '/assets/Projekan/pdfindo.png',
     videoSrc: '',
     seo: {
-      title: 'PDFIndo - Project Detail',
-      description: 'Preview PDFIndo.'
+      title: 'PDFIndo - Detail Proyek',
+      description: 'Pratinjau PDFIndo.'
     },
     cta: {
       demoHref: 'https://pdfindo.vercel.app/'
@@ -169,8 +169,8 @@ const projectDetails = {
     previewImage: '/assets/Projekan/motosense.png',
     videoSrc: '',
     seo: {
-      title: 'MotoSense - Project Detail',
-      description: 'Preview MotoSense.'
+      title: 'MotoSense - Detail Proyek',
+      description: 'Pratinjau MotoSense.'
     },
     cta: {
       demoHref: 'https://motosenseofficial.vercel.app/'
@@ -223,7 +223,7 @@ const ProjectDetailLLMMagangHub = () => {
                   playsInline
                   poster={project.previewImage}
                 >
-                  Your browser does not support the video tag.
+                  Browser Anda tidak mendukung tag video.
                 </video>
               ) : hasNotice ? (
                 <button
@@ -263,7 +263,7 @@ const ProjectDetailLLMMagangHub = () => {
                   )}
                   {project.cta.apkHref && project.cta.apkHref !== '#' && (
                     <Button variant="outline" size="lg" iconName="Download" iconPosition="left" asChild>
-                      <a href={project.cta.apkHref} target="_blank" rel="noreferrer">{project.cta.apkLabel || 'Download Aplikasi'}</a>
+                      <a href={project.cta.apkHref} target="_blank" rel="noreferrer">{project.cta.apkLabel || 'Unduh Aplikasi'}</a>
                     </Button>
                   )}
                 </div>

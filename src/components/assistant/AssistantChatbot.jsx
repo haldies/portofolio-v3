@@ -227,28 +227,28 @@ const computeResponse = (userInput) => {
       'Baca highlight projek terbaru di kartu paling atas.'
     ],
     project_maganhub: [
-      'Kunjungi halaman detail projek MagangHub dari menu Projects.',
+      'Kunjungi halaman detail projek MagangHub dari menu Proyek.',
       'Siapkan pertanyaan tentang use case LLM jika ingin diskusi lanjutan.',
-      'Hubungi Haldies lewat Contact Hub untuk kolaborasi produk serupa.'
+      'Hubungi Haldies lewat halaman Kontak untuk kolaborasi produk serupa.'
     ],
     collaboration: [
-      'Isi form di Contact & Collaboration Hub.',
+      'Isi form di halaman Kontak.',
       'Siapkan konteks proyek dan timeline yang kamu incar.',
       'Sertakan referensi dataset atau use case yang ingin dipecahkan.'
     ],
     education: [
-      'Download modul pembelajaran di halaman Educational Content.',
+      'Unduh modul pembelajaran di halaman Hub Pengetahuan.',
       'Tandai sertifikasi mana yang relevan untuk kamu.',
       'Tanyakan rekomendasi jalur belajar lanjutan ke asisten.'
     ],
     skills: [
-      'Cek rubrik Skills Assessment untuk detail skor kompetensi.',
+      'Cek rubrik Penilaian Keahlian untuk detail skor kompetensi.',
       'Lihat project card yang menunjukkan skill tersebut dalam praktik.',
       'Minta rekomendasi roadmap adaptasi skill baru.'
     ],
     cv: [
-      'Buka halaman Journey & Achievements.',
-      'Scroll ke bagian Downloadable CV dan klik tombol unduh.',
+      'Buka halaman Perjalanan & Pencapaian.',
+      'Minta CV terbaru lewat form di halaman Kontak.',
       'Pastikan menyimpan versi terbaru per tanggal yang tertera.'
     ],
     social: [
@@ -257,14 +257,14 @@ const computeResponse = (userInput) => {
       'Telusuri repositori GitHub untuk sample code tambahan.'
     ],
     achievements: [
-      'Review badge Achievement di halaman Journey.',
+      'Review badge Pencapaian di halaman Perjalanan.',
       'Catat highlight yang relevan untuk kebutuhanmu.',
       'Minta klarifikasi lebih detail lewat form kontak.'
     ],
     availability: [
       'Gunakan prompt "Apa jenis kolaborasi yang sedang dicari?"',
       'Sampaikan informasi proyek via email supaya bisa ditindak cepat.',
-      'Atur sesi diskusi awal melalui Contact Hub.'
+      'Atur sesi diskusi awal melalui halaman Kontak.'
     ]
   };
 
@@ -396,10 +396,10 @@ const AssistantChatbot = () => {
         .map((item) => item.suggestions || [])
         .flat()
         .map((item) => {
-          if (item.toLowerCase().includes('playground')) return 'Projects';
-          if (item.toLowerCase().includes('journey')) return 'Journey';
-          if (item.toLowerCase().includes('contact')) return 'Collaboration';
-          if (item.toLowerCase().includes('educational')) return 'Education';
+          if (item.toLowerCase().includes('playground')) return 'Proyek';
+          if (item.toLowerCase().includes('journey')) return 'Perjalanan';
+          if (item.toLowerCase().includes('contact')) return 'Kolaborasi';
+          if (item.toLowerCase().includes('educational')) return 'Edukasi';
           return null;
         })
         .filter(Boolean)

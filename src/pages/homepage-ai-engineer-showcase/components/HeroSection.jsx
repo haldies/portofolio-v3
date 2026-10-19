@@ -1,41 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
-import Image from '../../../components/AppImage';
 import Meteors from '../../../components/ui/meteors';
 
-const serviceSignals = [
-  {
-    name: 'Websites',
-    program: 'Landing page, company profile, product pages',
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
-  },
-  {
-    name: 'AI Automation',
-    program: 'Chatbot, workflow assistant, document automation',
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'
-  },
-  {
-    name: 'Internal Tools',
-    program: 'Admin panel, CRM light, reporting dashboard',
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'
-  },
-  {
-    name: 'Integrations',
-    program: 'API, spreadsheet, WhatsApp, database sync',
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg'
-  },
-  {
-    name: 'Content Systems',
-    program: 'SEO pages, CMS setup, reusable content blocks',
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'
-  },
-  {
-    name: 'Care Plan',
-    program: 'Maintenance, analytics, optimization support',
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg'
-  }
+// Belum ada file logo -> tampilkan sebagai teks satu baris.
+const trustedBrands = [
+  'Drspecs',
+  'Isvandiary Law Firm',
+  'Hagepos',
+  'AJM',
+  'Zushi',
+  'Javasuperfood',
 ];
 
 const HeroSection = ({ ready = true }) => {
@@ -43,7 +18,7 @@ const HeroSection = ({ ready = true }) => {
   const [parallax, setParallax] = useState({ bg: 0, mid1: 0, mid2: 0, x: 0 });
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
 
-  const partnerLoop = [...serviceSignals, ...serviceSignals];
+  const partnerLoop = [...trustedBrands, ...trustedBrands];
 
   // Scroll-based parallax for background and accents (smoothed)
   useEffect(() => {
@@ -220,28 +195,23 @@ const HeroSection = ({ ready = true }) => {
 
           </div>
 
-          {/* Learning Partners Marquee - Moved inside Hero for better layout spacing */}
-          <div className={`w-full max-w-5xl mx-auto px-4 ${ready ? 'animate-fade-slide-up' : 'opacity-0'}`} style={{ animationDelay: '100ms' }}>
+          {/* Trusted Brands Marquee - teks satu baris */}
+          <div className={`w-full max-w-5xl mx-auto px-4 mt-16 lg:mt-24 ${ready ? 'animate-fade-slide-up' : 'opacity-0'}`} style={{ animationDelay: '100ms' }}>
             <div className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
-              What I Build
+              Dipercaya Oleh
             </div>
-            <div className="relative overflow-hidden rounded-sm backdrop-blur">
-              <div className={`${ready ? 'marquee-track' : 'flex'} items-center gap-8 px-10 py-6`}>
+            <div className="relative overflow-hidden rounded-sm backdrop-blur [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
+              <div className={`${ready ? 'marquee-track' : 'flex'} items-center gap-12 px-10 py-4`}>
                 {partnerLoop.map((brand, index) => {
-                  const isDuplicate = index >= serviceSignals.length;
+                  const isDuplicate = index >= trustedBrands.length;
                   return (
-                    <div
-                      key={`${brand.name}-${index}`}
+                    <span
+                      key={`${brand}-${index}`}
                       aria-hidden={isDuplicate}
-                      className="flex min-w-[220px] items-center gap-3 px-4 py-3  backdrop-blur-sm transition-colors duration-300 hover:border-foreground"
+                      className="whitespace-nowrap text-lg font-semibold tracking-tight text-primary/70 transition-colors duration-300 hover:text-primary"
                     >
-                      <div className="flex h-12 w-12 items-center justify-center overflow-hidden ">
-                        <Image src={brand.logo} alt="" className="h-10 w-10 object-contain" />
-                      </div>
-                      <div className="text-left">
-                        <p className="text-sm font-semibold text-primary">{brand.name}</p>
-                      </div>
-                    </div>
+                      {brand}
+                    </span>
                   );
                 })}
               </div>

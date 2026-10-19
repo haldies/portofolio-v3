@@ -7,15 +7,15 @@ import FooterCTA from '../../components/ui/FooterCTA';
 import aiEngineerProjects from '../../data/aiEngineerProjects';
 
 const ProjectsShowcase = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState('Semua');
 
   const categories = useMemo(
-    () => ['All', ...Array.from(new Set(aiEngineerProjects.map(project => project.category)))],
+    () => ['Semua', ...Array.from(new Set(aiEngineerProjects.map(project => project.category)))],
     []
   );
 
   const filteredProjects = useMemo(
-    () => (selectedCategory === 'All'
+    () => (selectedCategory === 'Semua'
       ? aiEngineerProjects
       : aiEngineerProjects.filter(project => project.category === selectedCategory)),
     [selectedCategory]
@@ -24,10 +24,10 @@ const ProjectsShowcase = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Project Collections - Haldies Portfolio</title>
+        <title>Koleksi Proyek - Portofolio Haldies</title>
         <meta
           name="description"
-          content="Explore curated digital projects crafted by Haldies. Discover elegant solutions across analytics, AI, automation, and product design."
+          content="Jelajahi kurasi proyek digital garapan Haldies. Temukan solusi elegan di bidang analitik, AI, otomasi, dan desain produk."
         />
         <meta
           name="keywords"
@@ -39,7 +39,7 @@ const ProjectsShowcase = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="mt-6 mb-4 text-4xl font-semibold text-primary md:text-5xl">
-              Crafting purposeful AI research and product experiments
+              Merancang riset AI dan eksperimen produk yang tepat guna
             </h1>
           
           </div>
@@ -73,15 +73,15 @@ const ProjectsShowcase = () => {
 
 
       <FooterCTA
-        title="Need a hand shaping your next idea?"
-        description="Let's collaborate on meaningful, design-led solutions that move your product forward with intent."
+        title="Butuh bantuan mematangkan ide berikutnya?"
+        description="Mari kolaborasi bikin solusi yang bermakna dan berbasis desain, yang bikin produkmu maju dengan jelas."
         primaryAction={{
           href: '/achievements',
-          label: 'View All Projects'
+          label: 'Lihat Semua Proyek'
         }}
         secondaryAction={{
           href: '/contact',
-          label: "Let's Connect"
+          label: 'Hubungi Saya'
         }}
       />
     </div>

@@ -13,11 +13,11 @@ function TranscriptApp() {
       <main className="max-w-7xl mx-auto px-4 py-8">
         {/* Bachelor of Computer Science */}
         <TranscriptSection
-          title="Bachelor of Computer Science (S.Kom)"
+          title="Sarjana Ilmu Komputer (S.Kom)"
           institution="Universitas Nusa Putra"
           icon={<GraduationCap className="w-8 h-8" />}
           courses={bachelorCourses}
-          achievements={["IPK 3.47", "147 SKS Completed", "Strong Foundation in CS"]}
+          achievements={["IPK 3.47", "147 SKS Selesai", "Fondasi Ilmu Komputer yang Kuat"]}
           totalCredits={147}
           totalWeight={510}
           finalGPA={3.47}
@@ -35,34 +35,34 @@ function TranscriptApp() {
           institution="Lintasarta × Dicoding × NVIDIA"
           icon={<Brain className="w-8 h-8" />}
           courses={laskarAICourses}
-          achievements={["Top 10% of 500", "Best Capstone Project", "Distinction Award"]}
+          achievements={["Top 10% dari 500 peserta", "Proyek Capstone Terbaik", "Penghargaan Distinction"]}
           averageScore={97.34}
           additionalInfo={[
             "Distinction – Top 10% dari 500 peserta",
-            "Best Capstone Project Winner",
-            "Program fokus AI/ML dengan NVIDIA partnership",
-            "Transkrip tambahan courses dengan rata-rata 95.50"
+            "Pemenang Proyek Capstone Terbaik",
+            "Program fokus AI/ML hasil kemitraan dengan NVIDIA",
+            "Kursus transkrip tambahan dengan rata-rata 95.50"
           ]}
         />
 
         {/* Additional Laskar AI Courses */}
         <div className="bg-card rounded-xl shadow-brand-large border border-border overflow-hidden mb-8">
           <div className="p-4 bg-primary text-primary-foreground">
-            <h3 className="text-lg font-bold">Additional Laskar AI Courses</h3>
+            <h3 className="text-lg font-bold">Kursus Tambahan Laskar AI</h3>
           </div>
           <div className="p-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
               <div className="text-center p-4 bg-muted rounded-lg">
                 <div className="text-2xl font-bold text-trust-purple">3</div>
-                <div className="text-sm text-text-secondary">Extra Courses</div>
+                <div className="text-sm text-text-secondary">Kursus Tambahan</div>
               </div>
               <div className="text-center p-4 bg-muted rounded-lg">
                 <div className="text-2xl font-bold text-trust-purple">95.50</div>
-                <div className="text-sm text-text-secondary">Average Score</div>
+                <div className="text-sm text-text-secondary">Nilai Rata-rata</div>
               </div>
               <div className="text-center p-4 bg-muted rounded-lg">
                 <div className="text-2xl font-bold text-trust-purple">A</div>
-                <div className="text-sm text-text-secondary">Grade</div>
+                <div className="text-sm text-text-secondary">Predikat</div>
               </div>
             </div>
             <div className="overflow-x-auto">
@@ -99,13 +99,13 @@ function TranscriptApp() {
           institution="Google × GoTo × Traveloka"
           icon={<Rocket className="w-8 h-8" />}
           courses={bangkitCourses}
-          achievements={["Top 10% of 4000+", "50 Best Capstone", "ML Cohort Distinction"]}
+          achievements={["Top 10% dari 4.000+ peserta", "50 Capstone Terbaik", "Distinction Kohort ML"]}
           averageScore={96.20}
           additionalInfo={[
-            "Distinction – Top 10% dari 4.000+ peserta Machine Learning Cohort",
-            "50 Best Capstone Project Winner", 
-            "Industry-partnered program with Google, GoTo, Traveloka",
-            "Comprehensive ML specialization with hands-on projects"
+            "Distinction – Top 10% dari 4.000+ peserta Kohort Machine Learning",
+            "Pemenang 50 Proyek Capstone Terbaik", 
+            "Program kemitraan industri bersama Google, GoTo, Traveloka",
+            "Spesialisasi ML yang komprehensif dengan proyek praktik langsung"
           ]}
         />
       </main>

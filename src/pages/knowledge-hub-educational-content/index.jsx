@@ -117,7 +117,7 @@ const KnowledgeHubEducationalContent = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Helmet>
-        <title>Knowledge Hub & Educational Content - Haldies Portfolio</title>
+        <title>Hub Pengetahuan & Konten Edukasi - Portofolio Haldies</title>
         <meta
           name="description"
           content="Temukan kurasi program belajar AI, roadmap karier, dan tools produksi yang digunakan Haldies untuk membangun solusi AI end-to-end."
@@ -184,7 +184,7 @@ const KnowledgeHubEducationalContent = () => {
               >
                 <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.3em]">
                   <span className="text-accent">{item.focus}</span>
-                  <span className="text-muted-foreground">Explore</span>
+                  <span className="text-muted-foreground">Jelajahi</span>
                 </div>
                 <div>
                   <p className="text-lg font-semibold text-foreground">{item.name}</p>

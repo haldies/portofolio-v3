@@ -25,8 +25,8 @@ const ProfessionalJourneyAchievements = () => {
       "type": "achievement",
       "title": "AI Engineer - Laskar AI",
       "organization": "Laskar AI (Lintasarta, Dicoding, NVIDIA)",
-      "period": "February 2025 - July 2025",
-      "achievement": "Distinction (Top 10%) & Best Capstone Project Award",
+      "period": "Februari 2025 - Juli 2025",
+      "achievement": "Distinction (Top 10%) & Penghargaan Proyek Capstone Terbaik",
       "description": "Terpilih sebagai salah satu dari 600 peserta dari 13.588 pendaftar. Merancang dan deploy model klasifikasi tipe kulit wajah menggunakan CNN, MobileNet, dan ViT. Menerapkan MLOps end-to-end di Google Cloud Platform (GCP) dan membangun inference API dengan FastAPI, serta web interface Cskin.",
       "skills": [
         "CNN",
@@ -55,15 +55,15 @@ const ProfessionalJourneyAchievements = () => {
         "metrics": [
           {
             "value": "Top 10%",
-            "label": "Ranking"
+            "label": "Peringkat"
           },
           {
             "value": "Best Capstone",
-            "label": "Project Award"
+            "label": "Penghargaan Proyek"
           },
           {
             "value": "4",
-            "label": "Team Members"
+            "label": "Anggota Tim"
           }
         ]
       }
@@ -71,10 +71,10 @@ const ProfessionalJourneyAchievements = () => {
     {
       "id": 2,
       "type": "education",
-      "title": "Machine Learning Cohort - Bangkit Academy",
+      "title": "Kohort Machine Learning - Bangkit Academy",
       "organization": "Google, GoTo, & Traveloka",
-      "period": "September 2024 - December 2024",
-      "achievement": "Distinction (Top 10% of 1,500 participants) & Top 50 Capstone",
+      "period": "September 2024 - Desember 2024",
+      "achievement": "Distinction (Top 10% dari 1.500 peserta) & 50 Capstone Terbaik",
       "description": "Terpilih sebagai salah satu dari 4.636 peserta dari 45.841+ pendaftar. Mengembangkan model pengenalan ekspresi wajah (CNN + ViT) dan pipeline pengenalan ekspresi teks (BiLSTM + IndoBERT). Kedua model diintegrasikan menggunakan FastAPI.",
       "skills": [
         "Machine Learning",
@@ -104,15 +104,15 @@ const ProfessionalJourneyAchievements = () => {
         "metrics": [
           {
             "value": "Top 10%",
-            "label": "Ranking"
+            "label": "Peringkat"
           },
           {
             "value": "Top 50",
-            "label": "Capstone Project Rank"
+            "label": "Peringkat Proyek Capstone"
           },
           {
             "value": "7",
-            "label": "Team Members"
+            "label": "Anggota Tim"
           }
         ]
       }
@@ -120,10 +120,10 @@ const ProfessionalJourneyAchievements = () => {
     {
       "id": 3,
       "type": "work_experience",
-      "title": "Full stack Developer Intern",
+      "title": "Magang Full Stack Developer",
       "organization": "GoodPets",
-      "period": "January 2024 - July 2024",
-      "achievement": "Developed Blog Platform and Custom CMS",
+      "period": "Januari 2024 - Juli 2024",
+      "achievement": "Mengembangkan Platform Blog dan CMS Kustom",
       "description": "Merancang dan mengembangkan platform blog dari awal menggunakan Tailwind CSS, JavaScript, Prisma, MySQL, dan Next.js 13. Membangun Content Management System (CMS) yang intuitif dan mengoptimalkan performa menggunakan SSR dan CSR.",
       "skills": [
         "JavaScript (Expert)",
@@ -148,13 +148,13 @@ const ProfessionalJourneyAchievements = () => {
     {
       "id": 4,
       "type": "education",
-      "title": "S1 Informatics Engineering",
+      "title": "S1 Teknik Informatika",
       "organization": "Universitas Nusa Putra - Sukabumi, Indonesia",
-      "period": "september 2021 - july 2025",
-      "achievement": "GPA 3.47",
+      "period": "September 2021 - Juli 2025",
+      "achievement": "IPK 3.47",
       "description": "Lulusan Teknik Informatika dengan minat kuat pada AI Engineering, khususnya Large Language Models (LLMs) dan Computer Vision.",
       "skills": [
-        "Informatics Engineering",
+        "Teknik Informatika",
         "AI Engineering",
         "LLMs",
         "Computer Vision",
@@ -170,11 +170,11 @@ const ProfessionalJourneyAchievements = () => {
         "metrics": [
           {
             "value": "3.47",
-            "label": "GPA"
+            "label": "IPK"
           },
           {
             "value": "S1",
-            "label": "Degree"
+            "label": "Gelar"
           }
         ]
       }
@@ -182,16 +182,16 @@ const ProfessionalJourneyAchievements = () => {
     {
       "id": 5,
       "type": "other_activity",
-      "title": "AI Educational Content Creator",
-      "organization": "TikTok & Social Media",
-      "period": "Ongoing (Outside of academics)",
-      "achievement": "Sharing AI insights for a broader audience",
+      "title": "Kreator Konten Edukasi AI",
+      "organization": "TikTok & Media Sosial",
+      "period": "Berjalan (Di luar akademik)",
+      "achievement": "Berbagi wawasan AI untuk audiens yang lebih luas",
       "description": "Secara aktif berbagi wawasan tentang AI sebagai pembuat konten edukasi di TikTok, berfokus pada penyederhanaan konsep yang kompleks bagi audiens yang lebih luas.",
       "skills": [
-        "Content Creation",
-        "AI Education",
-        "Communication",
-        "Social Media"
+        "Pembuatan Konten",
+        "Edukasi AI",
+        "Komunikasi",
+        "Media Sosial"
       ],
       "status": "in-progress",
       "logo": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=100&h=100&fit=crop&crop=center",
@@ -205,10 +205,10 @@ const ProfessionalJourneyAchievements = () => {
   ];
 
   const navigationSections = [
-    { id: 'timeline', name: 'Journey Timeline', icon: 'Clock' },
-    { id: 'skills', name: 'Skills Assessment', icon: 'TrendingUp' },
-    { id: 'certifications', name: 'Certifications', icon: 'Award' },
-    { id: 'testimonials', name: 'Transcript', icon: 'MessageSquare' },
+    { id: 'timeline', name: 'Linimasa Perjalanan', icon: 'Clock' },
+    { id: 'skills', name: 'Penilaian Keahlian', icon: 'TrendingUp' },
+    { id: 'certifications', name: 'Sertifikasi', icon: 'Award' },
+    { id: 'testimonials', name: 'Transkrip', icon: 'MessageSquare' },
   ]
 
   if (isLoading) {
@@ -216,7 +216,7 @@ const ProfessionalJourneyAchievements = () => {
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-accent border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-text-secondary">Loading professional journey...</p>
+          <p className="text-text-secondary">Memuat perjalanan profesional...</p>
         </div>
       </div>
     );
@@ -225,8 +225,8 @@ const ProfessionalJourneyAchievements = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Professional Journey & Achievements - Haldies Portfolio</title>
-        <meta name="description" content="Explore Haldies' professional journey, achievements, certifications, and skills in AI/ML engineering. Download CV and view testimonials from industry professionals." />
+        <title>Perjalanan Profesional & Pencapaian - Portofolio Haldies</title>
+        <meta name="description" content="Jelajahi perjalanan profesional, pencapaian, sertifikasi, dan keahlian Haldies di bidang rekayasa AI/ML. Unduh CV dan lihat testimoni dari para profesional industri." />
         <meta name="keywords" content="AI engineer, machine learning, professional journey, achievements, certifications, CV, resume, testimonials" />
       </Helmet>
       <Header />
@@ -235,12 +235,12 @@ const ProfessionalJourneyAchievements = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-              Building Excellence in
+              Membangun Keunggulan dalam
               <span className="text-primary block">AI & Machine Learning</span>
             </h1>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-              From academic foundations to industry recognition, explore my journey of continuous learning,
-              technical growth, and impactful contributions to the AI/ML community.
+              Dari fondasi akademik hingga pengakuan industri, jelajahi perjalanan saya dalam pembelajaran
+              berkelanjutan, pengembangan teknis, dan kontribusi nyata untuk komunitas AI/ML.
             </p>
           </div>
         </div>
@@ -271,9 +271,9 @@ const ProfessionalJourneyAchievements = () => {
           {activeSection === 'timeline' && (
             <div>
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-primary mb-4">Professional Timeline</h2>
+                <h2 className="text-3xl font-bold text-primary mb-4">Linimasa Profesional</h2>
                 <p className="text-text-secondary max-w-2xl mx-auto">
-                  Key milestones, achievements, and learning experiences that shaped my AI/ML expertise
+                  Tonggak penting, pencapaian, dan pengalaman belajar yang membentuk keahlian AI/ML saya
                 </p>
               </div>
               <div className="max-w-4xl mx-auto">
@@ -291,9 +291,9 @@ const ProfessionalJourneyAchievements = () => {
           {activeSection === 'skills' && (
             <div>
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-primary mb-4">Skills Assessment</h2>
+                <h2 className="text-3xl font-bold text-primary mb-4">Penilaian Keahlian</h2>
                 <p className="text-text-secondary max-w-2xl mx-auto">
-                  Technical proficiency across programming languages, frameworks, and tools
+                  Kemahiran teknis dalam bahasa pemrograman, framework, dan perkakas
                 </p>
               </div>
               <SkillsAssessment />
@@ -303,9 +303,9 @@ const ProfessionalJourneyAchievements = () => {
           {activeSection === 'certifications' && (
             <div>
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-primary mb-4">Certifications & Badges</h2>
+                <h2 className="text-3xl font-bold text-primary mb-4">Sertifikasi & Lencana</h2>
                 <p className="text-text-secondary max-w-2xl mx-auto">
-                  Professional credentials from leading technology companies and educational platforms
+                  Kredensial profesional dari perusahaan teknologi terkemuka dan platform edukasi
                 </p>
               </div>
               <CertificationBadges />
@@ -325,11 +325,11 @@ const ProfessionalJourneyAchievements = () => {
                       </div>
                     </div>
                     <h1 className="text-4xl font-bold text-primary mb-2">
-                      Professional Journey & Achievements
+                      Perjalanan Profesional & Pencapaian
                     </h1>
                     <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-                      Comprehensive academic and professional development records showcasing excellence in Computer Science,
-                      AI/ML specialization, and continuous learning through distinguished programs.
+                      Rekam jejak akademik dan pengembangan profesional yang komprehensif, menunjukkan keunggulan dalam Ilmu Komputer,
+                      spesialisasi AI/ML, dan pembelajaran berkelanjutan melalui program-program unggulan.
                     </p>
                   </div>
                 </div>

@@ -33,16 +33,16 @@ const FooterPage = () => {
                     </div>
 
                     <div>
-                        <h4 className="font-semibold mb-4">Explore</h4>
+                        <h4 className="font-semibold mb-4">Jelajahi</h4>
                         <ul className="space-y-2 text-sm">
-                            <li><a href="/home#services" className="text-background/70 hover:text-background transition-colors">Services</a></li>
-                            <li><a href="/home#process" className="text-background/70 hover:text-background transition-colors">Process</a></li>
-                            <li><a href="/contact" className="text-background/70 hover:text-background transition-colors">Contact</a></li>
+                            <li><a href="/home#services" className="text-background/70 hover:text-background transition-colors">Layanan</a></li>
+                            <li><a href="/home#process" className="text-background/70 hover:text-background transition-colors">Proses</a></li>
+                            <li><a href="/contact" className="text-background/70 hover:text-background transition-colors">Kontak</a></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 className="font-semibold mb-4">Connect</h4>
+                        <h4 className="font-semibold mb-4">Terhubung</h4>
                         <ul className="space-y-2 text-sm">
                             <li><a href="https://wa.me/6289632579100" className="text-background/70 hover:text-background transition-colors">WhatsApp</a></li>
                             <li><a href="https://github.com/haldies" className="text-background/70 hover:text-background transition-colors">GitHub</a></li>
@@ -52,7 +52,7 @@ const FooterPage = () => {
                     </div>
 
                     <div>
-                        <h4 className="font-semibold mb-4">Project Inquiry</h4>
+                        <h4 className="font-semibold mb-4">Konsultasi Proyek</h4>
                         <p className="text-background/70 text-sm mb-4">
                             Kirim ide awalmu, nanti saya bantu petakan solusi yang paling masuk akal.
                         </p>
@@ -60,12 +60,12 @@ const FooterPage = () => {
                             <div className="flex w-full flex-col gap-2 sm:flex-row sm:gap-0">
                                 <input
                                     type="email"
-                                    placeholder="Your email"
+                                    placeholder="Email kamu"
                                     className="h-11 w-full rounded-brand border border-background/20 bg-background/10 px-4 py-2 text-sm text-background placeholder:text-background/50 transition-brand focus-brand focus:border-accent sm:flex-1 sm:rounded-r-none"
                                 />
                                 <button
                                     className="inline-flex h-11 w-full items-center justify-center rounded-brand border border-accent bg-accent px-4 text-accent-foreground transition-brand hover:bg-accent/90 focus-brand sm:w-12 sm:rounded-l-none"
-                                    aria-label="Send inquiry"
+                                    aria-label="Kirim pertanyaan"
                                 >
                                     <SendHorizontal className="h-4 w-4" aria-hidden="true" />
                                 </button>
@@ -76,12 +76,12 @@ const FooterPage = () => {
 
                 <div className="border-t border-background/20 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
                     <p className="text-background/70 text-sm">
-                        © {new Date()?.getFullYear()} Buatai Studio. All rights reserved.
+                        © {new Date()?.getFullYear()} Buatai Studio. Seluruh hak cipta dilindungi.
                     </p>
                     <div className="flex space-x-6 mt-4 sm:mt-0">
-                        <a href="/privacy" className="text-background/70 hover:text-background text-sm transition-colors">Privacy</a>
-                        <a href="/terms" className="text-background/70 hover:text-background text-sm transition-colors">Terms</a>
-                        <a href="/sitemap" className="text-background/70 hover:text-background text-sm transition-colors">Sitemap</a>
+                        <a href="/privacy" className="text-background/70 hover:text-background text-sm transition-colors">Privasi</a>
+                        <a href="/terms" className="text-background/70 hover:text-background text-sm transition-colors">Ketentuan</a>
+                        <a href="/sitemap" className="text-background/70 hover:text-background text-sm transition-colors">Peta Situs</a>
                     </div>
                 </div>
             </div>

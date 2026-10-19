@@ -9,14 +9,14 @@ const ContactCollaborationHub = () => {
   return (
     <>
       <Helmet>
-        <title>Contact - Buatai Studio</title>
+        <title>Kontak - Buatai Studio</title>
         <meta 
           name="description" 
-          content="Start a website or AI automation project with Buatai Studio. Share your business needs and get a practical next step." 
+          content="Mulai project website atau otomasi AI bersama Buatai Studio. Ceritakan kebutuhan bisnismu dan dapatkan langkah praktis berikutnya." 
         />
         <meta name="keywords" content="website agency contact, AI automation consultant, web development Indonesia" />
-        <meta property="og:title" content="Contact - Buatai Studio" />
-        <meta property="og:description" content="Discuss a website, internal tool, or AI automation project with Haldies." />
+        <meta property="og:title" content="Kontak - Buatai Studio" />
+        <meta property="og:description" content="Diskusikan project website, sistem internal, atau otomasi AI bersama Haldies." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="/contact" />
       </Helmet>

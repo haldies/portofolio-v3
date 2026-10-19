@@ -9,8 +9,8 @@ const socialPlatforms = [
     description: 'Diskusi profesional, update kerja, dan koneksi bisnis.',
     icon: 'Linkedin',
     color: 'bg-blue-600',
-    signal: 'Professional',
-    activity: 'Active',
+    signal: 'Profesional',
+    activity: 'Aktif',
     url: 'https://linkedin.com/in/haldies-pasya',
   },
   {
@@ -19,18 +19,18 @@ const socialPlatforms = [
     description: 'Workbench teknis, eksperimen, dan contoh implementasi.',
     icon: 'Github',
     color: 'bg-gray-800',
-    signal: 'Code',
-    activity: 'Maintained',
+    signal: 'Kode',
+    activity: 'Rutin Update',
     url: 'https://github.com/haldies',
   },
   {
     name: 'WhatsApp',
-    handle: 'Quick chat',
+    handle: 'Chat cepat',
     description: 'Jalur tercepat untuk tanya scope, jadwal, dan kebutuhan project.',
     icon: 'MessageCircle',
     color: 'bg-green-600',
-    signal: 'Fast',
-    activity: 'Direct',
+    signal: 'Cepat',
+    activity: 'Langsung',
     url: 'https://wa.me/6289632579100',
   },
   {
@@ -39,8 +39,8 @@ const socialPlatforms = [
     description: 'Sisi personal, proses kreatif, dan update ringan.',
     icon: 'Instagram',
     color: 'bg-pink-600',
-    signal: 'Social',
-    activity: 'Casual',
+    signal: 'Sosial',
+    activity: 'Santai',
     url: 'https://instagram.com/gerhardien_',
   }
 ];
@@ -85,7 +85,7 @@ const SocialConnect = () => {
                   iconPosition="right"
                   onClick={() => window.open(platform.url, '_blank')}
                 >
-                  Open
+                  Buka
                 </Button>
               </div>
 

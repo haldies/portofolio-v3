@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import Icon from '../AppIcon';
 import Button from './Button';
 
 const Header = () => {
@@ -9,11 +8,11 @@ const Header = () => {
     const location = useLocation();
 
     const navigationItems = [
-        { name: 'Home', path: '/home' },
-        { name: 'Services', path: '/home#services'},
-        { name: 'Projects', path: '/home#projects'},
-        { name: 'Process', path: '/home#process'},
-        { name: 'Contact', path: '/contact' }
+        { name: 'Beranda', path: '/home' },
+        { name: 'Layanan', path: '/home#services'},
+        { name: 'Proyek', path: '/home#projects'},
+        { name: 'Proses', path: '/home#process'},
+        { name: 'Kontak', path: '/contact' }
     ];
 
     useEffect(() => {
@@ -21,7 +20,8 @@ const Header = () => {
             setIsScrolled(window.scrollY > 20);
         };
 
-        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -39,9 +39,11 @@ const Header = () => {
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-brand ${isScrolled
-                ? 'bg-background/95 backdrop-blur-brand shadow-brand-subtle border-b border-border'
-                : 'bg-transparent'
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+                ? 'bg-white'
+                : isMenuOpen
+                    ? 'bg-white/70 backdrop-blur-xl'
+                    : 'bg-transparent backdrop-blur-xl'
                 }`}
         >
             <div className="w-full">
@@ -53,9 +55,9 @@ const Header = () => {
                             <Link
                                 key={item?.path}
                                 to={item?.path}
-                                className={`flex items-center space-x-2 px-4 py-2 rounded-brand text-sm font-medium transition-brand focus-brand ${isActivePath(item?.path)
-                                    ? 'bg-accent text-accent-foreground shadow-brand-subtle'
-                                    : 'text-primary hover:bg-muted hover:text-primary'
+                                className={`px-4 py-2 text-sm font-medium transition-colors duration-200 ${isActivePath(item?.path)
+                                    ? 'text-primary'
+                                    : 'text-primary/60 hover:text-primary'
                                     }`}
                             > 
                                 <span>{item?.name}</span>
@@ -83,7 +85,7 @@ const Header = () => {
                             asChild
                         >
                             <Link to="/contact">
-                                Book a Call
+                                Jadwalkan Panggilan
                             </Link>
                         </Button>
                     </div>
@@ -93,7 +95,7 @@ const Header = () => {
     <button
         type="button"
         onClick={toggleMenu}
-        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        aria-label={isMenuOpen ? "Tutup menu" : "Buka menu"}
         className="flex h-10 w-10 items-center justify-center"
     >
         <span className="relative h-3 w-6">
@@ -117,19 +119,19 @@ const Header = () => {
 
                 {/* Mobile Navigation Menu */}
                 <div
-                    className={`lg:hidden transition-brand overflow-hidden ${isMenuOpen
-                        ? 'max-h-screen opacity-100 bg-background/95 backdrop-blur-brand border-b border-border' : 'max-h-0 opacity-0'
+                    className={`lg:hidden overflow-hidden origin-top transition-all duration-300 ease-out ${isScrolled ? 'bg-white' : 'bg-transparent'} ${isMenuOpen
+                        ? 'max-h-screen opacity-100 scale-100' : 'max-h-0 opacity-0 scale-95'
                         }`}
                 >
-                    <nav className="mx-auto max-w-6xl px-4 py-4 space-y-2">
+                    <nav className="mx-auto max-w-6xl px-4 py-4 space-y-2 bg-transparent">
                         {navigationItems?.map((item) => (
                             <Link
                                 key={item?.path}
                                 to={item?.path}
                                 onClick={closeMenu}
-                                className={`flex items-center space-x-3 px-4 py-3 rounded-brand text-base font-medium transition-brand focus-brand ${isActivePath(item?.path)
-                                    ? 'bg-accent text-accent-foreground shadow-brand-subtle'
-                                    : 'text-primary hover:bg-muted'
+                                className={`flex items-center px-4 py-3 text-base font-medium transition-colors duration-200 ${isActivePath(item?.path)
+                                    ? 'text-primary'
+                                    : 'text-primary/60 hover:text-primary'
                                     }`}
                             >
                                 <span>{item?.name}</span>
@@ -137,7 +139,7 @@ const Header = () => {
                         ))}
 
                         {/* Mobile CTA Buttons */}
-                        <div className="pt-4 space-y-3 border-t border-border">
+                        <div className="pt-4 space-y-3">
                             <Button
                                 variant="default"
                                 fullWidth
@@ -146,7 +148,7 @@ const Header = () => {
                                 asChild
                             >
                                 <Link to="/contact" onClick={closeMenu}>
-                                    Book a Call
+                                    Jadwalkan Panggilan
                                 </Link>
                             </Button>
                         </div>

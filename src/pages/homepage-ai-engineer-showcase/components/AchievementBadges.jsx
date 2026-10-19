@@ -29,7 +29,7 @@ const AchievementBadges = () => {
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-14 max-w-3xl text-center">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.32em] text-muted-foreground">
-            Process
+            Proses
           </p>
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-primary">
             Dibangun seperti partner, bukan sekadar vendor
