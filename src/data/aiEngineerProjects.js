@@ -1,10 +1,10 @@
 const aiEngineerProjects = [
   {
     id: 6,
-    title: 'KasirAi',
+    title: 'Hagepos',
     description:
       'Aplikasi kasir mobile untuk membantu operasional penjualan secara praktis. Sudah diinstall 400+ orang dengan 20 pengguna aktif setiap harinya, kini tersedia di Google Play Store.',
-    image: '/assets/Projekan/kasirai.png',
+    image: '/assets/Projekan/hagepos.png',
     category: 'Aplikasi Mobile',
     year: '2026',
     tags: ['POS', 'Aplikasi Mobile', 'Google Play'],

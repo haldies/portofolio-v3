@@ -106,14 +106,14 @@ const projectDetails = {
     }
   },
   'kasir-ai': {
-    title: 'KasirAi',
+    title: 'Hagepos',
     summary:
       'Aplikasi kasir mobile untuk membantu operasional penjualan secara praktis. Sudah diinstall 400+ orang dengan 20 pengguna aktif setiap harinya, kini tersedia di Google Play Store.',
-    previewImage: '/assets/Projekan/kasirai.png',
+    previewImage: '/assets/Projekan/hagepos.png',
     videoSrc: '',
     seo: {
-      title: 'KasirAi - Detail Proyek',
-      description: 'Pratinjau KasirAi.'
+      title: 'Hagepos - Detail Proyek',
+      description: 'Pratinjau hagepos.'
     },
     cta: {
       demoLabel: 'Lihat di Play Store',
